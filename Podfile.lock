@@ -1,0 +1,38 @@
+PODS:
+  - BulletinBoard (4.1.0)
+  - Charts (3.4.0):
+    - Charts/Core (= 3.4.0)
+  - Charts/Core (3.4.0)
+  - IQKeyboardManagerSwift (6.5.4)
+  - Siren (5.2.3)
+  - SwiftSoup (2.2.2)
+  - ViewAnimator (2.7.0)
+
+DEPENDENCIES:
+  - BulletinBoard
+  - Charts
+  - IQKeyboardManagerSwift
+  - Siren
+  - SwiftSoup
+  - ViewAnimator
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BulletinBoard
+    - Charts
+    - IQKeyboardManagerSwift
+    - Siren
+    - SwiftSoup
+    - ViewAnimator
+
+SPEC CHECKSUMS:
+  BulletinBoard: c774340545b5cfd05a96a89f63b105ecc95c86f9
+  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  Siren: 996f37869eae1f343f8c11f17d90c9c8da90bd4c
+  SwiftSoup: 77147d707df716eb6dbd06c5c24d35ad5ba62ee1
+  ViewAnimator: 5af1c6f3b310f012bf081259c43717aa54fbae73
+
+PODFILE CHECKSUM: 86c8245911e17a0a9be3d31bb7dccd3d8bf38fa1
+
+COCOAPODS: 1.7.5

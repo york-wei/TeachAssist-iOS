@@ -1,0 +1,1157 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2B62379503DA325F39CFA401 /* Pods_TeachAssist_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7FEF3B590744C8B59A05FE1 /* Pods_TeachAssist_Widget.framework */; };
+		BBA5D22585E2CC8B14E88547 /* Pods_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00101563DAD0C81FF189EF35 /* Pods_TeachAssistUITests.framework */; };
+		CCA8295F0A448B7B797C70FB /* Pods_TeachAssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DC25695472FE64F4015CD22 /* Pods_TeachAssistTests.framework */; };
+		F321764E23019FF1007503A2 /* ForwardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F321764D23019FF1007503A2 /* ForwardSegue.swift */; };
+		F32176522301A792007503A2 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32176512301A792007503A2 /* CalculatorViewController.swift */; };
+		F32176542303A654007503A2 /* CourseReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32176532303A654007503A2 /* CourseReponse.swift */; };
+		F32176562303A693007503A2 /* Marks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32176552303A693007503A2 /* Marks.swift */; };
+		F32176582303A844007503A2 /* MarkStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32176572303A844007503A2 /* MarkStruct.swift */; };
+		F327DC5D22FDD055006E8ABB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327DC5C22FDD055006E8ABB /* MenuViewController.swift */; };
+		F327DC5F22FDDE92006E8ABB /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F327DC5E22FDDE92006E8ABB /* Transition.swift */; };
+		F3289D9A2309CC1C002C3215 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3289D992309CC1C002C3215 /* CourseViewController.swift */; };
+		F32BF80F22FD18F70000051C /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BF80E22FD18F70000051C /* Reachability.swift */; };
+		F32C5593230D929D00A191D0 /* EvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C5592230D929D00A191D0 /* EvaluationViewController.swift */; };
+		F32C5595230D9A6800A191D0 /* EvaluationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C5594230D9A6800A191D0 /* EvaluationTableViewCell.swift */; };
+		F32D8D8F23119D78001920DA /* BreakdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D8D8E23119D78001920DA /* BreakdownViewController.swift */; };
+		F3312AC6230711D000CAD48C /* CourseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3312AC5230711D000CAD48C /* CourseTableViewCell.swift */; };
+		F333D027231426EB00E11989 /* TrendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F333D026231426EB00E11989 /* TrendViewController.swift */; };
+		F333D02923143D6200E11989 /* TrendTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F333D02823143D6200E11989 /* TrendTableViewCell.swift */; };
+		F367836B22FB731500C85848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367836A22FB731500C85848 /* AppDelegate.swift */; };
+		F367836D22FB731500C85848 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367836C22FB731500C85848 /* LoadingViewController.swift */; };
+		F367837022FB731500C85848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F367836E22FB731500C85848 /* Main.storyboard */; };
+		F367837222FB731600C85848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F367837122FB731600C85848 /* Assets.xcassets */; };
+		F367837522FB731600C85848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F367837322FB731600C85848 /* LaunchScreen.storyboard */; };
+		F367838022FB731600C85848 /* TeachAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367837F22FB731600C85848 /* TeachAssistTests.swift */; };
+		F367838B22FB731700C85848 /* TeachAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367838A22FB731700C85848 /* TeachAssistUITests.swift */; };
+		F36783EC22FB792D00C85848 /* Sofia Pro Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783DC22FB792D00C85848 /* Sofia Pro Bold.otf */; };
+		F36783ED22FB792D00C85848 /* Sofia Pro Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783DD22FB792D00C85848 /* Sofia Pro Italic.otf */; };
+		F36783EE22FB792D00C85848 /* Sofia Pro Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783DE22FB792D00C85848 /* Sofia Pro Regular.otf */; };
+		F36783EF22FB792D00C85848 /* Sofia Pro Ultra Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783DF22FB792D00C85848 /* Sofia Pro Ultra Light.otf */; };
+		F36783F022FB792D00C85848 /* Sofia Pro Semi Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E022FB792D00C85848 /* Sofia Pro Semi Bold Italic.otf */; };
+		F36783F122FB792D00C85848 /* Sofia Pro Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E122FB792D00C85848 /* Sofia Pro Black.otf */; };
+		F36783F222FB792D00C85848 /* Sofia Pro Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E222FB792D00C85848 /* Sofia Pro Black Italic.otf */; };
+		F36783F322FB792D00C85848 /* Sofia Pro Semi Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E322FB792D00C85848 /* Sofia Pro Semi Bold.otf */; };
+		F36783F422FB792D00C85848 /* Sofia Pro Extra Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E422FB792D00C85848 /* Sofia Pro Extra Light.otf */; };
+		F36783F522FB792D00C85848 /* Sofia Pro Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E522FB792D00C85848 /* Sofia Pro Bold Italic.otf */; };
+		F36783F622FB792D00C85848 /* Sofia Pro Extra Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E622FB792D00C85848 /* Sofia Pro Extra Light Italic.otf */; };
+		F36783F722FB792D00C85848 /* Sofia Pro Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E722FB792D00C85848 /* Sofia Pro Light.otf */; };
+		F36783F822FB792D00C85848 /* Sofia Pro Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E822FB792D00C85848 /* Sofia Pro Medium.otf */; };
+		F36783F922FB792D00C85848 /* Sofia Pro Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783E922FB792D00C85848 /* Sofia Pro Light Italic.otf */; };
+		F36783FA22FB792D00C85848 /* Sofia Pro Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783EA22FB792D00C85848 /* Sofia Pro Medium Italic.otf */; };
+		F36783FB22FB792D00C85848 /* Sofia Pro Ultra Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F36783EB22FB792D00C85848 /* Sofia Pro Ultra Light Italic.otf */; };
+		F36783FD22FB7FB400C85848 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36783FC22FB7FB400C85848 /* MainViewController.swift */; };
+		F367840122FB81DC00C85848 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367840022FB81DC00C85848 /* Course.swift */; };
+		F367840322FB821000C85848 /* TeachAssistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367840222FB821000C85848 /* TeachAssistResponse.swift */; };
+		F367840522FB82D900C85848 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367840422FB82D900C85848 /* LoginViewController.swift */; };
+		F367840722FBB04B00C85848 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F367840622FBB04B00C85848 /* LoadingButton.swift */; };
+		F38C0CC22345868B00DC891D /* CreditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38C0CC12345868B00DC891D /* CreditViewController.swift */; };
+		F3BA052D23A5957800F1ADD0 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3BA052C23A5957800F1ADD0 /* NotificationCenter.framework */; };
+		F3BA053723A5957800F1ADD0 /* TeachAssist-Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F3BA052B23A5957800F1ADD0 /* TeachAssist-Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F3BA053C23A595F000F1ADD0 /* CourseReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA90523A491E80009B5EA /* CourseReponse.swift */; };
+		F3BA053D23A595F000F1ADD0 /* TeachAssistResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA90423A491E80009B5EA /* TeachAssistResponse.swift */; };
+		F3BA053E23A595F000F1ADD0 /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA91A23A4A8D10009B5EA /* TodayTableViewCell.swift */; };
+		F3BA053F23A595F000F1ADD0 /* MarkStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA90123A491E80009B5EA /* MarkStruct.swift */; };
+		F3BA054023A595F000F1ADD0 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA90323A491E80009B5EA /* Course.swift */; };
+		F3BA054123A595F000F1ADD0 /* Marks.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA90223A491E80009B5EA /* Marks.swift */; };
+		F3BA054223A595F000F1ADD0 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32BA8F523A48CD60009B5EA /* TodayViewController.swift */; };
+		F3BA054E23A5BEA700F1ADD0 /* Pods_TeachAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68D34D29D5EBC4C1272E3108 /* Pods_TeachAssist.framework */; };
+		F3DAB60D23A8236500EECE5F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3DAB60923A8234E00EECE5F /* MainInterface.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F367837C22FB731600C85848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F367835F22FB731500C85848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F367836622FB731500C85848;
+			remoteInfo = TeachAssist;
+		};
+		F367838722FB731700C85848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F367835F22FB731500C85848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F367836622FB731500C85848;
+			remoteInfo = TeachAssist;
+		};
+		F3BA053523A5957800F1ADD0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F367835F22FB731500C85848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F3BA052A23A5957800F1ADD0;
+			remoteInfo = "TeachAssist-Widget";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F32BA8EA23A48C3B0009B5EA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F3BA053723A5957800F1ADD0 /* TeachAssist-Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00101563DAD0C81FF189EF35 /* Pods_TeachAssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25F2CC37C5CA6E2A3714C7DC /* Pods-TeachAssist-Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist-Widget.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist-Widget/Pods-TeachAssist-Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		2DB4C5BD7F6A249D00AE6B0C /* Pods-TeachAssistTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.release.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.release.xcconfig"; sourceTree = "<group>"; };
+		30227CC75E53BB1494A1E7A2 /* Pods-TeachAssist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.debug.xcconfig"; sourceTree = "<group>"; };
+		68D34D29D5EBC4C1272E3108 /* Pods_TeachAssist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		711C7BC7C5DC1D053FB53C1A /* Pods-TeachAssist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.release.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.release.xcconfig"; sourceTree = "<group>"; };
+		76801D1D2AB2345C6231D73B /* Pods-TeachAssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistUITests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistUITests/Pods-TeachAssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9DC25695472FE64F4015CD22 /* Pods_TeachAssistTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssistTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1AF1636E03FBFF73C0BE9AB /* Pods-TeachAssist-Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist-Widget.release.xcconfig"; path = "Target Support Files/Pods-TeachAssist-Widget/Pods-TeachAssist-Widget.release.xcconfig"; sourceTree = "<group>"; };
+		B8909EF9C647BCDAFC22593E /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E0718E9481E02758CA9EA60A /* Pods-TeachAssistUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistUITests.release.xcconfig"; path = "Target Support Files/Pods-TeachAssistUITests/Pods-TeachAssistUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E7FEF3B590744C8B59A05FE1 /* Pods_TeachAssist_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssist_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F321764D23019FF1007503A2 /* ForwardSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForwardSegue.swift; sourceTree = "<group>"; };
+		F32176512301A792007503A2 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		F32176532303A654007503A2 /* CourseReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseReponse.swift; sourceTree = "<group>"; };
+		F32176552303A693007503A2 /* Marks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marks.swift; sourceTree = "<group>"; };
+		F32176572303A844007503A2 /* MarkStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkStruct.swift; sourceTree = "<group>"; };
+		F327DC5C22FDD055006E8ABB /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		F327DC5E22FDDE92006E8ABB /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		F3289D992309CC1C002C3215 /* CourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
+		F32BA8F523A48CD60009B5EA /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TodayViewController.swift; path = "../TeachAssist Widget/TodayViewController.swift"; sourceTree = "<group>"; };
+		F32BA90123A491E80009B5EA /* MarkStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkStruct.swift; sourceTree = "<group>"; };
+		F32BA90223A491E80009B5EA /* Marks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marks.swift; sourceTree = "<group>"; };
+		F32BA90323A491E80009B5EA /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		F32BA90423A491E80009B5EA /* TeachAssistResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeachAssistResponse.swift; sourceTree = "<group>"; };
+		F32BA90523A491E80009B5EA /* CourseReponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseReponse.swift; sourceTree = "<group>"; };
+		F32BA91623A497E30009B5EA /* TeachAssist.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeachAssist.entitlements; sourceTree = "<group>"; };
+		F32BA91A23A4A8D10009B5EA /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
+		F32BF80E22FD18F70000051C /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F32C5592230D929D00A191D0 /* EvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationViewController.swift; sourceTree = "<group>"; };
+		F32C5594230D9A6800A191D0 /* EvaluationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationTableViewCell.swift; sourceTree = "<group>"; };
+		F32D8D8E23119D78001920DA /* BreakdownViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakdownViewController.swift; sourceTree = "<group>"; };
+		F3312AC5230711D000CAD48C /* CourseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTableViewCell.swift; sourceTree = "<group>"; };
+		F333D026231426EB00E11989 /* TrendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendViewController.swift; sourceTree = "<group>"; };
+		F333D02823143D6200E11989 /* TrendTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewCell.swift; sourceTree = "<group>"; };
+		F367836722FB731500C85848 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F367836A22FB731500C85848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F367836C22FB731500C85848 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		F367836F22FB731500C85848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F367837122FB731600C85848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F367837422FB731600C85848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F367837622FB731600C85848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F367837B22FB731600C85848 /* TeachAssistTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeachAssistTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F367837F22FB731600C85848 /* TeachAssistTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistTests.swift; sourceTree = "<group>"; };
+		F367838122FB731700C85848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F367838622FB731700C85848 /* TeachAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeachAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F367838A22FB731700C85848 /* TeachAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistUITests.swift; sourceTree = "<group>"; };
+		F367838C22FB731700C85848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F36783DC22FB792D00C85848 /* Sofia Pro Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Bold.otf"; sourceTree = "<group>"; };
+		F36783DD22FB792D00C85848 /* Sofia Pro Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Italic.otf"; sourceTree = "<group>"; };
+		F36783DE22FB792D00C85848 /* Sofia Pro Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Regular.otf"; sourceTree = "<group>"; };
+		F36783DF22FB792D00C85848 /* Sofia Pro Ultra Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Ultra Light.otf"; sourceTree = "<group>"; };
+		F36783E022FB792D00C85848 /* Sofia Pro Semi Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Semi Bold Italic.otf"; sourceTree = "<group>"; };
+		F36783E122FB792D00C85848 /* Sofia Pro Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Black.otf"; sourceTree = "<group>"; };
+		F36783E222FB792D00C85848 /* Sofia Pro Black Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Black Italic.otf"; sourceTree = "<group>"; };
+		F36783E322FB792D00C85848 /* Sofia Pro Semi Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Semi Bold.otf"; sourceTree = "<group>"; };
+		F36783E422FB792D00C85848 /* Sofia Pro Extra Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Extra Light.otf"; sourceTree = "<group>"; };
+		F36783E522FB792D00C85848 /* Sofia Pro Bold Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Bold Italic.otf"; sourceTree = "<group>"; };
+		F36783E622FB792D00C85848 /* Sofia Pro Extra Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Extra Light Italic.otf"; sourceTree = "<group>"; };
+		F36783E722FB792D00C85848 /* Sofia Pro Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Light.otf"; sourceTree = "<group>"; };
+		F36783E822FB792D00C85848 /* Sofia Pro Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Medium.otf"; sourceTree = "<group>"; };
+		F36783E922FB792D00C85848 /* Sofia Pro Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Light Italic.otf"; sourceTree = "<group>"; };
+		F36783EA22FB792D00C85848 /* Sofia Pro Medium Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Medium Italic.otf"; sourceTree = "<group>"; };
+		F36783EB22FB792D00C85848 /* Sofia Pro Ultra Light Italic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sofia Pro Ultra Light Italic.otf"; sourceTree = "<group>"; };
+		F36783FC22FB7FB400C85848 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		F367840022FB81DC00C85848 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		F367840222FB821000C85848 /* TeachAssistResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistResponse.swift; sourceTree = "<group>"; };
+		F367840422FB82D900C85848 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F367840622FBB04B00C85848 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		F38C0CC12345868B00DC891D /* CreditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditViewController.swift; sourceTree = "<group>"; };
+		F396890723A47C4000057A4D /* AppIcon-Dark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-Dark@3x.png"; path = "Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark@3x.png"; sourceTree = "<group>"; };
+		F396890823A47C4000057A4D /* AppIcon-Dark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "AppIcon-Dark@2x.png"; path = "Assets.xcassets/AppIcon-Dark.appiconset/AppIcon-Dark@2x.png"; sourceTree = "<group>"; };
+		F3BA052B23A5957800F1ADD0 /* TeachAssist-Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TeachAssist-Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3BA052C23A5957800F1ADD0 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		F3BA053423A5957800F1ADD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3BA053B23A5959900F1ADD0 /* TeachAssist-Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "TeachAssist-Widget.entitlements"; sourceTree = "<group>"; };
+		F3DAB60A23A8234E00EECE5F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = MainInterface.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F367836422FB731500C85848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BA054E23A5BEA700F1ADD0 /* Pods_TeachAssist.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F367837822FB731600C85848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCA8295F0A448B7B797C70FB /* Pods_TeachAssistTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F367838322FB731700C85848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBA5D22585E2CC8B14E88547 /* Pods_TeachAssistUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BA052823A5957800F1ADD0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BA052D23A5957800F1ADD0 /* NotificationCenter.framework in Frameworks */,
+				2B62379503DA325F39CFA401 /* Pods_TeachAssist_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DBE50F53D1DB1DEF4B2BD53 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F3BA052C23A5957800F1ADD0 /* NotificationCenter.framework */,
+				68D34D29D5EBC4C1272E3108 /* Pods_TeachAssist.framework */,
+				E7FEF3B590744C8B59A05FE1 /* Pods_TeachAssist_Widget.framework */,
+				9DC25695472FE64F4015CD22 /* Pods_TeachAssistTests.framework */,
+				00101563DAD0C81FF189EF35 /* Pods_TeachAssistUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5FFB6445C1497B8661CF2EAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				30227CC75E53BB1494A1E7A2 /* Pods-TeachAssist.debug.xcconfig */,
+				711C7BC7C5DC1D053FB53C1A /* Pods-TeachAssist.release.xcconfig */,
+				25F2CC37C5CA6E2A3714C7DC /* Pods-TeachAssist-Widget.debug.xcconfig */,
+				A1AF1636E03FBFF73C0BE9AB /* Pods-TeachAssist-Widget.release.xcconfig */,
+				B8909EF9C647BCDAFC22593E /* Pods-TeachAssistTests.debug.xcconfig */,
+				2DB4C5BD7F6A249D00AE6B0C /* Pods-TeachAssistTests.release.xcconfig */,
+				76801D1D2AB2345C6231D73B /* Pods-TeachAssistUITests.debug.xcconfig */,
+				E0718E9481E02758CA9EA60A /* Pods-TeachAssistUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F367835E22FB731500C85848 = {
+			isa = PBXGroup;
+			children = (
+				F367836922FB731500C85848 /* TeachAssist */,
+				F367837E22FB731600C85848 /* TeachAssistTests */,
+				F367838922FB731700C85848 /* TeachAssistUITests */,
+				F3BA052E23A5957800F1ADD0 /* TeachAssist-Widget */,
+				F367836822FB731500C85848 /* Products */,
+				F36783DB22FB792D00C85848 /* Fonts */,
+				5FFB6445C1497B8661CF2EAF /* Pods */,
+				3DBE50F53D1DB1DEF4B2BD53 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F367836822FB731500C85848 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F367836722FB731500C85848 /* TeachAssist.app */,
+				F367837B22FB731600C85848 /* TeachAssistTests.xctest */,
+				F367838622FB731700C85848 /* TeachAssistUITests.xctest */,
+				F3BA052B23A5957800F1ADD0 /* TeachAssist-Widget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F367836922FB731500C85848 /* TeachAssist */ = {
+			isa = PBXGroup;
+			children = (
+				F32BA91623A497E30009B5EA /* TeachAssist.entitlements */,
+				F367836A22FB731500C85848 /* AppDelegate.swift */,
+				F36783FE22FB81A900C85848 /* ViewControllers */,
+				F36783FF22FB81C000C85848 /* Data Processing */,
+				F367840822FBB2DC00C85848 /* Misc */,
+				F367836E22FB731500C85848 /* Main.storyboard */,
+				F367837322FB731600C85848 /* LaunchScreen.storyboard */,
+				F367837122FB731600C85848 /* Assets.xcassets */,
+				F367837622FB731600C85848 /* Info.plist */,
+				F396890823A47C4000057A4D /* AppIcon-Dark@2x.png */,
+				F396890723A47C4000057A4D /* AppIcon-Dark@3x.png */,
+			);
+			path = TeachAssist;
+			sourceTree = "<group>";
+		};
+		F367837E22FB731600C85848 /* TeachAssistTests */ = {
+			isa = PBXGroup;
+			children = (
+				F367837F22FB731600C85848 /* TeachAssistTests.swift */,
+				F367838122FB731700C85848 /* Info.plist */,
+			);
+			path = TeachAssistTests;
+			sourceTree = "<group>";
+		};
+		F367838922FB731700C85848 /* TeachAssistUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F367838A22FB731700C85848 /* TeachAssistUITests.swift */,
+				F367838C22FB731700C85848 /* Info.plist */,
+			);
+			path = TeachAssistUITests;
+			sourceTree = "<group>";
+		};
+		F36783DB22FB792D00C85848 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F36783DC22FB792D00C85848 /* Sofia Pro Bold.otf */,
+				F36783DD22FB792D00C85848 /* Sofia Pro Italic.otf */,
+				F36783DE22FB792D00C85848 /* Sofia Pro Regular.otf */,
+				F36783DF22FB792D00C85848 /* Sofia Pro Ultra Light.otf */,
+				F36783E022FB792D00C85848 /* Sofia Pro Semi Bold Italic.otf */,
+				F36783E122FB792D00C85848 /* Sofia Pro Black.otf */,
+				F36783E222FB792D00C85848 /* Sofia Pro Black Italic.otf */,
+				F36783E322FB792D00C85848 /* Sofia Pro Semi Bold.otf */,
+				F36783E422FB792D00C85848 /* Sofia Pro Extra Light.otf */,
+				F36783E522FB792D00C85848 /* Sofia Pro Bold Italic.otf */,
+				F36783E622FB792D00C85848 /* Sofia Pro Extra Light Italic.otf */,
+				F36783E722FB792D00C85848 /* Sofia Pro Light.otf */,
+				F36783E822FB792D00C85848 /* Sofia Pro Medium.otf */,
+				F36783E922FB792D00C85848 /* Sofia Pro Light Italic.otf */,
+				F36783EA22FB792D00C85848 /* Sofia Pro Medium Italic.otf */,
+				F36783EB22FB792D00C85848 /* Sofia Pro Ultra Light Italic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F36783FE22FB81A900C85848 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F367836C22FB731500C85848 /* LoadingViewController.swift */,
+				F367840422FB82D900C85848 /* LoginViewController.swift */,
+				F36783FC22FB7FB400C85848 /* MainViewController.swift */,
+				F3289D992309CC1C002C3215 /* CourseViewController.swift */,
+				F32C5592230D929D00A191D0 /* EvaluationViewController.swift */,
+				F333D026231426EB00E11989 /* TrendViewController.swift */,
+				F32D8D8E23119D78001920DA /* BreakdownViewController.swift */,
+				F327DC5C22FDD055006E8ABB /* MenuViewController.swift */,
+				F32176512301A792007503A2 /* CalculatorViewController.swift */,
+				F38C0CC12345868B00DC891D /* CreditViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F36783FF22FB81C000C85848 /* Data Processing */ = {
+			isa = PBXGroup;
+			children = (
+				F367840222FB821000C85848 /* TeachAssistResponse.swift */,
+				F367840022FB81DC00C85848 /* Course.swift */,
+				F32176532303A654007503A2 /* CourseReponse.swift */,
+				F32176552303A693007503A2 /* Marks.swift */,
+				F32176572303A844007503A2 /* MarkStruct.swift */,
+			);
+			path = "Data Processing";
+			sourceTree = "<group>";
+		};
+		F367840822FBB2DC00C85848 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				F367840622FBB04B00C85848 /* LoadingButton.swift */,
+				F327DC5E22FDDE92006E8ABB /* Transition.swift */,
+				F32BF80E22FD18F70000051C /* Reachability.swift */,
+				F321764D23019FF1007503A2 /* ForwardSegue.swift */,
+				F3312AC5230711D000CAD48C /* CourseTableViewCell.swift */,
+				F32C5594230D9A6800A191D0 /* EvaluationTableViewCell.swift */,
+				F333D02823143D6200E11989 /* TrendTableViewCell.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		F3BA052E23A5957800F1ADD0 /* TeachAssist-Widget */ = {
+			isa = PBXGroup;
+			children = (
+				F3BA054623A598A100F1ADD0 /* Base.lproj */,
+				F32BA90323A491E80009B5EA /* Course.swift */,
+				F32BA90523A491E80009B5EA /* CourseReponse.swift */,
+				F32BA90223A491E80009B5EA /* Marks.swift */,
+				F32BA90123A491E80009B5EA /* MarkStruct.swift */,
+				F32BA90423A491E80009B5EA /* TeachAssistResponse.swift */,
+				F32BA8F523A48CD60009B5EA /* TodayViewController.swift */,
+				F32BA91A23A4A8D10009B5EA /* TodayTableViewCell.swift */,
+				F3BA053B23A5959900F1ADD0 /* TeachAssist-Widget.entitlements */,
+				F3BA053423A5957800F1ADD0 /* Info.plist */,
+			);
+			path = "TeachAssist-Widget";
+			sourceTree = "<group>";
+		};
+		F3BA054623A598A100F1ADD0 /* Base.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F3DAB60923A8234E00EECE5F /* MainInterface.storyboard */,
+			);
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F367836622FB731500C85848 /* TeachAssist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F367838F22FB731700C85848 /* Build configuration list for PBXNativeTarget "TeachAssist" */;
+			buildPhases = (
+				3D1872482266FF29367243A9 /* [CP] Check Pods Manifest.lock */,
+				F367836322FB731500C85848 /* Sources */,
+				F367836422FB731500C85848 /* Frameworks */,
+				F367836522FB731500C85848 /* Resources */,
+				F32BA8EA23A48C3B0009B5EA /* Embed App Extensions */,
+				E1E317773E62E963B8704A22 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F3BA053623A5957800F1ADD0 /* PBXTargetDependency */,
+			);
+			name = TeachAssist;
+			productName = TeachAssist;
+			productReference = F367836722FB731500C85848 /* TeachAssist.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F367837A22FB731600C85848 /* TeachAssistTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F367839222FB731700C85848 /* Build configuration list for PBXNativeTarget "TeachAssistTests" */;
+			buildPhases = (
+				7104D4A6595A24DB6D8F1059 /* [CP] Check Pods Manifest.lock */,
+				F367837722FB731600C85848 /* Sources */,
+				F367837822FB731600C85848 /* Frameworks */,
+				F367837922FB731600C85848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F367837D22FB731600C85848 /* PBXTargetDependency */,
+			);
+			name = TeachAssistTests;
+			productName = TeachAssistTests;
+			productReference = F367837B22FB731600C85848 /* TeachAssistTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F367838522FB731700C85848 /* TeachAssistUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F367839522FB731700C85848 /* Build configuration list for PBXNativeTarget "TeachAssistUITests" */;
+			buildPhases = (
+				AD8E318AD36F59CC1A6ABC94 /* [CP] Check Pods Manifest.lock */,
+				F367838222FB731700C85848 /* Sources */,
+				F367838322FB731700C85848 /* Frameworks */,
+				F367838422FB731700C85848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F367838822FB731700C85848 /* PBXTargetDependency */,
+			);
+			name = TeachAssistUITests;
+			productName = TeachAssistUITests;
+			productReference = F367838622FB731700C85848 /* TeachAssistUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		F3BA052A23A5957800F1ADD0 /* TeachAssist-Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3BA053823A5957800F1ADD0 /* Build configuration list for PBXNativeTarget "TeachAssist-Widget" */;
+			buildPhases = (
+				8A6C562DDCB81363ADC600EE /* [CP] Check Pods Manifest.lock */,
+				F3BA052723A5957800F1ADD0 /* Sources */,
+				F3BA052823A5957800F1ADD0 /* Frameworks */,
+				F3BA052923A5957800F1ADD0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TeachAssist-Widget";
+			productName = "TeachAssist-Widget";
+			productReference = F3BA052B23A5957800F1ADD0 /* TeachAssist-Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F367835F22FB731500C85848 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				KnownAssetTags = (
+					New,
+				);
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = "York Wei";
+				TargetAttributes = {
+					F367836622FB731500C85848 = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					F367837A22FB731600C85848 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = F367836622FB731500C85848;
+					};
+					F367838522FB731700C85848 = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = F367836622FB731500C85848;
+					};
+					F3BA052A23A5957800F1ADD0 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = F367836222FB731500C85848 /* Build configuration list for PBXProject "TeachAssist" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F367835E22FB731500C85848;
+			productRefGroup = F367836822FB731500C85848 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F367836622FB731500C85848 /* TeachAssist */,
+				F367837A22FB731600C85848 /* TeachAssistTests */,
+				F367838522FB731700C85848 /* TeachAssistUITests */,
+				F3BA052A23A5957800F1ADD0 /* TeachAssist-Widget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F367836522FB731500C85848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F36783F922FB792D00C85848 /* Sofia Pro Light Italic.otf in Resources */,
+				F36783F622FB792D00C85848 /* Sofia Pro Extra Light Italic.otf in Resources */,
+				F36783EF22FB792D00C85848 /* Sofia Pro Ultra Light.otf in Resources */,
+				F36783FB22FB792D00C85848 /* Sofia Pro Ultra Light Italic.otf in Resources */,
+				F367837522FB731600C85848 /* LaunchScreen.storyboard in Resources */,
+				F36783ED22FB792D00C85848 /* Sofia Pro Italic.otf in Resources */,
+				F36783F422FB792D00C85848 /* Sofia Pro Extra Light.otf in Resources */,
+				F36783F222FB792D00C85848 /* Sofia Pro Black Italic.otf in Resources */,
+				F36783EC22FB792D00C85848 /* Sofia Pro Bold.otf in Resources */,
+				F367837222FB731600C85848 /* Assets.xcassets in Resources */,
+				F36783F322FB792D00C85848 /* Sofia Pro Semi Bold.otf in Resources */,
+				F36783F022FB792D00C85848 /* Sofia Pro Semi Bold Italic.otf in Resources */,
+				F36783F522FB792D00C85848 /* Sofia Pro Bold Italic.otf in Resources */,
+				F36783FA22FB792D00C85848 /* Sofia Pro Medium Italic.otf in Resources */,
+				F367837022FB731500C85848 /* Main.storyboard in Resources */,
+				F36783F722FB792D00C85848 /* Sofia Pro Light.otf in Resources */,
+				F36783EE22FB792D00C85848 /* Sofia Pro Regular.otf in Resources */,
+				F36783F122FB792D00C85848 /* Sofia Pro Black.otf in Resources */,
+				F36783F822FB792D00C85848 /* Sofia Pro Medium.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F367837922FB731600C85848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F367838422FB731700C85848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BA052923A5957800F1ADD0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3DAB60D23A8236500EECE5F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D1872482266FF29367243A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeachAssist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7104D4A6595A24DB6D8F1059 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeachAssistTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6C562DDCB81363ADC600EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeachAssist-Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD8E318AD36F59CC1A6ABC94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TeachAssistUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1E317773E62E963B8704A22 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeachAssist/Pods-TeachAssist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TeachAssist/Pods-TeachAssist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TeachAssist/Pods-TeachAssist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F367836322FB731500C85848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F327DC5F22FDDE92006E8ABB /* Transition.swift in Sources */,
+				F367840522FB82D900C85848 /* LoginViewController.swift in Sources */,
+				F367840722FBB04B00C85848 /* LoadingButton.swift in Sources */,
+				F333D02923143D6200E11989 /* TrendTableViewCell.swift in Sources */,
+				F367840122FB81DC00C85848 /* Course.swift in Sources */,
+				F333D027231426EB00E11989 /* TrendViewController.swift in Sources */,
+				F36783FD22FB7FB400C85848 /* MainViewController.swift in Sources */,
+				F327DC5D22FDD055006E8ABB /* MenuViewController.swift in Sources */,
+				F367836D22FB731500C85848 /* LoadingViewController.swift in Sources */,
+				F321764E23019FF1007503A2 /* ForwardSegue.swift in Sources */,
+				F32D8D8F23119D78001920DA /* BreakdownViewController.swift in Sources */,
+				F3312AC6230711D000CAD48C /* CourseTableViewCell.swift in Sources */,
+				F32176562303A693007503A2 /* Marks.swift in Sources */,
+				F32C5595230D9A6800A191D0 /* EvaluationTableViewCell.swift in Sources */,
+				F32C5593230D929D00A191D0 /* EvaluationViewController.swift in Sources */,
+				F3289D9A2309CC1C002C3215 /* CourseViewController.swift in Sources */,
+				F367836B22FB731500C85848 /* AppDelegate.swift in Sources */,
+				F32176522301A792007503A2 /* CalculatorViewController.swift in Sources */,
+				F32176542303A654007503A2 /* CourseReponse.swift in Sources */,
+				F32BF80F22FD18F70000051C /* Reachability.swift in Sources */,
+				F32176582303A844007503A2 /* MarkStruct.swift in Sources */,
+				F367840322FB821000C85848 /* TeachAssistResponse.swift in Sources */,
+				F38C0CC22345868B00DC891D /* CreditViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F367837722FB731600C85848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F367838022FB731600C85848 /* TeachAssistTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F367838222FB731700C85848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F367838B22FB731700C85848 /* TeachAssistUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3BA052723A5957800F1ADD0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3BA054023A595F000F1ADD0 /* Course.swift in Sources */,
+				F3BA054123A595F000F1ADD0 /* Marks.swift in Sources */,
+				F3BA053C23A595F000F1ADD0 /* CourseReponse.swift in Sources */,
+				F3BA054223A595F000F1ADD0 /* TodayViewController.swift in Sources */,
+				F3BA053D23A595F000F1ADD0 /* TeachAssistResponse.swift in Sources */,
+				F3BA053F23A595F000F1ADD0 /* MarkStruct.swift in Sources */,
+				F3BA053E23A595F000F1ADD0 /* TodayTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F367837D22FB731600C85848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F367836622FB731500C85848 /* TeachAssist */;
+			targetProxy = F367837C22FB731600C85848 /* PBXContainerItemProxy */;
+		};
+		F367838822FB731700C85848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F367836622FB731500C85848 /* TeachAssist */;
+			targetProxy = F367838722FB731700C85848 /* PBXContainerItemProxy */;
+		};
+		F3BA053623A5957800F1ADD0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F3BA052A23A5957800F1ADD0 /* TeachAssist-Widget */;
+			targetProxy = F3BA053523A5957800F1ADD0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F367836E22FB731500C85848 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F367836F22FB731500C85848 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F367837322FB731600C85848 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F367837422FB731600C85848 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F3DAB60923A8234E00EECE5F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F3DAB60A23A8234E00EECE5F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F367838D22FB731700C85848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F367838E22FB731700C85848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F367839022FB731700C85848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30227CC75E53BB1494A1E7A2 /* Pods-TeachAssist.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TeachAssist/TeachAssist.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = TeachAssist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.TeachAssist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		F367839122FB731700C85848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 711C7BC7C5DC1D053FB53C1A /* Pods-TeachAssist.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TeachAssist/TeachAssist.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = TeachAssist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.TeachAssist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		F367839322FB731700C85848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8909EF9C647BCDAFC22593E /* Pods-TeachAssistTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = TeachAssistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YorkWei.TeachAssistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeachAssist.app/TeachAssist";
+			};
+			name = Debug;
+		};
+		F367839422FB731700C85848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DB4C5BD7F6A249D00AE6B0C /* Pods-TeachAssistTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = TeachAssistTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YorkWei.TeachAssistTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TeachAssist.app/TeachAssist";
+			};
+			name = Release;
+		};
+		F367839622FB731700C85848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76801D1D2AB2345C6231D73B /* Pods-TeachAssistUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = TeachAssistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YorkWei.TeachAssistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TeachAssist;
+			};
+			name = Debug;
+		};
+		F367839722FB731700C85848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0718E9481E02758CA9EA60A /* Pods-TeachAssistUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = TeachAssistUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = YorkWei.TeachAssistUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TeachAssist;
+			};
+			name = Release;
+		};
+		F3BA053923A5957800F1ADD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F2CC37C5CA6E2A3714C7DC /* Pods-TeachAssist-Widget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TeachAssist-Widget/TeachAssist-Widget.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = "TeachAssist-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.TeachAssist.TeachAssist-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F3BA053A23A5957800F1ADD0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1AF1636E03FBFF73C0BE9AB /* Pods-TeachAssist-Widget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TeachAssist-Widget/TeachAssist-Widget.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				INFOPLIST_FILE = "TeachAssist-Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 2.9;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.app.TeachAssist.TeachAssist-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F367836222FB731500C85848 /* Build configuration list for PBXProject "TeachAssist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F367838D22FB731700C85848 /* Debug */,
+				F367838E22FB731700C85848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F367838F22FB731700C85848 /* Build configuration list for PBXNativeTarget "TeachAssist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F367839022FB731700C85848 /* Debug */,
+				F367839122FB731700C85848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F367839222FB731700C85848 /* Build configuration list for PBXNativeTarget "TeachAssistTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F367839322FB731700C85848 /* Debug */,
+				F367839422FB731700C85848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F367839522FB731700C85848 /* Build configuration list for PBXNativeTarget "TeachAssistUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F367839622FB731700C85848 /* Debug */,
+				F367839722FB731700C85848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3BA053823A5957800F1ADD0 /* Build configuration list for PBXNativeTarget "TeachAssist-Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F3BA053923A5957800F1ADD0 /* Debug */,
+				F3BA053A23A5957800F1ADD0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F367835F22FB731500C85848 /* Project object */;
+}
