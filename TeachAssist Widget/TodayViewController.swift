@@ -48,213 +48,239 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         
         textLabel.text = ""
+        
         if isLoggedIn {
-
-            let loginURL = URL(string: "https://ta.yrdsb.ca/live/m/index.php?error_message=0")!
-            let loginParameters = ["subject_id": "0", "username": studentID!, "password": studentPW!, "submit": "Login"]
-            var request = URLRequest(url: loginURL)
-            request.httpMethod = "POST"
-            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-            request.httpBody = loginParameters.percentEscaped().data(using: .utf8)
-            var listCourseHTML = ""
-            var viewCourseHTML = ""
-            var sessionToken = ""
-            var sessionID = ""
-            var totalLinks = 0
-            var linksLoaded = 0
-            let semaphoreLogin = DispatchSemaphore(value: 0)
             
-            let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                guard let data = data,
-                    let response = response as? HTTPURLResponse,
-                    error == nil else {
-                        
-                    UserDefaults.standard.set(true, forKey: "widgetTimedOut")
-                    semaphoreLogin.signal()
-                    return
-                        
-                }
+            if studentID != "demo" {
+
+                let loginURL = URL(string: "https://ta.yrdsb.ca/live/m/index.php?error_message=0")!
+                let loginParameters = ["subject_id": "0", "username": studentID!, "password": studentPW!, "submit": "Login"]
+                var request = URLRequest(url: loginURL)
+                request.httpMethod = "POST"
+                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+                request.httpBody = loginParameters.percentEscaped().data(using: .utf8)
+                var listCourseHTML = ""
+                var viewCourseHTML = ""
+                var sessionToken = ""
+                var sessionID = ""
+                var totalLinks = 0
+                var linksLoaded = 0
+                let semaphoreLogin = DispatchSemaphore(value: 0)
                 
-                guard (200 ... 299) ~= response.statusCode else {
-                    
-                    UserDefaults.standard.set(true, forKey: "widgetTimedOut")
-                    semaphoreLogin.signal()
-                    return
-                    
-                }
-                
-                let responseString = String(data: data, encoding: .utf8)
-                listCourseHTML = responseString!
-                do {
-                    
-                    let teachAssistResponse = try(TeachAssistResponse(listCourseHTML))
-                    var sameCourses = true
-                    
-                    if self.courses.count != teachAssistResponse.courses.count {
-                        
-                        sameCourses = false
-                        
-                    }
-                    else {
-                        
-                        for(i, course) in teachAssistResponse.courses.enumerated() {
+                let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                    guard let data = data,
+                        let response = response as? HTTPURLResponse,
+                        error == nil else {
                             
-                            if self.courses[i].code != course.code {
-                                
-                                sameCourses = false
-                                
-                            }
+                        UserDefaults.standard.set(true, forKey: "widgetTimedOut")
+                        semaphoreLogin.signal()
+                        return
                             
-                            self.courses[i].link = course.link
-                            
-                        }
-                        
                     }
                     
-                    if sameCourses == false {
-                        
-                        self.courses = teachAssistResponse.courses
-                        
-                    }
-                    
-                    let cookies = readCookie(forURL: loginURL)
-                    
-                    if cookies.count == 0 {
+                    guard (200 ... 299) ~= response.statusCode else {
                         
                         UserDefaults.standard.set(true, forKey: "widgetTimedOut")
-                        
-                    }
-                        
-                    else {
-                        
-                        sessionToken = cookies.first!.value
-                        sessionID = cookies.dropFirst().first!.value
-                        print("session Token: " + sessionToken)
-                        print("session ID: " + sessionID)
+                        semaphoreLogin.signal()
+                        return
                         
                     }
                     
-                    semaphoreLogin.signal()
-                    
-                } catch {}
-                
-            }
-            
-            task.resume()
-            _ = semaphoreLogin.wait(timeout: DispatchTime.distantFuture)
-            
-            let semaphoreCourse = DispatchSemaphore(value: 0)
-            
-            if UserDefaults.standard.bool(forKey: "widgetTimedOut") {
-                
-                semaphoreCourse.signal()
-                
-            }
-            
-            else {
-                
-                for(i, course) in self.courses.enumerated() {
-                    
-                    
-                    if course.link == "..." && i == self.courses.count - 1 {
-                        semaphoreCourse.signal()
-                    }
-                    
-                    if course.link != "..." {
+                    let responseString = String(data: data, encoding: .utf8)
+                    listCourseHTML = responseString!
+                    do {
                         
-                        totalLinks += 1
-                        let courseURL = URL(string: "https://ta.yrdsb.ca/live/students/" + course.link)!
-                        request = URLRequest(url: courseURL)
-                        request.httpMethod = "GET"
-                        request.setValue("session_token=\(sessionToken); student_id=\(sessionID)", forHTTPHeaderField: "Cookie")
-                        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                        guard let data = data,
-                            let response = response as? HTTPURLResponse,
-                                error == nil else {
-                                    
-                                    UserDefaults.standard.set(true, forKey: "widgetTimedOut")
-                                    return
-                                    
-                                }
-
-                                guard (200 ... 299) ~= response.statusCode else {
-                                    
-                                    UserDefaults.standard.set(true, forKey: "widgetTimedOut")
-                                    return
-                                    
-                                }
-
-                                let responseString = String(data: data, encoding: .utf8)
-                                viewCourseHTML = responseString!
+                        let teachAssistResponse = try(TeachAssistResponse(listCourseHTML))
+                        var sameCourses = true
+                        
+                        if self.courses.count != teachAssistResponse.courses.count {
                             
-                                do {
-                                    
-                                    let courseResponse = try CourseResponse(viewCourseHTML)
-                                    self.courses[i].marks = courseResponse.marks
-                                    self.courses[i].markStruct = courseResponse.markStruct
-                                    
-                                    if self.courses[i].prevAverage == self.courses[i].markStruct.average {
-                                        
-                                        self.courses[i].updated = false
-                                        
-                                    }
-                                        
-                                    else if self.courses[i].prevAverage == -1 && self.courses[i].markStruct.average > -1 {
-                                        
-                                        self.courses[i].prevAverage = self.courses[i].markStruct.average
-                                        self.courses[i].updated = true
-                                        
-                                    }
-                                        
-                                    else if self.courses[i].prevAverage >= 0 && self.courses[i].prevAverage != self.courses[i].markStruct.average {
-                                        
-                                        self.courses[i].prevAverage = self.courses[i].markStruct.average
-                                        self.courses[i].updated = true
-                                        
-                                    }
-                                        
-                                    else if self.courses[i].prevAverage == -2 {
-                                        
-                                        self.courses[i].prevAverage = self.courses[i].markStruct.average
-                                        self.courses[i].updated = false
-                                        
-                                    }
-                                    
-                                } catch {}
+                            sameCourses = false
                             
-                            linksLoaded += 1
+                        }
+                        else {
                             
-                            if linksLoaded == totalLinks {
+                            for(i, course) in teachAssistResponse.courses.enumerated() {
                                 
-                                semaphoreCourse.signal()
+                                if self.courses[i].code != course.code {
+                                    
+                                    sameCourses = false
+                                    
+                                }
+                                
+                                self.courses[i].link = course.link
                                 
                             }
                             
                         }
                         
-                        task.resume()
+                        if sameCourses == false {
+                            
+                            self.courses = teachAssistResponse.courses
+                            
+                        }
+                        
+                        let cookies = readCookie(forURL: loginURL)
+                        
+                        if cookies.count == 0 {
+                            
+                            UserDefaults.standard.set(true, forKey: "widgetTimedOut")
+                            
+                        }
+                            
+                        else {
+                            
+                            sessionToken = cookies.first!.value
+                            sessionID = cookies.dropFirst().first!.value
+                            print("session Token: " + sessionToken)
+                            print("session ID: " + sessionID)
+                            
+                        }
+                        
+                        semaphoreLogin.signal()
+                        
+                    } catch {}
+                    
+                }
+                
+                task.resume()
+                _ = semaphoreLogin.wait(timeout: DispatchTime.distantFuture)
+                
+                let semaphoreCourse = DispatchSemaphore(value: 0)
+                
+                if UserDefaults.standard.bool(forKey: "widgetTimedOut") {
+                    
+                    semaphoreCourse.signal()
+                    
+                }
+                
+                else {
+                    
+                    for(i, course) in self.courses.enumerated() {
+                        
+                        
+                        if course.link == "..." && i == self.courses.count - 1 {
+                            semaphoreCourse.signal()
+                        }
+                        
+                        if course.link != "..." {
+                            
+                            totalLinks += 1
+                            let courseURL = URL(string: "https://ta.yrdsb.ca/live/students/" + course.link)!
+                            request = URLRequest(url: courseURL)
+                            request.httpMethod = "GET"
+                            request.setValue("session_token=\(sessionToken); student_id=\(sessionID)", forHTTPHeaderField: "Cookie")
+                            let task = URLSession.shared.dataTask(with: request) { data, response, error in
+                            guard let data = data,
+                                let response = response as? HTTPURLResponse,
+                                    error == nil else {
+                                        
+                                        UserDefaults.standard.set(true, forKey: "widgetTimedOut")
+                                        return
+                                        
+                                    }
+
+                                    guard (200 ... 299) ~= response.statusCode else {
+                                        
+                                        UserDefaults.standard.set(true, forKey: "widgetTimedOut")
+                                        return
+                                        
+                                    }
+
+                                    let responseString = String(data: data, encoding: .utf8)
+                                    viewCourseHTML = responseString!
+                                
+                                    do {
+                                        
+                                        let courseResponse = try CourseResponse(viewCourseHTML)
+                                        self.courses[i].marks = courseResponse.marks
+                                        self.courses[i].markStruct = courseResponse.markStruct
+                                        
+                                        if self.courses[i].prevAverage == self.courses[i].markStruct.average {
+                                            
+                                            self.courses[i].updated = false
+                                            
+                                        }
+                                            
+                                        else if self.courses[i].prevAverage == -1 && self.courses[i].markStruct.average > -1 {
+                                            
+                                            self.courses[i].prevAverage = self.courses[i].markStruct.average
+                                            self.courses[i].updated = true
+                                            
+                                        }
+                                            
+                                        else if self.courses[i].prevAverage >= 0 && self.courses[i].prevAverage != self.courses[i].markStruct.average {
+                                            
+                                            self.courses[i].prevAverage = self.courses[i].markStruct.average
+                                            self.courses[i].updated = true
+                                            
+                                        }
+                                            
+                                        else if self.courses[i].prevAverage == -2 {
+                                            
+                                            self.courses[i].prevAverage = self.courses[i].markStruct.average
+                                            self.courses[i].updated = false
+                                            
+                                        }
+                                        
+                                    } catch {}
+                                
+                                linksLoaded += 1
+                                
+                                if linksLoaded == totalLinks {
+                                    
+                                    semaphoreCourse.signal()
+                                    
+                                }
+                                
+                            }
+                            
+                            task.resume()
+                            
+                        }
                         
                     }
                     
                 }
                 
-            }
-            
-            _ = semaphoreCourse.wait(timeout: DispatchTime.distantFuture)
-            
-            if UserDefaults.standard.bool(forKey: "widgetTimedOut") {
+                _ = semaphoreCourse.wait(timeout: DispatchTime.distantFuture)
                 
-//                self.textLabel.text = "Marks could not be updated"
-                tableView.isHidden = false
-                tableView.alpha = 1
-                UserDefaults.standard.set(false, forKey: "widgetTimedOut")
-                completionHandler(NCUpdateResult.noData)
+                if UserDefaults.standard.bool(forKey: "widgetTimedOut") {
+                    
+    //                self.textLabel.text = "Marks could not be updated"
+                    tableView.isHidden = false
+                    tableView.alpha = 1
+                    UserDefaults.standard.set(false, forKey: "widgetTimedOut")
+                    completionHandler(NCUpdateResult.noData)
+                    
+                }
                 
+                else {
+                    
+                    print(self.courses)
+                    UserDefaults.standard.removeObject(forKey: "widgetSavedCourses")
+                    let encoded = try? JSONEncoder().encode(self.courses)
+                    UserDefaults.standard.set(encoded, forKey: "widgetSavedCourses")
+                    self.tableView.reloadData()
+                    tableView.isHidden = false
+                    tableView.alpha = 1
+                    UserDefaults.standard.set(Date(), forKey: "updatedTime")
+                    completionHandler(NCUpdateResult.newData)
+                    
+                }
             }
             
             else {
                 
                 print(self.courses)
+                self.courses.removeAll()
+                var arr = [Marks]()
+                let holderMarks = Marks(evalName: "demo", k: 80, kWeight: 5, kScore: "4 / 5", t: 80, tWeight: 5, tScore: "4 / 5", c: 80, cWeight: 5, cScore: "4 / 5", a: 80, aWeight: 5, aScore: "4 / 5", o: -1, oWeight: -1, oScore: "", overall: 80)
+                arr.append(holderMarks)
+                let holderMarkStruct = MarkStruct(average: 80, kCourse: 80, kCourseWeight: 20, tCourse: 80, tCourseWeight: 20, cCourse: 80, cCourseWeight: 20, aCourse: 80, aCourseWeight: 20, oCourse: -1, oCourseWeight: 20)
+                let course = Course(code: "DEMO-01", name: "demo", period: "1", room: "101", mark: 80, link: "", marks: arr, markStruct: holderMarkStruct, prevAverage: -2, updated: false)
+                self.courses.append(course)
+                
                 UserDefaults.standard.removeObject(forKey: "widgetSavedCourses")
                 let encoded = try? JSONEncoder().encode(self.courses)
                 UserDefaults.standard.set(encoded, forKey: "widgetSavedCourses")
@@ -265,7 +291,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 completionHandler(NCUpdateResult.newData)
                 
             }
-            
         }
         
         else {

@@ -110,6 +110,13 @@ class LoginViewController: UIViewController, WKNavigationDelegate, UITextFieldDe
                 UserDefaults.standard.set(true, forKey: "isLoggedIn")
                 let encoded = try? JSONEncoder().encode(self.courses)
                 UserDefaults.standard.set(encoded, forKey: "SavedCourses")
+                
+                if let userDefaults = UserDefaults(suiteName: "group.todayTeachAssist") {
+                    userDefaults.set(self.studentID.text!, forKey: "studentID")
+                    userDefaults.set(self.studentPW.text!, forKey: "studentPW")
+                    userDefaults.set(true, forKey: "isLoggedIn")
+                }
+                
                 self.performSegue(withIdentifier: "LoginToMain", sender: nil)
                 
             }
