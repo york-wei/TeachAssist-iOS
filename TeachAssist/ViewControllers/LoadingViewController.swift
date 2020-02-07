@@ -38,6 +38,14 @@ class LoadingViewController: UIViewController {
                 //crash where no saved courses are stored
                 if UserDefaults.standard.object(forKey: "SavedCourses") != nil {
                     
+                    if !UserDefaults.standard.bool(forKey: "LoginResetForCrash") {
+                        
+                        UserDefaults.standard.set(true, forKey: "LoginResetForCrash")
+                        UserDefaults.standard.set(false, forKey: "isLoggedIn")
+                        self.performSegue(withIdentifier: "LaunchToLogin", sender: nil)
+                        
+                    }
+                    
                     if !UserDefaults.standard.bool(forKey: "LoginResetForProgression") {
                         
                         UserDefaults.standard.set(true, forKey: "LoginResetForProgression")
@@ -189,6 +197,10 @@ class LoadingViewController: UIViewController {
                     
                     for(i, course) in self.courses.enumerated() {
                         
+                        if course.link == "..." && i == self.courses.count - 1 {
+                            semaphoreCourse.signal()
+                        }
+                                                
                         if course.link != "..." {
                                                         
                             totalLinks += 1

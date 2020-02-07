@@ -151,7 +151,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate, UITextFieldDe
                     
                     let responseString = String(data: data, encoding: .utf8)
                     listCourseHTML = responseString!
-                    
+                                        
                     if listCourseHTML.contains("Please log in with your <b>YRDSB</b> provided user name and password.") {
                         
                         UserDefaults.standard.set(false, forKey: "isLoggedIn")
@@ -209,9 +209,13 @@ class LoginViewController: UIViewController, WKNavigationDelegate, UITextFieldDe
                     
                 
                 else {
-                        
+                                            
                     for(i, course) in self.courses.enumerated() {
-                                
+                        
+                        if course.link == "..." && i == self.courses.count - 1 {
+                            semaphoreCourse.signal()
+                        }
+                        
                         if course.link != "..." {
                                     
                             totalLinks += 1
@@ -277,6 +281,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate, UITextFieldDe
                                 
                     }
                     
+                    
                 }
                         
                 _ = semaphoreCourse.wait(timeout: DispatchTime.distantFuture)
@@ -306,7 +311,6 @@ class LoginViewController: UIViewController, WKNavigationDelegate, UITextFieldDe
                         userDefaults.set(encoded, forKey: "SavedCourses")
                     }
                     self.performSegue(withIdentifier: "LoginToMain", sender: nil)
-                    
                 }
                 
                 else {

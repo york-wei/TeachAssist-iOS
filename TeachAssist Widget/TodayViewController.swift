@@ -155,6 +155,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
                 
                 for(i, course) in self.courses.enumerated() {
                     
+                    
+                    if course.link == "..." && i == self.courses.count - 1 {
+                        semaphoreCourse.signal()
+                    }
+                    
                     if course.link != "..." {
                         
                         totalLinks += 1
