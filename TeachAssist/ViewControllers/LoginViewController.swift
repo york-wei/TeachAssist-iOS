@@ -219,7 +219,7 @@ class LoginViewController: UIViewController, WKNavigationDelegate, UITextFieldDe
                                             
                     for(i, course) in self.courses.enumerated() {
                         
-                        if course.link == "..." && i == self.courses.count - 1 {
+                        if course.link == "..." && i == self.courses.count - 1 && linksLoaded == totalLinks {
                             semaphoreCourse.signal()
                         }
                         
