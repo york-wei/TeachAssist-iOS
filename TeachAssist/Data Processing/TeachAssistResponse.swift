@@ -82,7 +82,13 @@ struct TeachAssistResponse {
                                 let holder = String(infoString[periodIndexHolder!...periodIndexHolder2!])
                                 let periodIndexHolder3 = holder.index(holder.startIndex, offsetBy: 2)
                                 let periodIndexHolder4 = holder.index(holder.endIndex, offsetBy: -3)
-                                period = String(holder[periodIndexHolder3...periodIndexHolder4])
+                                
+                                if periodIndexHolder3 == nil || periodIndexHolder4 == nil{
+                                    period = "..."
+                                }
+                                else {
+                                    period = String(holder[periodIndexHolder3...periodIndexHolder4])
+                                }
                             }
                             else {
                                 period = "..."

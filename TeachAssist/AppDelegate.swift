@@ -29,7 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
-        checkUpdate()
+        
+        if #available(iOS 13.0, *) {
+            checkUpdate()
+        }
+        
         return true
     }
 

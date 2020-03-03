@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import SwiftSoup
+import SwiftSoup 
 
 struct CourseResponse {
     
