@@ -1,6 +1,17 @@
 # TeachAssist-iOS
 
-![wide](https://user-images.githubusercontent.com/49313072/66704736-f518f000-ecec-11e9-8911-1cf95795f5ef.png)
+<p align="left">
+    <img src="https://user-images.githubusercontent.com/49313072/76861293-befb1180-6832-11ea-881b-17acf73f4fb8.jpg" width="225px" height="400px">
+    <img src="https://user-images.githubusercontent.com/49313072/76861913-b5be7480-6833-11ea-839f-35f10198d6fc.jpg" width="225px" height="400px">
+    <img src="https://user-images.githubusercontent.com/49313072/76861917-b6efa180-6833-11ea-9527-116d68acc0bf.jpg" width="225px" height="400px">
+    <img src="https://user-images.githubusercontent.com/49313072/76861922-b8b96500-6833-11ea-8d98-f2f14808f68e.jpg" width="225px" height="400px">
+    <img src="https://user-images.githubusercontent.com/49313072/76861925-b9ea9200-6833-11ea-8938-912a51c100cd.jpg" width="225px" height="400px">
+    <img src="https://user-images.githubusercontent.com/49313072/76861930-bb1bbf00-6833-11ea-8720-ba410dba6e75.jpg" width="225px" height="400px">
+    <img src="https://user-images.githubusercontent.com/49313072/76862077-edc5b780-6833-11ea-9a74-c7aa06338518.png" width="225px" height="400px">
+ </p>
+
+![Wide](https://user-images.githubusercontent.com/49313072/76862693-d935ef00-6834-11ea-8cb4-63ffb311fc59.png)
+
 # The unofficial TeachAssist app made by students, for students.
 
 The TeachAssist website is transformed into an app with clean, user-friendly UI and numerous additional tools to help students succeed. As of January 2020, it has gained over 9000 downloads on the iOS App Store!
