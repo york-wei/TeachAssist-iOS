@@ -4,8 +4,6 @@
 
 The TeachAssist website is transformed into an app with clean, user-friendly UI and numerous additional tools to help students succeed. As of March 2020, it has gained over 9700 downloads on the iOS App Store!
 
-![Wide](https://user-images.githubusercontent.com/49313072/76862693-d935ef00-6834-11ea-8cb4-63ffb311fc59.png)
-
 If you find a bug, please use our [Google Forms](https://docs.google.com/forms/d/e/1FAIpQLSe1rl77TVf8BO1nt-CNlovleFo6wDpiYY-YQclaAxcQWI0AEw/viewform) or email us at teachassist.ios@gmail.com.
 
 This app is not associated with the TeachAssist Foundation or YRDSB. For student use only.
