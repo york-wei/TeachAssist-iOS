@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9681D7152652DE6C003F7E31 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681D7142652DE6C003F7E31 /* UserState.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* ContentView.swift */; };
 		F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C042652BB2E00B79F38 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9681D7142652DE6C003F7E31 /* UserState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserState.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
 		F3BA8C022652BB2C00B79F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
 				F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */,
 				F3BA8C062652BB2E00B79F38 /* Preview Content */,
+				9681D7142652DE6C003F7E31 /* UserState.swift */,
 			);
 			path = TeachAssist;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
+				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
