@@ -11,6 +11,7 @@
 		9D0CA4FF3CD821B7A4078D44 /* Pods_TeachAssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C13CED4F7CA17D7CBB6CC00 /* Pods_TeachAssistTests.framework */; };
 		CD8BC9889167B27DC3198026 /* Pods_TeachAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BF106475FFAEA25BD8B7D3 /* Pods_TeachAssist.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
+		F325329A2669175B006480DA /* TAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAColor.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* ContentView.swift */; };
 		F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C042652BB2E00B79F38 /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 		C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssist_TeachAssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54CC16644B267F2EF6A4F9 /* Pods-TeachAssist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.debug.xcconfig"; sourceTree = "<group>"; };
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F32532992669175B006480DA /* TAColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAColor.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
 		F3BA8C022652BB2C00B79F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */,
 				F3BA8C062652BB2E00B79F38 /* Preview Content */,
 				9681D7142652DE6C003F7E31 /* UserState.swift */,
+				F32532992669175B006480DA /* TAColor.swift */,
 			);
 			path = TeachAssist;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 			files = (
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
+				F325329A2669175B006480DA /* TAColor.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
@@ -588,10 +592,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkwei.TeachAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -611,10 +616,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkwei.TeachAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
