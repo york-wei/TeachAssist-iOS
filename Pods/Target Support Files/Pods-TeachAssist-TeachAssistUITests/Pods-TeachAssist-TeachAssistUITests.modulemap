@@ -1,0 +1,6 @@
+framework module Pods_TeachAssist_TeachAssistUITests {
+  umbrella header "Pods-TeachAssist-TeachAssistUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

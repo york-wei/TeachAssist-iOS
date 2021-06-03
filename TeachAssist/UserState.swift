@@ -7,43 +7,44 @@
 
 import Foundation
 import SwiftUI
-
-enum InterfaceTheme: Int {
-    case system
-    case light
-    case dark
-}
+import SwiftKeychainWrapper
 
 class UserState: ObservableObject {
     
     // MARK: - Properties
-    @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: "isLoggedIn") {
+    @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
         didSet {
-            UserDefaults.standard.set(isLoggedIn, forKey: "isLoggedIn")
+            UserDefaults.standard.set(isLoggedIn, forKey: "IS_LOGGED_IN")
         }
     }
     
     @Published var isLoading: Bool = false
 
-    @Published var username: String = UserDefaults.standard.string(forKey: "username") ?? "" {
+    @Published var username: String = UserDefaults.standard.string(forKey: "USERNAME") ?? "" {
         didSet {
-            UserDefaults.standard.set(username, forKey: "username")
+            UserDefaults.standard.set(username, forKey: "USERNAME")
         }
     }
     
-    @Published var password: String = UserDefaults.standard.string(forKey: "password") ?? "" {
+    @Published var password: String = UserDefaults.standard.string(forKey: "PASSWORD") ?? "" {
         didSet {
-            UserDefaults.standard.set(password, forKey: "password")
+            UserDefaults.standard.set(password, forKey: "PASSWORD")
         }
     }
     
     @Published var interfaceTheme: InterfaceTheme = {
-        let rawValue = UserDefaults.standard.integer(forKey: "interfaceTheme")
+        let rawValue = UserDefaults.standard.integer(forKey: "INTERFACE_THEME")
         return InterfaceTheme(rawValue: rawValue) ?? .system
     }() {
         didSet {
-            UserDefaults.standard.set(interfaceTheme.rawValue, forKey: "interfaceTheme")
+            UserDefaults.standard.set(interfaceTheme.rawValue, forKey: "INTERFACE_THEME")
         }
     }
     
+}
+
+enum InterfaceTheme: Int {
+    case system
+    case light
+    case dark
 }
