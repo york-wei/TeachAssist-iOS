@@ -12,7 +12,9 @@
 		CD8BC9889167B27DC3198026 /* Pods_TeachAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BF106475FFAEA25BD8B7D3 /* Pods_TeachAssist.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
 		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
-		F325329A2669175B006480DA /* TAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAColor.swift */; };
+		F324C14E266B1BA300DD8BE1 /* logodark.gif in Resources */ = {isa = PBXBuildFile; fileRef = F324C14C266B1BA300DD8BE1 /* logodark.gif */; };
+		F324C14F266B1BA300DD8BE1 /* logolight.gif in Resources */ = {isa = PBXBuildFile; fileRef = F324C14D266B1BA300DD8BE1 /* logolight.gif */; };
+		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* ContentView.swift */; };
 		F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C042652BB2E00B79F38 /* Assets.xcassets */; };
@@ -52,7 +54,9 @@
 		CE54CC16644B267F2EF6A4F9 /* Pods-TeachAssist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.debug.xcconfig"; sourceTree = "<group>"; };
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		F32532992669175B006480DA /* TAColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAColor.swift; sourceTree = "<group>"; };
+		F324C14C266B1BA300DD8BE1 /* logodark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logodark.gif; sourceTree = "<group>"; };
+		F324C14D266B1BA300DD8BE1 /* logolight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logolight.gif; sourceTree = "<group>"; };
+		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
 		F3BA8C022652BB2C00B79F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -129,10 +133,21 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		F324C14B266B1B8000DD8BE1 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				F324C14C266B1BA300DD8BE1 /* logodark.gif */,
+				F324C14D266B1BA300DD8BE1 /* logolight.gif */,
+			);
+			path = Graphics;
+			sourceTree = "<group>";
+		};
 		F3BA8BF42652BB2C00B79F38 = {
 			isa = PBXGroup;
 			children = (
 				F3BA8BFF2652BB2C00B79F38 /* TeachAssist */,
+				F3BA8C042652BB2E00B79F38 /* Assets.xcassets */,
+				F324C14B266B1B8000DD8BE1 /* Graphics */,
 				F3BA8C162652BB2E00B79F38 /* TeachAssistTests */,
 				F3BA8C212652BB2E00B79F38 /* TeachAssistUITests */,
 				F3BA8BFE2652BB2C00B79F38 /* Products */,
@@ -156,13 +171,12 @@
 			children = (
 				F324C146266B187200DD8BE1 /* Views */,
 				F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */,
-				F3BA8C042652BB2E00B79F38 /* Assets.xcassets */,
 				F3BA8C092652BB2E00B79F38 /* Persistence.swift */,
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
 				F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */,
 				F3BA8C062652BB2E00B79F38 /* Preview Content */,
 				9681D7142652DE6C003F7E31 /* UserState.swift */,
-				F32532992669175B006480DA /* TAColor.swift */,
+				F32532992669175B006480DA /* TAConstants.swift */,
 			);
 			path = TeachAssist;
 			sourceTree = "<group>";
@@ -301,7 +315,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F324C14E266B1BA300DD8BE1 /* logodark.gif in Resources */,
 				F3BA8C082652BB2E00B79F38 /* Preview Assets.xcassets in Resources */,
+				F324C14F266B1BA300DD8BE1 /* logolight.gif in Resources */,
 				F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,7 +448,7 @@
 			files = (
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
-				F325329A2669175B006480DA /* TAColor.swift in Sources */,
+				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */,

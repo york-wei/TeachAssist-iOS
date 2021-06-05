@@ -11,9 +11,24 @@ import CoreData
 struct ContentView: View {
     @Environment(\.managedObjectContext) var viewContext
     @EnvironmentObject var userState: UserState
+    @State var launch = true
 
     var body: some View {
-        Text("")
+        ZStack {
+            if launch {
+                LaunchView()
+                    .transition(TATransition.fadeTransition)
+            }            
+        }
+        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .ignoresSafeArea()
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
+                withAnimation(.easeInOut(duration: 0.8)) {
+                    self.launch.toggle()
+                }
+            }
+        }
     }
 }
 
