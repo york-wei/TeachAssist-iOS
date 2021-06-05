@@ -7,6 +7,7 @@ target 'TeachAssist' do
 
   # Pods for TeachAssist
   pod 'SwiftKeychainWrapper'
+  pod 'SSSwiftUIGIFView'
 
   target 'TeachAssistTests' do
     inherit! :search_paths

@@ -11,6 +11,7 @@
 		9D0CA4FF3CD821B7A4078D44 /* Pods_TeachAssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C13CED4F7CA17D7CBB6CC00 /* Pods_TeachAssistTests.framework */; };
 		CD8BC9889167B27DC3198026 /* Pods_TeachAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BF106475FFAEA25BD8B7D3 /* Pods_TeachAssist.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
+		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
 		F325329A2669175B006480DA /* TAColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAColor.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* ContentView.swift */; };
@@ -50,6 +51,7 @@
 		C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssist_TeachAssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54CC16644B267F2EF6A4F9 /* Pods-TeachAssist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.debug.xcconfig"; sourceTree = "<group>"; };
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAColor.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
@@ -118,6 +120,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F324C146266B187200DD8BE1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F3BA8C022652BB2C00B79F38 /* ContentView.swift */,
+				F324C147266B18F000DD8BE1 /* LaunchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F3BA8BF42652BB2C00B79F38 = {
 			isa = PBXGroup;
 			children = (
@@ -143,8 +154,8 @@
 		F3BA8BFF2652BB2C00B79F38 /* TeachAssist */ = {
 			isa = PBXGroup;
 			children = (
+				F324C146266B187200DD8BE1 /* Views */,
 				F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */,
-				F3BA8C022652BB2C00B79F38 /* ContentView.swift */,
 				F3BA8C042652BB2E00B79F38 /* Assets.xcassets */,
 				F3BA8C092652BB2E00B79F38 /* Persistence.swift */,
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
@@ -422,6 +433,7 @@
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
 				F325329A2669175B006480DA /* TAColor.swift in Sources */,
+				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
@@ -628,7 +640,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AG32RQPW3;
 				INFOPLIST_FILE = TeachAssistTests/Info.plist;
@@ -650,7 +661,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 240BBE4389126FA234C672E6 /* Pods-TeachAssistTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AG32RQPW3;
 				INFOPLIST_FILE = TeachAssistTests/Info.plist;
@@ -672,7 +682,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0583A148131986D8313BA064 /* Pods-TeachAssist-TeachAssistUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AG32RQPW3;
 				INFOPLIST_FILE = TeachAssistUITests/Info.plist;
@@ -694,7 +703,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8084A35F71D9115350B9B5B9 /* Pods-TeachAssist-TeachAssistUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3AG32RQPW3;
 				INFOPLIST_FILE = TeachAssistUITests/Info.plist;
