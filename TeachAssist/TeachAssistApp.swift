@@ -9,6 +9,7 @@ import SwiftUI
 
 @main
 struct TeachAssistApp: App {
+    
     let persistenceController = PersistenceController.shared
     @StateObject var userState = UserState()
 
