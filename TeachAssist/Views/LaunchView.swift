@@ -9,24 +9,32 @@ import SwiftUI
 import SSSwiftUIGIFView
 
 struct LaunchView: View {
-
-    @Environment(\.colorScheme) var colorScheme
-    @State var showLogo = true
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
-            if showLogo {
-                SwiftUIGIFPlayerView(gifName: (colorScheme == .light) ? "logolight" : "logodark")
+            if viewModel.showLogo {
+                SwiftUIGIFPlayerView(gifName: (viewModel.colorScheme == .light) ? "logolight" : "logodark")
                     .frame(width: 200, height: 200)
             }
         }
-        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
+        .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         .background(TAColor.backgroundColor)
         .onAppear {
+            viewModel.hideLogoAfterDelay()
+        }
+    }
+}
+
+extension LaunchView {
+    class ViewModel: ObservableObject {
+        @Environment(\.colorScheme) var colorScheme
+        @Published var showLogo = true
+       
+        func hideLogoAfterDelay() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
-                showLogo = false
+                self.showLogo = false
             }
         }
     }
-    
 }

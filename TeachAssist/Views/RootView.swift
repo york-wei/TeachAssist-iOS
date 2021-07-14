@@ -9,15 +9,13 @@ import SwiftUI
 import CoreData
 
 struct RootView: View {
-    
     @ObservedObject var viewModel: ViewModel
 
     var body: some View {
         ZStack {
-            // MARK: - Launch
             if viewModel.isLaunching {
                 // MARK: - Launch
-                LaunchView()
+                LaunchView(viewModel: LaunchView.ViewModel())
                     .transition(TATransition.fadeTransition)
             }
             if !UserState.shared.isLoggedIn {
