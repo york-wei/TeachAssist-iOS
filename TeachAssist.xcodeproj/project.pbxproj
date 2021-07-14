@@ -15,6 +15,7 @@
 		F324C14E266B1BA300DD8BE1 /* logodark.gif in Resources */ = {isa = PBXBuildFile; fileRef = F324C14C266B1BA300DD8BE1 /* logodark.gif */; };
 		F324C14F266B1BA300DD8BE1 /* logolight.gif in Resources */ = {isa = PBXBuildFile; fileRef = F324C14D266B1BA300DD8BE1 /* logolight.gif */; };
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
+		F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3621861269F457900B40CD1 /* SecureTextField.swift */; };
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* RootView.swift */; };
@@ -58,6 +59,7 @@
 		F324C14C266B1BA300DD8BE1 /* logodark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logodark.gif; sourceTree = "<group>"; };
 		F324C14D266B1BA300DD8BE1 /* logolight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logolight.gif; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
+		F3621861269F457900B40CD1 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 		F3716935266C220700A350EB /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
+				F3621861269F457900B40CD1 /* SecureTextField.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
 				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
+				F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
