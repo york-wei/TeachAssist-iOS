@@ -10,12 +10,13 @@ import SSSwiftUIGIFView
 
 struct LaunchView: View {
     @ObservedObject var viewModel: ViewModel
+    let logoSize = UIScreen.main.bounds.size.width / 2
     
     var body: some View {
         VStack {
             if viewModel.showLogo {
                 SwiftUIGIFPlayerView(gifName: (viewModel.colorScheme == .light) ? "logolight" : "logodark")
-                    .frame(width: 200, height: 200)
+                    .frame(width: logoSize, height: logoSize)
             }
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)

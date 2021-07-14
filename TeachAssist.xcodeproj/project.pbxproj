@@ -17,6 +17,8 @@
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3621861269F457900B40CD1 /* SecureTextField.swift */; };
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
+		F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065A269F86CB007319AD /* LongButtonView.swift */; };
+		F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065C269F8A40007319AD /* ActivityIndicator.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* RootView.swift */; };
 		F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C042652BB2E00B79F38 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F3621861269F457900B40CD1 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F38E065A269F86CB007319AD /* LongButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButtonView.swift; sourceTree = "<group>"; };
+		F38E065C269F8A40007319AD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
 		F3BA8C022652BB2C00B79F38 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				F3621861269F457900B40CD1 /* SecureTextField.swift */,
+				F38E065A269F86CB007319AD /* LongButtonView.swift */,
+				F38E065C269F8A40007319AD /* ActivityIndicator.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -465,7 +471,9 @@
 				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
 				F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
+				F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
+				F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
