@@ -17,7 +17,7 @@
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
-		F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* ContentView.swift */; };
+		F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* RootView.swift */; };
 		F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C042652BB2E00B79F38 /* Assets.xcassets */; };
 		F3BA8C082652BB2E00B79F38 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C072652BB2E00B79F38 /* Preview Assets.xcassets */; };
 		F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C092652BB2E00B79F38 /* Persistence.swift */; };
@@ -61,7 +61,7 @@
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
-		F3BA8C022652BB2C00B79F38 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F3BA8C022652BB2C00B79F38 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F3BA8C042652BB2E00B79F38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3BA8C072652BB2E00B79F38 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F3BA8C092652BB2E00B79F38 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -129,10 +129,9 @@
 		F324C146266B187200DD8BE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F3BA8C022652BB2C00B79F38 /* ContentView.swift */,
+				F3BA8C022652BB2C00B79F38 /* RootView.swift */,
 				F324C147266B18F000DD8BE1 /* LaunchView.swift */,
 				F3716936266C221C00A350EB /* LoginView.swift */,
-				F3716935266C220700A350EB /* ComponentViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -140,6 +139,7 @@
 		F324C14B266B1B8000DD8BE1 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				F3BA8C042652BB2E00B79F38 /* Assets.xcassets */,
 				F324C14C266B1BA300DD8BE1 /* logodark.gif */,
 				F324C14D266B1BA300DD8BE1 /* logolight.gif */,
 			);
@@ -157,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				F3BA8BFF2652BB2C00B79F38 /* TeachAssist */,
-				F3BA8C042652BB2E00B79F38 /* Assets.xcassets */,
 				F324C14B266B1B8000DD8BE1 /* Graphics */,
 				F3BA8C162652BB2E00B79F38 /* TeachAssistTests */,
 				F3BA8C212652BB2E00B79F38 /* TeachAssistUITests */,
@@ -181,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				F324C146266B187200DD8BE1 /* Views */,
+				F3716935266C220700A350EB /* ComponentViews */,
 				F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */,
 				F3BA8C092652BB2E00B79F38 /* Persistence.swift */,
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
@@ -462,7 +462,7 @@
 				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
-				F3BA8C032652BB2C00B79F38 /* ContentView.swift in Sources */,
+				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
 			);

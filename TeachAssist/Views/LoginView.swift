@@ -9,15 +9,27 @@ import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    
-    @State var username = ""
-    @State var password = ""
+        
     @State var fadeIn = true
     @State var selectedUsername = false
     @State var selectedPassword = false
     
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    }
+    
+}
+
+extension LoginView {
+    class ViewModel: ObservableObject {
+        @Published var username = ""
+        @Published var password = ""
+        
+        let userState: UserState
+        
+        init(userState: UserState) {
+            self.userState = userState
+        }
     }
 }
 
@@ -36,8 +48,8 @@ struct SecureTextField: UIViewRepresentable {
     func makeUIView(context: Context) -> UITextField {
         let view = UITextField()
         view.placeholder = title
-        view.font = UIFont.preferredFont(forTextStyle: UIFont()
-        view.textColor = UIColor(Color("PrimaryTextColor"))
+//        view.font = UIFont.preferredFont(forTextStyle: UIFont()
+//        view.textColor = UIColor(Color("PrimaryTextColor"))
         view.delegate = context.coordinator
         view.isSecureTextEntry = true
         view.endEditing(true)
