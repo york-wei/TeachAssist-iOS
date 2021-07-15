@@ -22,6 +22,7 @@ struct RootView: View {
             else if !UserState.shared.isLoggedIn {
                 // MARK: - Login
                 LoginView(viewModel: LoginView.ViewModel())
+                    .transition(TATransition.fadeTransition)
                     .zIndex(1)
             } else {
                 // MARK: - Main

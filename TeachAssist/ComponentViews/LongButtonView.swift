@@ -26,11 +26,13 @@ struct LongButtonView: View {
                 ActivityIndicator(isAnimating: true) {
                     $0.color = .white
                 }
+                .transition(TATransition.fadeTransition)
             } else {
                 Text("Sign In")
                     .font(.body)
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
+                    .transition(TATransition.fadeTransition)
             }
         }
         .onTapGesture {

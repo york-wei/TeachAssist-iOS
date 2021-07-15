@@ -11,7 +11,7 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject var viewModel: ViewModel
     let logoSize = UIScreen.main.bounds.size.width / 3.5
-    let topPadding = UIScreen.main.bounds.size.height / 10
+    let topPadding = UIScreen.main.bounds.size.height / 20
     
     var body: some View {
         VStack(alignment: .center) {
@@ -20,7 +20,7 @@ struct LoginView: View {
                 .resizable()
                 .frame(width: logoSize, height: logoSize)
                 .padding(.top, topPadding)
-                .shadow(color: TAColor.themeDropShadowColor, radius: 3)
+                .shadow(color: TAColor.themeDropShadowColor, radius: 5)
             Text("TeachAssist")
                 .font(.largeTitle)
                 .fontWeight(.bold)
@@ -29,6 +29,13 @@ struct LoginView: View {
                 .font(.subheadline)
                 .fontWeight(.regular)
                 .foregroundColor(TAColor.secondaryTextColor)
+                .padding(3)
+            Spacer()
+            Text("Invalid Login")
+                .font(.subheadline)
+                .fontWeight(.regular)
+                .foregroundColor(.red)
+                .opacity(viewModel.showInvalidLogin ? 1 : 0)
                 .padding(3)
             Spacer()
             LongButtonView(viewModel: LongButtonView.ViewModel(caller: viewModel, isLoading: $viewModel.isLoading))
@@ -69,7 +76,9 @@ extension LoginView {
         }
         
         func longButtonPressed() {
-            //self.isLoading = true
+            withAnimation {
+                self.isLoading = true
+            }
             // do the login here
         }
 
