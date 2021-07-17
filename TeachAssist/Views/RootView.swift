@@ -15,13 +15,13 @@ struct RootView: View {
         ZStack {
             if viewModel.isLaunching {
                 // MARK: - Launch
-                LaunchView(viewModel: LaunchView.ViewModel())
+                LaunchView(viewModel: .init())
                     .transition(TATransition.fadeTransition)
                     .zIndex(2)
             }
             else if !UserState.shared.isLoggedIn {
                 // MARK: - Login
-                LoginView(viewModel: LoginView.ViewModel())
+                LoginView(viewModel: .init())
                     .transition(TATransition.fadeTransition)
                     .zIndex(1)
             } else {

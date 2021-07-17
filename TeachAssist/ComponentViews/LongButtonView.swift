@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-protocol LongButtonProtocol {
-    func longButtonPressed()
-}
-
 struct LongButtonView: View {
     @ObservedObject var viewModel: ViewModel
     
@@ -35,10 +31,6 @@ struct LongButtonView: View {
                     .transition(TATransition.fadeTransition)
             }
         }
-        .onTapGesture {
-            viewModel.handleButtonPress()
-        }
-        .scaleEffect(viewModel.buttonPressed ? 1.05 : 1)
         .animation(.spring())
         .disabled(viewModel.isLoading)
     }
@@ -46,22 +38,17 @@ struct LongButtonView: View {
 
 extension LongButtonView {
     class ViewModel: ObservableObject {
-        @Published var buttonPressed: Bool = false
         @Binding var isLoading: Bool
-        let caller: LongButtonProtocol
         
-        init(caller: LongButtonProtocol, isLoading: Binding<Bool>) {
-            self.caller = caller
+        init(isLoading: Binding<Bool>) {
             self._isLoading = isLoading
         }
-        
-        func handleButtonPress() {
-            self.buttonPressed = true
-            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.buttonPressed = false
-                self.caller.longButtonPressed()
-            }
-        }
+    }
+}
+
+struct LongButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 1.03 : 1)
     }
 }

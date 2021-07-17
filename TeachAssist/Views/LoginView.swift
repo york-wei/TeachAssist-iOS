@@ -38,7 +38,13 @@ struct LoginView: View {
                 .opacity(viewModel.showInvalidLogin ? 1 : 0)
                 .padding(3)
             Spacer()
-            LongButtonView(viewModel: LongButtonView.ViewModel(caller: viewModel, isLoading: $viewModel.isLoading))
+            Button(action: {
+                viewModel.longButtonPressed()
+            }) {
+                LongButtonView(viewModel: .init(isLoading: $viewModel.isLoading))
+            }
+            .buttonStyle(LongButtonStyle())
+            .disabled(viewModel.isLoading)
         }
         .padding(TAPadding.viewEdgePadding)
         .opacity(viewModel.fadeIn ? 0 : 1)
@@ -50,7 +56,7 @@ struct LoginView: View {
 }
 
 extension LoginView {
-    class ViewModel: ObservableObject, LongButtonProtocol {
+    class ViewModel: ObservableObject {
         
         @Published var username = ""
         @Published var password = ""
@@ -76,6 +82,7 @@ extension LoginView {
         }
         
         func longButtonPressed() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             withAnimation {
                 self.isLoading = true
             }
@@ -87,19 +94,19 @@ extension LoginView {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: LoginView.ViewModel(fadeIn: false))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Mini"))
+        LoginView(viewModel: .init(fadeIn: false))
+            .previewDevice("iPhone 12 mini")
             .previewDisplayName("iPhone 12 Mini")
 
-//        LoginView(viewModel: LoginView.ViewModel(fadeIn: false))
+//        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
 //            .previewDisplayName("iPhone 12 Pro Max")
 
-//        LoginView(viewModel: LoginView.ViewModel(fadeIn: false))
+//        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
 //            .previewDisplayName("iPhone 8")
         
-//        LoginView(viewModel: LoginView.ViewModel(fadeIn: false))
+//        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 8 Plus"))
 //            .previewDisplayName("iPhone 8 Plus")
     }
