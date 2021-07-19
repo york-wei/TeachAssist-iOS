@@ -27,6 +27,7 @@
 		F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */; };
 		F3BA8C182652BB2E00B79F38 /* TeachAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C172652BB2E00B79F38 /* TeachAssistTests.swift */; };
 		F3BA8C232652BB2E00B79F38 /* TeachAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C222652BB2E00B79F38 /* TeachAssistUITests.swift */; };
+		F3EA7ABA26A5EA4F007FBFCF /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		F3BA8C1E2652BB2E00B79F38 /* TeachAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeachAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C222652BB2E00B79F38 /* TeachAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistUITests.swift; sourceTree = "<group>"; };
 		F3BA8C242652BB2E00B79F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,9 +157,9 @@
 		F3716935266C220700A350EB /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
-				F3621861269F457900B40CD1 /* SecureTextField.swift */,
 				F38E065A269F86CB007319AD /* LongButtonView.swift */,
-				F38E065C269F8A40007319AD /* ActivityIndicator.swift */,
+				F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */,
+				F3EA7ABB26A5EA72007FBFCF /* Components */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -225,6 +227,15 @@
 				F3BA8C242652BB2E00B79F38 /* Info.plist */,
 			);
 			path = TeachAssistUITests;
+			sourceTree = "<group>";
+		};
+		F3EA7ABB26A5EA72007FBFCF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F3621861269F457900B40CD1 /* SecureTextField.swift */,
+				F38E065C269F8A40007319AD /* ActivityIndicator.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +479,7 @@
 			files = (
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
+				F3EA7ABA26A5EA4F007FBFCF /* TextFieldView.swift in Sources */,
 				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
 				F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,

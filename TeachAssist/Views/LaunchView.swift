@@ -21,6 +21,7 @@ struct LaunchView: View {
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
         .background(TAColor.backgroundColor)
+        .ignoresSafeArea()
         .onAppear {
             viewModel.hideLogoAfterDelay()
         }
@@ -29,7 +30,7 @@ struct LaunchView: View {
 
 extension LaunchView {
     class ViewModel: ObservableObject {
-        @Environment(\.colorScheme) var colorScheme
+        @Published var colorScheme = UITraitCollection.current.userInterfaceStyle
         @Published var showLogo = true
        
         func hideLogoAfterDelay() {

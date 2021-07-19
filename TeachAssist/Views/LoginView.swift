@@ -30,6 +30,12 @@ struct LoginView: View {
                 .fontWeight(.regular)
                 .foregroundColor(TAColor.secondaryTextColor)
                 .padding(3)
+            TextFieldView(viewModel: .init(imageName: "person.fill", title: "Student ID", isSecure: false, text: $viewModel.username))
+                .padding(.top, topPadding * 2)
+                .disabled(viewModel.isLoading)
+            TextFieldView(viewModel: .init(imageName: "lock.fill", title: "Password", isSecure: true, text: $viewModel.password))
+                .padding(.top, topPadding)
+                .disabled(viewModel.isLoading)
             Spacer()
             Text("Invalid Login")
                 .font(.subheadline)
@@ -49,6 +55,7 @@ struct LoginView: View {
         .padding(TAPadding.viewEdgePadding)
         .opacity(viewModel.fadeIn ? 0 : 1)
         .offset(x: 0, y: viewModel.fadeIn ? 50 : 0)
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .onAppear() {
             viewModel.playFadeInAnimation()
         }
@@ -69,6 +76,8 @@ extension LoginView {
         @Published var isLoading = false
         
         init() {}
+        
+        // Init for previews
         init(fadeIn: Bool) {
             self.fadeIn = fadeIn
         }
@@ -86,6 +95,8 @@ extension LoginView {
             withAnimation {
                 self.isLoading = true
             }
+            print(username)
+            print(password)
             // do the login here
         }
 
