@@ -1,20 +1,24 @@
 PODS:
+  - Alamofire (5.4.3)
   - SSSwiftUIGIFView (1.0.0)
   - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
+  - Alamofire (~> 5.4)
   - SSSwiftUIGIFView
   - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - SSSwiftUIGIFView
     - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   SSSwiftUIGIFView: f109262cd0baff190b58b519c0e94f7622c428d4
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 3839e7e40bae5c09692e4887095dac6b4c4f9b61
+PODFILE CHECKSUM: dc31fe84619f2df365a9f26f6a1a63bdf235078c
 
 COCOAPODS: 1.10.1
