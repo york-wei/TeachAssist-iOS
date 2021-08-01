@@ -18,7 +18,7 @@ struct LoginView: View {
             HStack { Spacer() }
             Image("Logo")
                 .resizable()
-                .frame(width: logoSize, height: logoSize * 0.81)
+                .frame(width: logoSize, height: logoSize * 0.759)
                 .padding(.top, topPadding)
                 .shadow(color: TAColor.themeDropShadowColor, radius: 5)
             Text("TeachAssist")
