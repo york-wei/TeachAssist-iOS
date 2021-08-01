@@ -10,7 +10,7 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel: ViewModel
-    let logoSize = UIScreen.main.bounds.size.width / 3.5
+    let logoSize = UIScreen.main.bounds.size.width / 3
     let topPadding = UIScreen.main.bounds.size.height / 20
     
     var body: some View {
@@ -18,7 +18,7 @@ struct LoginView: View {
             HStack { Spacer() }
             Image("Logo")
                 .resizable()
-                .frame(width: logoSize, height: logoSize)
+                .frame(width: logoSize, height: logoSize * 0.81)
                 .padding(.top, topPadding)
                 .shadow(color: TAColor.themeDropShadowColor, radius: 5)
             Text("TeachAssist")
