@@ -30,7 +30,7 @@ struct TextFieldView: View {
                             selected.toggle()
                         }
                     }, onCommit: {})
-                        .font(.footnote)
+                        .font(.subheadline)
                         .multilineTextAlignment(.leading)
                         .autocapitalization(.none)
                         .keyboardType(.asciiCapable)

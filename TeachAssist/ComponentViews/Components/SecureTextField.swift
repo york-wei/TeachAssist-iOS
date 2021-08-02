@@ -16,7 +16,7 @@ struct SecureTextField: UIViewRepresentable {
     func makeUIView(context: Context) -> UITextField {
         let view = UITextField()
         view.placeholder = title
-        view.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.footnote)
+        view.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.subheadline)
         view.textColor = UIColor(named: "PrimaryTextColor")
         view.delegate = context.coordinator
         view.isSecureTextEntry = true

@@ -11,7 +11,7 @@ import SwiftUI
 struct LoginView: View {
     @ObservedObject var viewModel: ViewModel
     let logoSize = UIScreen.main.bounds.size.width / 3
-    let topPadding = UIScreen.main.bounds.size.height / 20
+    let topPadding = UIScreen.main.bounds.size.height / 10
     
     var body: some View {
         VStack(alignment: .center) {
@@ -30,11 +30,11 @@ struct LoginView: View {
                 .fontWeight(.regular)
                 .foregroundColor(TAColor.secondaryTextColor)
                 .padding(3)
-            TextFieldView(viewModel: .init(imageName: "person.fill", title: "Student ID", isSecure: false, text: $viewModel.username))
-                .padding(.top, topPadding * 2)
+            TextFieldView(viewModel: .init(imageName: "person.fill", title: "Student Number", isSecure: false, text: $viewModel.username))
+                .padding(.top, topPadding * 0.65)
                 .disabled(viewModel.isLoading)
             TextFieldView(viewModel: .init(imageName: "lock.fill", title: "Password", isSecure: true, text: $viewModel.password))
-                .padding(.top, topPadding)
+                .padding(.top, topPadding * 0.65)
                 .disabled(viewModel.isLoading)
             Spacer()
             Text("Invalid Login")
@@ -42,8 +42,7 @@ struct LoginView: View {
                 .fontWeight(.regular)
                 .foregroundColor(.red)
                 .opacity(viewModel.showInvalidLogin ? 1 : 0)
-                .padding(3)
-            Spacer()
+                .padding(10)
             Button(action: {
                 viewModel.longButtonPressed()
             }) {
@@ -105,17 +104,21 @@ extension LoginView {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: .init(fadeIn: false))
-            .previewDevice("iPhone 12 mini")
-            .previewDisplayName("iPhone 12 Mini")
+//        LoginView(viewModel: .init(fadeIn: false))
+//            .previewDevice("iPhone 12 mini")
+//            .previewDisplayName("iPhone 12 Mini")
+        
+//        LoginView(viewModel: .init(fadeIn: false))
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+//            .previewDisplayName("iPhone 12")
 
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
 //            .previewDisplayName("iPhone 12 Pro Max")
 
-//        LoginView(viewModel: .init(fadeIn: false))
-//            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-//            .previewDisplayName("iPhone 8")
+        LoginView(viewModel: .init(fadeIn: false))
+            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+            .previewDisplayName("iPhone 8")
         
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 8 Plus"))

@@ -25,7 +25,7 @@ struct LongButtonView: View {
                 .transition(TATransition.fadeTransition)
             } else {
                 Text("Sign In")
-                    .font(.body)
+                    .font(.subheadline)
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
                     .transition(TATransition.fadeTransition)

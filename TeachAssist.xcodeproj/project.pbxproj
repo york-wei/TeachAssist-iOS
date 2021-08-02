@@ -27,6 +27,7 @@
 		F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */; };
 		F3BA8C182652BB2E00B79F38 /* TeachAssistTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C172652BB2E00B79F38 /* TeachAssistTests.swift */; };
 		F3BA8C232652BB2E00B79F38 /* TeachAssistUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C222652BB2E00B79F38 /* TeachAssistUITests.swift */; };
+		F3D9F4B026B8AC1200B48D08 /* TAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9F4AF26B8AC1100B48D08 /* TAService.swift */; };
 		F3EA7ABA26A5EA4F007FBFCF /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		F3BA8C1E2652BB2E00B79F38 /* TeachAssistUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TeachAssistUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C222652BB2E00B79F38 /* TeachAssistUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistUITests.swift; sourceTree = "<group>"; };
 		F3BA8C242652BB2E00B79F38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F3D9F4AF26B8AC1100B48D08 /* TAService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAService.swift; sourceTree = "<group>"; };
 		F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +195,7 @@
 				F324C146266B187200DD8BE1 /* Views */,
 				F3716935266C220700A350EB /* ComponentViews */,
 				F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */,
+				F3D9F4AF26B8AC1100B48D08 /* TAService.swift */,
 				F3BA8C092652BB2E00B79F38 /* Persistence.swift */,
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
 				F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */,
@@ -485,6 +488,7 @@
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
+				F3D9F4B026B8AC1200B48D08 /* TAService.swift in Sources */,
 				F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
