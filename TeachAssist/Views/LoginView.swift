@@ -10,7 +10,6 @@ import SwiftUI
 
 struct LoginView: View {
     @ObservedObject var viewModel: ViewModel
-    let logoSize = UIScreen.main.bounds.size.width / 3
     let topPadding = UIScreen.main.bounds.size.height / 10
     
     var body: some View {
@@ -18,7 +17,7 @@ struct LoginView: View {
             HStack { Spacer() }
             Image("Logo")
                 .resizable()
-                .frame(width: logoSize, height: logoSize * 0.759)
+                .frame(width: 150, height: 150 * 0.71)
                 .padding(.top, topPadding)
                 .shadow(color: TAColor.themeDropShadowColor, radius: 5)
             Text("TeachAssist")
@@ -37,11 +36,11 @@ struct LoginView: View {
                 .padding(.top, topPadding * 0.65)
                 .disabled(viewModel.isLoading)
             Spacer()
-            Text("Invalid Login")
+            Text(viewModel.errorText)
                 .font(.subheadline)
                 .fontWeight(.regular)
                 .foregroundColor(.red)
-                .opacity(viewModel.showInvalidLogin ? 1 : 0)
+                .opacity(viewModel.showError ? 1 : 0)
                 .padding(10)
             Button(action: {
                 viewModel.longButtonPressed()
@@ -71,7 +70,8 @@ extension LoginView {
         @Published var selectedUsername = false
         @Published var selectedPassword = false
         
-        @Published var showInvalidLogin = false
+        @Published var showError = false
+        @Published var errorText = ""
         @Published var isLoading = false
         
         init() {}
@@ -93,10 +93,37 @@ extension LoginView {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             withAnimation {
                 self.isLoading = true
+                self.showError = false
             }
-            print(username)
-            print(password)
-            // do the login here
+            TAService.shared.authenticateStudent(username: username, password: password, completion: { response in
+                switch response {
+                case .failure(let error):
+                    self.handleLoginError(error: error)
+                case .success(let authenticationResponse):
+                    self.handleLoginSuccess(response: authenticationResponse)
+                }
+            })
+        }
+        
+        private func handleLoginError(error: TAServiceError) {
+            DispatchQueue.main.async {
+                switch error {
+                case .badRequest:
+                    self.errorText = "Could Not Reach TeachAssist"
+                case .noConnection:
+                    self.errorText = "No Connection"
+                case .invalidLogin:
+                    self.errorText = "Invalid Login"
+                }
+                withAnimation {
+                    self.isLoading = false
+                    self.showError = true
+                }
+            }
+        }
+        
+        private func handleLoginSuccess(response: AuthenticationResponse) {
+            
         }
 
     }
@@ -108,17 +135,17 @@ struct LoginView_Previews: PreviewProvider {
 //            .previewDevice("iPhone 12 mini")
 //            .previewDisplayName("iPhone 12 Mini")
         
-//        LoginView(viewModel: .init(fadeIn: false))
-//            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-//            .previewDisplayName("iPhone 12")
+        LoginView(viewModel: .init(fadeIn: false))
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+            .previewDisplayName("iPhone 12")
 
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
 //            .previewDisplayName("iPhone 12 Pro Max")
 
-        LoginView(viewModel: .init(fadeIn: false))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-            .previewDisplayName("iPhone 8")
+//        LoginView(viewModel: .init(fadeIn: false))
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+//            .previewDisplayName("iPhone 8")
         
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 8 Plus"))

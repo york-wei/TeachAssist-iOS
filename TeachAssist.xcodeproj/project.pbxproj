@@ -17,8 +17,10 @@
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3621861269F457900B40CD1 /* SecureTextField.swift */; };
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
+		F375111426D1968400C452DB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375111326D1968400C452DB /* Helpers.swift */; };
 		F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065A269F86CB007319AD /* LongButtonView.swift */; };
 		F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065C269F8A40007319AD /* ActivityIndicator.swift */; };
+		F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* RootView.swift */; };
 		F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3BA8C042652BB2E00B79F38 /* Assets.xcassets */; };
@@ -65,8 +67,10 @@
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F3621861269F457900B40CD1 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		F375111326D1968400C452DB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F38E065A269F86CB007319AD /* LongButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButtonView.swift; sourceTree = "<group>"; };
 		F38E065C269F8A40007319AD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
 		F3BA8C022652BB2C00B79F38 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 		F324C146266B187200DD8BE1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F3716935266C220700A350EB /* ComponentViews */,
 				F3BA8C022652BB2C00B79F38 /* RootView.swift */,
 				F324C147266B18F000DD8BE1 /* LaunchView.swift */,
 				F3716936266C221C00A350EB /* LoginView.swift */,
@@ -193,9 +198,10 @@
 			isa = PBXGroup;
 			children = (
 				F324C146266B187200DD8BE1 /* Views */,
-				F3716935266C220700A350EB /* ComponentViews */,
 				F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */,
 				F3D9F4AF26B8AC1100B48D08 /* TAService.swift */,
+				F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */,
+				F375111326D1968400C452DB /* Helpers.swift */,
 				F3BA8C092652BB2E00B79F38 /* Persistence.swift */,
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
 				F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */,
@@ -480,6 +486,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F375111426D1968400C452DB /* Helpers.swift in Sources */,
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
 				F3EA7ABA26A5EA4F007FBFCF /* TextFieldView.swift in Sources */,
@@ -492,6 +499,7 @@
 				F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
+				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

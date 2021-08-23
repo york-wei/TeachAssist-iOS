@@ -22,3 +22,8 @@ struct TATransition {
 struct TAPadding {
     static let viewEdgePadding = CGFloat(30)
 }
+
+struct TAUrl {
+    static let loginUrl = URL(string: "https://ta.yrdsb.ca/yrdsb/")!
+    static let errorUrl = URL(string: "https://ta.yrdsb.ca/live/index.php?error_message=3")!
+}
