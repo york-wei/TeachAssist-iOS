@@ -6,8 +6,9 @@ target 'TeachAssist' do
   use_frameworks!
 
   # Pods for TeachAssist
+  pod 'lottie-ios'
   pod 'SwiftKeychainWrapper'
-  pod 'SSSwiftUIGIFView'
+  pod 'SwiftSoup'
 
   target 'TeachAssistTests' do
     inherit! :search_paths

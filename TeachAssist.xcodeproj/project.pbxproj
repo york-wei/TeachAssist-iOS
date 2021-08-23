@@ -12,8 +12,6 @@
 		CD8BC9889167B27DC3198026 /* Pods_TeachAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BF106475FFAEA25BD8B7D3 /* Pods_TeachAssist.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
 		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
-		F324C14E266B1BA300DD8BE1 /* logodark.gif in Resources */ = {isa = PBXBuildFile; fileRef = F324C14C266B1BA300DD8BE1 /* logodark.gif */; };
-		F324C14F266B1BA300DD8BE1 /* logolight.gif in Resources */ = {isa = PBXBuildFile; fileRef = F324C14D266B1BA300DD8BE1 /* logolight.gif */; };
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3621861269F457900B40CD1 /* SecureTextField.swift */; };
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
@@ -62,8 +60,6 @@
 		CE54CC16644B267F2EF6A4F9 /* Pods-TeachAssist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.debug.xcconfig"; sourceTree = "<group>"; };
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
-		F324C14C266B1BA300DD8BE1 /* logodark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logodark.gif; sourceTree = "<group>"; };
-		F324C14D266B1BA300DD8BE1 /* logolight.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logolight.gif; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F3621861269F457900B40CD1 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -155,8 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				F3BA8C042652BB2E00B79F38 /* Assets.xcassets */,
-				F324C14C266B1BA300DD8BE1 /* logodark.gif */,
-				F324C14D266B1BA300DD8BE1 /* logolight.gif */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -355,9 +349,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F324C14E266B1BA300DD8BE1 /* logodark.gif in Resources */,
 				F3BA8C082652BB2E00B79F38 /* Preview Assets.xcassets in Resources */,
-				F324C14F266B1BA300DD8BE1 /* logolight.gif in Resources */,
 				F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

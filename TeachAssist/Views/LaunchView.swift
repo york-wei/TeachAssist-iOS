@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SSSwiftUIGIFView
 
 struct LaunchView: View {
     @ObservedObject var viewModel: ViewModel
@@ -15,8 +14,8 @@ struct LaunchView: View {
     var body: some View {
         VStack {
             if viewModel.showLogo {
-                SwiftUIGIFPlayerView(gifName: (viewModel.colorScheme == .light) ? "logolight" : "logodark")
-                    .frame(width: logoSize, height: logoSize)
+//                SwiftUIGIFPlayerView(gifName: (viewModel.colorScheme == .light) ? "logolight" : "logodark")
+//                    .frame(width: logoSize, height: logoSize)
             }
         }
         .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: .infinity)
