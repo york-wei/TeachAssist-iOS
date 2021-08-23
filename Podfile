@@ -8,7 +8,6 @@ target 'TeachAssist' do
   # Pods for TeachAssist
   pod 'SwiftKeychainWrapper'
   pod 'SSSwiftUIGIFView'
-  pod 'Alamofire', '~> 5.4'
 
   target 'TeachAssistTests' do
     inherit! :search_paths

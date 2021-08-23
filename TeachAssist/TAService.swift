@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Alamofire
 
 enum TAServiceError: Error {
     case noConnection
