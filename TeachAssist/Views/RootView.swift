@@ -10,6 +10,7 @@ import CoreData
 
 struct RootView: View {
     @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject var userState: UserState
 
     var body: some View {
         ZStack {
@@ -19,9 +20,9 @@ struct RootView: View {
                     .transition(TATransition.fadeTransition)
                     .zIndex(2)
             }
-            if !UserState.shared.isLoggedIn && !viewModel.isLaunching {
+            if !userState.isLoggedIn && !viewModel.isLaunching {
                 // MARK: - Login
-                LoginView(viewModel: .init())
+                LoginView(viewModel: .init(userState: userState))
                     .transition(TATransition.fadeTransition)
                     .zIndex(1)
             } else {
@@ -38,6 +39,11 @@ struct RootView: View {
 extension RootView {
     class ViewModel: ObservableObject {
         @Published var isLaunching = true
+        let userState: UserState
+        
+        init(userState: UserState) {
+            self.userState = userState
+        }
        
         func hideLaunchViewAfterDelay() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {

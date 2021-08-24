@@ -74,6 +74,14 @@ class TAParser {
             throw TAError.parsingError
         }
     }
+    
+    func parseCourse(course: Course, html: String) throws {
+        do {
+            
+        } catch {
+            throw TAError.parsingError
+        }
+    }
 }
 
 extension TAParser {

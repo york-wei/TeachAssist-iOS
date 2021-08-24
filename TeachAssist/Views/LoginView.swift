@@ -74,11 +74,10 @@ extension LoginView {
         @Published var errorText = ""
         @Published var isLoading = false
         
-        init() {}
+        let userState: UserState
         
-        // Init for previews
-        init(fadeIn: Bool) {
-            self.fadeIn = fadeIn
+        init(userState: UserState) {
+            self.userState = userState
         }
         
         func playFadeInAnimation() {
@@ -118,7 +117,7 @@ extension LoginView {
         private func handleAuthenticationSuccess(response: AuthenticationResponse) {
             do {
                 let courses = try TAParser.shared.parseCourseList(html: response.dataString)
-                var thrownError: TAError? = nil
+                var thrownError: Error? = nil
                 let group = DispatchGroup()
                 for course in courses {
                     if let link = course.link {
@@ -134,11 +133,10 @@ extension LoginView {
                                 case .success(let courseFetchResponse):
                                     // handle course parsing here
                                     do {
-                                        
-                                    } catch {
-                                        thrownError = .parsingError
+                                        try TAParser.shared.parseCourse(course: course, html: courseFetchResponse.dataString)
+                                    } catch let error {
+                                        thrownError = error
                                     }
-                                    print(courseFetchResponse.dataString)
                                     group.leave()
                                 }
                             }
@@ -146,35 +144,31 @@ extension LoginView {
                     }
                 }
                 group.wait()
-                // all course fetches finished
+                // all course fetches finished, check for errors
                 if let error = thrownError {
                     throw error
                 }
                 // call function to handle successful login and course parsing
                 DispatchQueue.main.async {
-                    UserState.shared.isLoggedIn = true
+                    self.userState.isLoggedIn = true
                 }
             } catch let error {
-                guard let error = error as? TAError else {
-                    handleError(error: .unknownError)
-                    return
-                }
-                handleError(error: error)
+                handleError(error: TAError.getTAError(error))
             }
         }
 
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
+//struct LoginView_Previews: PreviewProvider {
+//    static var previews: some View {
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice("iPhone 12 mini")
 //            .previewDisplayName("iPhone 12 Mini")
         
-        LoginView(viewModel: .init(fadeIn: false))
-            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
-            .previewDisplayName("iPhone 12")
+//        LoginView(viewModel: .init(fadeIn: false))
+//            .previewDevice(PreviewDevice(rawValue: "iPhone 12"))
+//            .previewDisplayName("iPhone 12")
 
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
@@ -187,5 +181,5 @@ struct LoginView_Previews: PreviewProvider {
 //        LoginView(viewModel: .init(fadeIn: false))
 //            .previewDevice(PreviewDevice(rawValue: "iPhone 8 Plus"))
 //            .previewDisplayName("iPhone 8 Plus")
-    }
-}
+//    }
+//}

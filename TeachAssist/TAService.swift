@@ -7,18 +7,6 @@
 
 import Foundation
 
-enum TAError: String, Error {
-    case noConnection = "Could Not Reach TeachAssist"
-    case badRequest = "No Connection"
-    case invalidLogin = "Invalid Login"
-    case parsingError = "Unexpected Error"
-    case unknownError = "Unknown Error"
-    
-    var description: String {
-        return self.rawValue
-    }
-}
-
 class TAService {
     
     static let shared = TAService()

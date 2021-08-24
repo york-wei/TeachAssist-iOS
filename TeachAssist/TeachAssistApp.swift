@@ -12,7 +12,7 @@ struct TeachAssistApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView(viewModel: .init())
+            RootView(viewModel: .init(userState: UserState())).environmentObject(UserState())
         }
     }
     

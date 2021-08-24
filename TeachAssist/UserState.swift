@@ -11,8 +11,6 @@ import SwiftKeychainWrapper
 
 class UserState: ObservableObject {
     
-    static let shared = UserState()
-    
     // MARK: - Properties
     @Published var isLoggedIn: Bool = UserDefaults.standard.bool(forKey: "IS_LOGGED_IN") {
         didSet {
