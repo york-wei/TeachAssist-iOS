@@ -95,17 +95,17 @@ extension LoginView {
                 self.isLoading = true
                 self.showError = false
             }
-            TAService.shared.authenticateStudent(username: username, password: password, completion: { response in
-                switch response {
+            TAService.shared.authenticateStudent(username: username, password: password, completion: { result in
+                switch result {
                 case .failure(let error):
-                    self.handleLoginError(error: error)
+                    self.handleError(error: error)
                 case .success(let authenticationResponse):
                     self.handleLoginSuccess(response: authenticationResponse)
                 }
             })
         }
         
-        private func handleLoginError(error: TAError) {
+        private func handleError(error: TAError) {
             DispatchQueue.main.async {
                 switch error {
                 case .badRequest:
@@ -127,9 +127,23 @@ extension LoginView {
         private func handleLoginSuccess(response: AuthenticationResponse) {
             do {
                 let courses = try TAParser.parseCourseList(html: response.dataString)
-                print(courses)
+                for (i, course) in courses.enumerated() {
+                    if let link = course.link {
+                        TAService.shared.fetchCourse(link: link,
+                                                     sessionToken: response.sessionToken,
+                                                     studentId: response.studentId) { result in
+                            switch result {
+                            case .failure(let error):
+                                self.handleError(error: error)
+                            case .success(let courseFetchResponse):
+                                // handle course parsing here
+                                print(courseFetchResponse.dataString)
+                            }
+                        }
+                    }
+                }
             } catch {
-                handleLoginError(error: .parsingError)
+                handleError(error: .parsingError)
             }
         }
 
