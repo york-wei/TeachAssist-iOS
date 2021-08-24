@@ -97,26 +97,17 @@ extension LoginView {
             }
             TAService.shared.authenticateStudent(username: username, password: password, completion: { result in
                 switch result {
-                case .failure(let error):
-                    self.handleError(error: error)
+                case .failure(let authenticationError):
+                    self.handleError(error: authenticationError)
                 case .success(let authenticationResponse):
-                    self.handleLoginSuccess(response: authenticationResponse)
+                    self.handleAuthenticationSuccess(response: authenticationResponse)
                 }
             })
         }
         
         private func handleError(error: TAError) {
             DispatchQueue.main.async {
-                switch error {
-                case .badRequest:
-                    self.errorText = "Could Not Reach TeachAssist"
-                case .noConnection:
-                    self.errorText = "No Connection"
-                case .invalidLogin:
-                    self.errorText = "Invalid Login"
-                case .parsingError:
-                    self.errorText = "Unexpected Error"
-                }
+                self.errorText = error.description
                 withAnimation {
                     self.isLoading = false
                     self.showError = true
@@ -124,26 +115,51 @@ extension LoginView {
             }
         }
         
-        private func handleLoginSuccess(response: AuthenticationResponse) {
+        private func handleAuthenticationSuccess(response: AuthenticationResponse) {
             do {
-                let courses = try TAParser.parseCourseList(html: response.dataString)
-                for (i, course) in courses.enumerated() {
+                let courses = try TAParser.shared.parseCourseList(html: response.dataString)
+                var thrownError: TAError? = nil
+                let group = DispatchGroup()
+                for course in courses {
                     if let link = course.link {
-                        TAService.shared.fetchCourse(link: link,
-                                                     sessionToken: response.sessionToken,
-                                                     studentId: response.studentId) { result in
-                            switch result {
-                            case .failure(let error):
-                                self.handleError(error: error)
-                            case .success(let courseFetchResponse):
-                                // handle course parsing here
-                                print(courseFetchResponse.dataString)
+                        group.enter()
+                        DispatchQueue.global(qos: .userInitiated).async {
+                            TAService.shared.fetchCourse(link: link,
+                                                         sessionToken: response.sessionToken,
+                                                         studentId: response.studentId) { result in
+                                switch result {
+                                case .failure(let courseFetchError):
+                                    thrownError = courseFetchError
+                                    group.leave()
+                                case .success(let courseFetchResponse):
+                                    // handle course parsing here
+                                    do {
+                                        
+                                    } catch {
+                                        thrownError = .parsingError
+                                    }
+                                    print(courseFetchResponse.dataString)
+                                    group.leave()
+                                }
                             }
                         }
                     }
                 }
-            } catch {
-                handleError(error: .parsingError)
+                group.wait()
+                // all course fetches finished
+                if let error = thrownError {
+                    throw error
+                }
+                // call function to handle successful login and course parsing
+                DispatchQueue.main.async {
+                    UserState.shared.isLoggedIn = true
+                }
+            } catch let error {
+                guard let error = error as? TAError else {
+                    handleError(error: .unknownError)
+                    return
+                }
+                handleError(error: error)
             }
         }
 
