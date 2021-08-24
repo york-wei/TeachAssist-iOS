@@ -105,7 +105,7 @@ extension LoginView {
             })
         }
         
-        private func handleLoginError(error: TAServiceError) {
+        private func handleLoginError(error: TAError) {
             DispatchQueue.main.async {
                 switch error {
                 case .badRequest:
@@ -114,6 +114,8 @@ extension LoginView {
                     self.errorText = "No Connection"
                 case .invalidLogin:
                     self.errorText = "Invalid Login"
+                case .parsingError:
+                    self.errorText = "Unexpected Error"
                 }
                 withAnimation {
                     self.isLoading = false
@@ -123,7 +125,12 @@ extension LoginView {
         }
         
         private func handleLoginSuccess(response: AuthenticationResponse) {
-            
+            do {
+                let courses = try TAParser.parseCourseList(html: response.dataString)
+                print(courses)
+            } catch {
+                handleLoginError(error: .parsingError)
+            }
         }
 
     }

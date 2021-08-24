@@ -7,10 +7,11 @@
 
 import Foundation
 
-enum TAServiceError: Error {
+enum TAError: Error {
     case noConnection
     case badRequest
     case invalidLogin
+    case parsingError
 }
 
 class TAService {
@@ -19,7 +20,7 @@ class TAService {
     
     func authenticateStudent(username: String,
                              password: String,
-                             completion: @escaping (Result<AuthenticationResponse, TAServiceError>) -> ()) {
+                             completion: @escaping (Result<AuthenticationResponse, TAError>) -> ()) {
         // Check connection
         guard Reachability.isConnectedToNetwork() else {
             completion(.failure(.noConnection))
