@@ -119,26 +119,23 @@ extension LoginView {
                 let courses = try TAParser.shared.parseCourseList(html: response.dataString)
                 var thrownError: Error? = nil
                 let group = DispatchGroup()
-                for course in courses {
-                    if let link = course.link {
-                        group.enter()
-                        DispatchQueue.global(qos: .userInitiated).async {
-                            TAService.shared.fetchCourse(link: link,
-                                                         sessionToken: response.sessionToken,
-                                                         studentId: response.studentId) { result in
-                                switch result {
-                                case .failure(let courseFetchError):
-                                    thrownError = courseFetchError
-                                    group.leave()
-                                case .success(let courseFetchResponse):
-                                    // handle course parsing here
-                                    do {
-                                        try TAParser.shared.parseCourse(course: course, html: courseFetchResponse.dataString)
-                                    } catch let error {
-                                        thrownError = error
-                                    }
-                                    group.leave()
+                for course in courses.filter({ $0.link != nil }) {
+                    group.enter()
+                    DispatchQueue.global(qos: .userInitiated).async {
+                        TAService.shared.fetchCourse(link: course.link!,
+                                                     sessionToken: response.sessionToken,
+                                                     studentId: response.studentId) { result in
+                            switch result {
+                            case .failure(let courseFetchError):
+                                thrownError = courseFetchError
+                                group.leave()
+                            case .success(let courseFetchResponse):
+                                do {
+                                    try TAParser.shared.parseCourse(course: course, html: courseFetchResponse.dataString)
+                                } catch let error {
+                                    thrownError = error
                                 }
+                                group.leave()
                             }
                         }
                     }
@@ -156,7 +153,6 @@ extension LoginView {
                 handleError(error: TAError.getTAError(error))
             }
         }
-
     }
 }
 
