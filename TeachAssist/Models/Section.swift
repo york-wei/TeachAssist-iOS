@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SectionType {
+enum SectionType: Int {
     case knowledge
     case thinking
     case communication

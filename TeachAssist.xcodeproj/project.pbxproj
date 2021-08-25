@@ -13,6 +13,7 @@
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
 		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
+		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3621861269F457900B40CD1 /* SecureTextField.swift */; };
 		F365F34726D422180041BCA9 /* TAParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34626D422180041BCA9 /* TAParser.swift */; };
 		F365F34926D4226B0041BCA9 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34826D4226B0041BCA9 /* Course.swift */; };
@@ -68,6 +69,7 @@
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
+		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F3621861269F457900B40CD1 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		F365F34626D422180041BCA9 /* TAParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAParser.swift; sourceTree = "<group>"; };
 		F365F34826D4226B0041BCA9 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				F3BA8C022652BB2C00B79F38 /* RootView.swift */,
 				F324C147266B18F000DD8BE1 /* LaunchView.swift */,
 				F3716936266C221C00A350EB /* LoginView.swift */,
+				F33E7A7126D6CD6E007819B7 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				F365F35326D483310041BCA9 /* FetchCourseResponse.swift in Sources */,
 				F365F34726D422180041BCA9 /* TAParser.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
+				F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,

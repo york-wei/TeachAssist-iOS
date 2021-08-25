@@ -27,6 +27,9 @@ struct RootView: View {
                     .zIndex(1)
             } else {
                 // MARK: - Main
+                MainView()
+                    .transition(TATransition.fadeTransition)
+                    .zIndex(0)
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)

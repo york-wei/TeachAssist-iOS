@@ -1,9 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G71" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDCourse" representedClassName="CDCourse" syncable="YES" codeGenerationType="class">
+        <attribute name="average" optional="YES" attributeType="Double" usesScalarValueType="NO"/>
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="index" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="period" optional="YES" attributeType="String"/>
+        <attribute name="room" optional="YES" attributeType="String"/>
+        <relationship name="application" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="communication" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="evaluations" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CDEvaluation"/>
+        <relationship name="final" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="knowledge" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="other" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="thinking" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+    </entity>
+    <entity name="CDEvaluation" representedClassName="CDEvaluation" syncable="YES" codeGenerationType="class">
+        <attribute name="feedback" optional="YES" attributeType="String"/>
+        <attribute name="index" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="overall" optional="YES" attributeType="Double" usesScalarValueType="NO"/>
+        <relationship name="application" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="communication" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="final" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="knowledge" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="other" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+        <relationship name="thinking" maxCount="1" deletionRule="Nullify" destinationEntity="CDSection"/>
+    </entity>
+    <entity name="CDSection" representedClassName="CDSection" syncable="YES" codeGenerationType="class">
+        <attribute name="percent" optional="YES" attributeType="Double" usesScalarValueType="NO"/>
+        <attribute name="score" optional="YES" attributeType="String"/>
+        <attribute name="type" attributeType="Integer 64" usesScalarValueType="YES"/>
+        <attribute name="weight" optional="YES" attributeType="Double" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
+        <element name="CDCourse" positionX="-63" positionY="-18" width="128" height="239"/>
+        <element name="CDEvaluation" positionX="-63" positionY="-9" width="128" height="179"/>
+        <element name="CDSection" positionX="-54" positionY="0" width="128" height="89"/>
     </elements>
 </model>
