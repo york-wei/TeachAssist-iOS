@@ -16,7 +16,7 @@ struct RootView: View {
         ZStack {
             if viewModel.isLaunching {
                 // MARK: - Launch
-                LaunchView(viewModel: .init())
+                LaunchView()
                     .transition(TATransition.fadeTransition)
                     .zIndex(2)
             }

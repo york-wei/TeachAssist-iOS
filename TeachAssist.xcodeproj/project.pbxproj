@@ -26,6 +26,7 @@
 		F375111426D1968400C452DB /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375111326D1968400C452DB /* Helpers.swift */; };
 		F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065A269F86CB007319AD /* LongButtonView.swift */; };
 		F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065C269F8A40007319AD /* ActivityIndicator.swift */; };
+		F394DCB826D7584D00BE8B33 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F394DCB726D7584D00BE8B33 /* LottieView.swift */; };
 		F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
 		F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C022652BB2C00B79F38 /* RootView.swift */; };
@@ -82,6 +83,7 @@
 		F375111326D1968400C452DB /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		F38E065A269F86CB007319AD /* LongButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButtonView.swift; sourceTree = "<group>"; };
 		F38E065C269F8A40007319AD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		F394DCB726D7584D00BE8B33 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistApp.swift; sourceTree = "<group>"; };
@@ -180,7 +182,6 @@
 				F365F34E26D4253B0041BCA9 /* Section.swift */,
 				F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */,
 				F365F35226D483310041BCA9 /* FetchCourseResponse.swift */,
-				F32532992669175B006480DA /* TAConstants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -191,6 +192,7 @@
 				F38E065A269F86CB007319AD /* LongButtonView.swift */,
 				F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */,
 				F3EA7ABB26A5EA72007FBFCF /* Components */,
+				F394DCB726D7584D00BE8B33 /* LottieView.swift */,
 			);
 			path = ComponentViews;
 			sourceTree = "<group>";
@@ -223,8 +225,10 @@
 			children = (
 				F324C146266B187200DD8BE1 /* Views */,
 				F365F34A26D4250A0041BCA9 /* Models */,
+				9681D7142652DE6C003F7E31 /* UserState.swift */,
 				F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */,
 				F3D9F4AF26B8AC1100B48D08 /* TAService.swift */,
+				F32532992669175B006480DA /* TAConstants.swift */,
 				F373B3BC26D59E000009BB1D /* TAError.swift */,
 				F365F34626D422180041BCA9 /* TAParser.swift */,
 				F365F35026D4333E0041BCA9 /* String+Helpers.swift */,
@@ -233,7 +237,6 @@
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
 				F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */,
 				F3BA8C062652BB2E00B79F38 /* Preview Content */,
-				9681D7142652DE6C003F7E31 /* UserState.swift */,
 			);
 			path = TeachAssist;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
+				F394DCB826D7584D00BE8B33 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -147,6 +147,7 @@ extension LoginView {
                 }
                 // call function to handle successful login and course parsing
                 DispatchQueue.main.async {
+                    PersistenceController.shared.saveCourses(courses: courses)
                     self.userState.isLoggedIn = true
                 }
             } catch let error {
