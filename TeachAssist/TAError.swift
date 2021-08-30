@@ -9,7 +9,7 @@ import Foundation
 
 enum TAError: String, Error {
     case noConnection = "Could Not Reach TeachAssist"
-    case badRequest = "No Connection"
+    case badRequest = "Connection Error"
     case invalidLogin = "Invalid Login"
     case parsingError = "Unexpected Error"
     case unknownError = "Unknown Error"

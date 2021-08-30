@@ -128,27 +128,28 @@ extension LoginView {
                             switch result {
                             case .failure(let courseFetchError):
                                 thrownError = courseFetchError
-                                group.leave()
                             case .success(let courseFetchResponse):
                                 do {
                                     try TAParser.shared.parseCourse(course: course, html: courseFetchResponse.dataString)
                                 } catch let error {
                                     thrownError = error
                                 }
-                                group.leave()
                             }
+                            group.leave()
                         }
                     }
                 }
-                group.wait()
-                // all course fetches finished, check for errors
-                if let error = thrownError {
-                    throw error
-                }
-                // call function to handle successful login and course parsing
-                DispatchQueue.main.async {
-                    PersistenceController.shared.saveCourses(courses: courses)
-                    self.userState.isLoggedIn = true
+                group.notify(queue: .main) {
+                    // all course fetches finished, check for errors
+                    if let error = thrownError {
+                        self.handleError(error: TAError.getTAError(error))
+                        return
+                    }
+                    // call function to handle successful login and course parsing
+                    DispatchQueue.main.async {
+                        PersistenceController.shared.saveCourses(courses: courses)
+                        self.userState.isLoggedIn = true
+                    }
                 }
             } catch let error {
                 handleError(error: TAError.getTAError(error))
