@@ -1,5 +1,5 @@
 //
-//  Helpers.swift
+//  Reachability.swift
 //  TeachAssist
 //
 //  Created by York Wei on 2021-08-21.
