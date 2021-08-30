@@ -119,7 +119,7 @@ extension LoginView {
                 let courses = try TAParser.shared.parseCourseList(html: response.dataString)
                 var thrownError: Error? = nil
                 let group = DispatchGroup()
-                for course in courses.filter({ $0.link != nil }) {
+                for course in courses where course.link != nil {
                     group.enter()
                     DispatchQueue.global(qos: .userInitiated).async {
                         TAService.shared.fetchCourse(link: course.link!,

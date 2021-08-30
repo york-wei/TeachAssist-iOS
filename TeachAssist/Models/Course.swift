@@ -7,7 +7,10 @@
 
 import Foundation
 
-class Course {
+class Course: Identifiable {
+    
+    let id = UUID()
+    
     var code: String?
     var name: String?
     var period: String?
