@@ -9,7 +9,7 @@ import SwiftUI
 import CoreData
 
 struct RootView: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     @EnvironmentObject var userState: UserState
 
     var body: some View {
@@ -25,7 +25,8 @@ struct RootView: View {
                 LoginView(viewModel: .init(userState: userState))
                     .transition(TATransition.fadeTransition)
                     .zIndex(1)
-            } else if userState.isLoggedIn {
+            }
+            if userState.isLoggedIn {
                 // MARK: - Main
                 MainView(viewModel: .init(userState: userState))
                     .transition(TATransition.fadeTransition)

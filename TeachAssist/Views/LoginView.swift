@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct LoginView: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     let topPadding = UIScreen.main.bounds.size.height / 10
     
     var body: some View {
@@ -145,9 +145,12 @@ extension LoginView {
                         self.handleError(error: TAError.getTAError(error))
                         return
                     }
-                    // call function to handle successful login and course parsing
+                    // save courses and login details
                     DispatchQueue.main.async {
                         PersistenceController.shared.saveCourses(courses: courses)
+                        self.userState.username = self.username
+                        self.userState.password = self.password
+                        self.userState.fromLogin = true
                         self.userState.isLoggedIn = true
                     }
                 }

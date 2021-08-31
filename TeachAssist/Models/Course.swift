@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Course: Identifiable {
+class Course: ObservableObject, Identifiable, Equatable {
     
     let id = UUID()
     
@@ -58,5 +58,13 @@ class Course: Identifiable {
         if courseWeightSum > 0 {
             average = coursePercentSum / courseWeightSum
         }
+    }
+    
+    static func == (lhs: Course, rhs: Course) -> Bool {
+        guard let lhsCode = lhs.code,
+              let rhsCode = rhs.code else {
+            return false
+        }
+        return lhsCode == rhsCode
     }
 }

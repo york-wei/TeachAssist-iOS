@@ -30,6 +30,8 @@ class UserState: ObservableObject {
         }
     }
     
+    @Published var fromLogin: Bool = false
+    
     @Published var interfaceTheme: InterfaceTheme = {
         let rawValue = UserDefaults.standard.integer(forKey: "INTERFACE_THEME")
         return InterfaceTheme(rawValue: rawValue) ?? .system
