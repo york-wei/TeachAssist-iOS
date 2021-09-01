@@ -11,22 +11,26 @@ struct MainView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
-            RefreshControl(coordinateSpace: .named("MainScrollViewRefresh")) {
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                viewModel.refresh()
-            }
-            VStack {
-                if let overallAverage = viewModel.overallAverage {
-                    RingView(percentage: overallAverage, animate: $viewModel.loading)
+        VStack {
+            ScrollView(showsIndicators: false) {
+                RefreshControl(coordinateSpace: .named("MainScrollViewRefresh")) {
+                    viewModel.didPullToRefresh()
                 }
-                ForEach(viewModel.courses) { course in
-                    if let code = course.code {
-                        Text(code)
+                VStack {
+                    if let overallAverage = viewModel.overallAverage {
+                        RingView(percentage: overallAverage, animate: $viewModel.loading)
+                    }
+                    ForEach(viewModel.courses) { course in
+                        if let code = course.code {
+                            Text(code)
+                        }
                     }
                 }
-            }
-        }.coordinateSpace(name: "MainScrollViewRefresh")
+            }.coordinateSpace(name: "MainScrollViewRefresh")
+        }
+        .alert(isPresented: $viewModel.showError, content: {
+            Alert(title: Text(viewModel.currentError.description), message: Text("Your marks could not be updated."), dismissButton: .default(Text("OK")))
+        })
     }
 }
 
@@ -36,6 +40,8 @@ extension MainView {
         @Published var courses: [Course]
         @Published var overallAverage: Double?
         @Published var loading: Bool = true
+        @Published var showError: Bool = false
+        var currentError: TAError = TAError.unknownError
         
         init(userState: UserState) {
             self.userState = userState
@@ -64,8 +70,14 @@ extension MainView {
             }
         }
         
-        func refresh() {
-            // set up UI for loading
+        func didPullToRefresh() {
+            if !loading {
+                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                refresh()
+            }
+        }
+        
+        private func refresh() {
             loading = true
             TAService.shared.authenticateStudent(username: userState.username, password: userState.password, completion: { result in
                 switch result {
@@ -78,7 +90,11 @@ extension MainView {
         }
         
         private func handleError(error: Error) {
-            
+            currentError = TAError.getTAError(error)
+            DispatchQueue.main.async {
+                self.loading = false
+                self.showError = true
+            }
         }
         
         private func handleAuthenticationSuccess(response: AuthenticationResponse) {
@@ -88,7 +104,7 @@ extension MainView {
                 let group = DispatchGroup()
                 for course in courses where course.link != nil {
                     group.enter()
-                    DispatchQueue.global(qos: .userInitiated).async {
+                    DispatchQueue.global(qos: .userInteractive).async {
                         TAService.shared.fetchCourse(link: course.link!,
                                                      sessionToken: response.sessionToken,
                                                      studentId: response.studentId) { result in

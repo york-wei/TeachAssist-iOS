@@ -50,7 +50,7 @@ extension RootView {
         }
        
         func hideLaunchViewAfterDelay() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.2) {
                 withAnimation(.easeInOut(duration: 0.8)) {
                     self.isLaunching.toggle()
                 }

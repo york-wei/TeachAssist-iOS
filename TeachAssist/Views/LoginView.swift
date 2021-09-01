@@ -121,7 +121,7 @@ extension LoginView {
                 let group = DispatchGroup()
                 for course in courses where course.link != nil {
                     group.enter()
-                    DispatchQueue.global(qos: .userInitiated).async {
+                    DispatchQueue.global(qos: .userInteractive).async {
                         TAService.shared.fetchCourse(link: course.link!,
                                                      sessionToken: response.sessionToken,
                                                      studentId: response.studentId) { result in
