@@ -9,6 +9,8 @@ import SwiftUI
 
 struct TAColor {
     static let backgroundColor = Color("BackgroundColor")
+    static let foregroundColor = Color("ForegroundColor")
+    static let dropShadowColor = Color("DropShadowColor")
     static let themeColor = Color("ThemeColor")
     static let themeDropShadowColor = Color("ThemeDropShadowColor")
     static let primaryTextColor = Color("PrimaryTextColor")

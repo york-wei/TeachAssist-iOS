@@ -45,7 +45,7 @@ struct LoginView: View {
             Button(action: {
                 viewModel.longButtonPressed()
             }) {
-                LongButtonView(viewModel: .init(isLoading: $viewModel.isLoading))
+                LongButtonView(isLoading: $viewModel.isLoading)
             }
             .buttonStyle(LongButtonStyle())
             .disabled(viewModel.isLoading)

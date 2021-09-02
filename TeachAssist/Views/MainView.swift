@@ -8,28 +8,60 @@
 import SwiftUI
 
 struct MainView: View {
+    @EnvironmentObject var userState: UserState
     @StateObject var viewModel: ViewModel
     
     var body: some View {
         VStack {
+            HStack(alignment: .center) {
+                Button(action: {
+                    
+                }) {
+                    SmallButtonView(imageName: "line.horizontal.3.decrease")
+                }
+                .buttonStyle(SmallButtonStyle())
+                .disabled(viewModel.loading)
+                Spacer()
+                Text(userState.username)
+                    .font(.subheadline)
+                    .fontWeight(.medium)
+                    .foregroundColor(TAColor.primaryTextColor)
+                Spacer()
+                Button(action: {
+                    
+                }) {
+                    SmallButtonView(imageName: "person.fill")
+                }
+                .buttonStyle(SmallButtonStyle())
+                .disabled(viewModel.loading)
+            }
             ScrollView(showsIndicators: false) {
                 RefreshControl(coordinateSpace: .named("MainScrollViewRefresh")) {
                     viewModel.didPullToRefresh()
                 }
-                VStack {
-                    if let overallAverage = viewModel.overallAverage {
-                        RingView(percentage: overallAverage, animate: $viewModel.loading)
-                    }
-                    ForEach(viewModel.courses) { course in
-                        if let code = course.code {
-                            Text(code)
-                        }
-                    }
+                if let overallAverage = viewModel.overallAverage {
+                    RingView(percentage: overallAverage, animate: $viewModel.loading)
+                        .padding(10)
+                    Text("Term Average")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(TAColor.primaryTextColor)
+                        .padding(10)
                 }
+//                    ForEach(viewModel.courses) { course in
+//                        if let code = course.code {
+//                            Text(code)
+//                        }
+//                    }
             }.coordinateSpace(name: "MainScrollViewRefresh")
         }
+        .padding(TAPadding.viewEdgePadding)
         .alert(isPresented: $viewModel.showError, content: {
-            Alert(title: Text(viewModel.currentError.description), message: Text("Your marks could not be updated."), dismissButton: .default(Text("OK")))
+            Alert(title: Text(viewModel.currentError.description),
+                  message: Text("Your marks could not be updated."),
+                  dismissButton: .default(Text("OK")) {
+                    self.viewModel.loading = false
+                  })
         })
     }
 }
@@ -92,7 +124,6 @@ extension MainView {
         private func handleError(error: Error) {
             currentError = TAError.getTAError(error)
             DispatchQueue.main.async {
-                self.loading = false
                 self.showError = true
             }
         }
