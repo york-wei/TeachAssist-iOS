@@ -13,6 +13,7 @@ struct MainView: View {
     
     var body: some View {
         VStack {
+            // Top bar
             HStack(alignment: .center) {
                 Button(action: {
                     

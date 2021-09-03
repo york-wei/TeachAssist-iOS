@@ -13,11 +13,11 @@ struct SmallButtonView: View {
         ZStack(alignment: Alignment(horizontal: .center, vertical: .center)) {
             Rectangle()
                 .foregroundColor(TAColor.foregroundColor)
-                .frame(width: 50, height: 50)
+                .frame(width: 45, height: 45)
                 .cornerRadius(10)
                 .shadow(color: TAColor.dropShadowColor, radius: 5, x: 2, y: 2)
             Image(systemName: imageName)
-                .font(.title2)
+                .font(.title3)
                 .foregroundColor(Color("PrimaryTextColor"))
         }
     }
