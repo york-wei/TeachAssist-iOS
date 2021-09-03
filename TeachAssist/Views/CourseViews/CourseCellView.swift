@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CourseCellView: View {
     let course: Course
+    @Binding var animate : Bool
+    
     var body: some View {
         ZStack {
             Rectangle()
@@ -60,20 +62,19 @@ struct CourseCellView: View {
                     }
                 }
                 if let average = course.average {
-                    ProgressBarView(percentage: average)
+                    ProgressBarView(percentage: average, animate: $animate)
                         .padding(.top, 5)
                 } else {
-                    Text("Mark Unavailable")
+                    Text("Current Mark Unavailable")
                         .font(.subheadline)
                         .fontWeight(.regular)
                         .foregroundColor(TAColor.primaryTextColor)
                 }
             }
             .fixedSize(horizontal: false, vertical: true)
-            .padding(.leading, 28)
-            .padding(.trailing, 28)
-            .padding(.top, 38)
-            .padding(.bottom, 38)
+            .padding([.leading, .trailing], 28)
+            .padding([.top, .bottom], 38)
+            .redacted(reason: animate ? .placeholder : [])
         }
         .foregroundColor(TAColor.foregroundColor)
     }

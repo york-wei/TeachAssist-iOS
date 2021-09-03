@@ -19,6 +19,7 @@
 		F34E826326E152D800AC8314 /* SmallButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826226E152D800AC8314 /* SmallButtonView.swift */; };
 		F34E826926E2719100AC8314 /* CourseCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826826E2719100AC8314 /* CourseCellView.swift */; };
 		F34E826B26E2791200AC8314 /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826A26E2791200AC8314 /* ProgressBarView.swift */; };
+		F34E826D26E2C32300AC8314 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826C26E2C32300AC8314 /* CourseView.swift */; };
 		F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3621861269F457900B40CD1 /* SecureTextField.swift */; };
 		F365F34726D422180041BCA9 /* TAParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34626D422180041BCA9 /* TAParser.swift */; };
 		F365F34926D4226B0041BCA9 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34826D4226B0041BCA9 /* Course.swift */; };
@@ -80,6 +81,7 @@
 		F34E826226E152D800AC8314 /* SmallButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallButtonView.swift; sourceTree = "<group>"; };
 		F34E826826E2719100AC8314 /* CourseCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCellView.swift; sourceTree = "<group>"; };
 		F34E826A26E2791200AC8314 /* ProgressBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		F34E826C26E2C32300AC8314 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		F3621861269F457900B40CD1 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 		F365F34626D422180041BCA9 /* TAParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAParser.swift; sourceTree = "<group>"; };
 		F365F34826D4226B0041BCA9 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				F324C147266B18F000DD8BE1 /* LaunchView.swift */,
 				F3716936266C221C00A350EB /* LoginView.swift */,
 				F33E7A7126D6CD6E007819B7 /* MainView.swift */,
+				F34E826C26E2C32300AC8314 /* CourseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,6 +591,7 @@
 				F365F35326D483310041BCA9 /* FetchCourseResponse.swift in Sources */,
 				F365F34726D422180041BCA9 /* TAParser.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
+				F34E826D26E2C32300AC8314 /* CourseView.swift in Sources */,
 				F34E826126DD9EC700AC8314 /* RingView.swift in Sources */,
 				F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,

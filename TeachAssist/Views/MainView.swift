@@ -12,35 +12,36 @@ struct MainView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        VStack {
-            // Top bar
-            HStack(alignment: .center) {
-                Button(action: {
-                    
-                }) {
-                    SmallButtonView(imageName: "line.horizontal.3.decrease")
-                }
-                .buttonStyle(SmallButtonStyle())
-                .disabled(viewModel.loading)
-                Spacer()
-                Text(userState.username)
-                    .font(.subheadline)
-                    .fontWeight(.medium)
-                    .foregroundColor(TAColor.primaryTextColor)
-                Spacer()
-                Button(action: {
-                    
-                }) {
-                    SmallButtonView(imageName: "person.fill")
-                }
-                .buttonStyle(SmallButtonStyle())
-                .disabled(viewModel.loading)
-            }
-            .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+        ZStack {
+            // MARK: - Main Course List
             ScrollView(showsIndicators: false) {
                 RefreshControl(coordinateSpace: .named("MainScrollViewRefresh")) {
                     viewModel.didPullToRefresh()
                 }
+                // Top bar
+                HStack(alignment: .center) {
+                    Button(action: {
+                        
+                    }) {
+                        SmallButtonView(imageName: "line.horizontal.3.decrease")
+                    }
+                    .buttonStyle(SmallButtonStyle())
+                    .disabled(viewModel.loading)
+                    Spacer()
+                    Text(userState.username)
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(TAColor.primaryTextColor)
+                    Spacer()
+                    Button(action: {
+                        
+                    }) {
+                        SmallButtonView(imageName: "person.fill")
+                    }
+                    .buttonStyle(SmallButtonStyle())
+                    .disabled(viewModel.loading)
+                }
+                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
                 if let overallAverage = viewModel.overallAverage {
                     RingView(percentage: overallAverage, animate: $viewModel.loading)
                         .padding(10)
@@ -52,17 +53,23 @@ struct MainView: View {
                 }
                 VStack {
                     ForEach(viewModel.courses) { course in
-                        CourseCellView(course: course)
+                        CourseCellView(course: course, animate: $viewModel.loading)
                             .padding(.bottom, 15)
+                            .disabled(viewModel.loading)
                             .onTapGesture {
-                                if let code = course.code {
-                                    print("Tapped course: \(code)")
-                                }
+                                viewModel.didTapCourse(course: course)
                             }
                     }
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
-            }.coordinateSpace(name: "MainScrollViewRefresh")
+            }
+            .coordinateSpace(name: "MainScrollViewRefresh")
+            
+            // MARK: - Course View
+            if viewModel.showCourse {
+                CourseView(show: $viewModel.showCourse, viewModel: .init(course: viewModel.currentCourse))
+                    .transition(.move(edge: .trailing))
+            }
         }
         .alert(isPresented: $viewModel.showError, content: {
             Alert(title: Text(viewModel.currentError.description),
@@ -82,6 +89,8 @@ extension MainView {
         @Published var loading: Bool = true
         @Published var showError: Bool = false
         var currentError: TAError = TAError.unknownError
+        @Published var showCourse: Bool = false
+        var currentCourse: Course = Course()
         
         init(userState: UserState) {
             self.userState = userState
@@ -98,6 +107,21 @@ extension MainView {
             }
         }
         
+        func didPullToRefresh() {
+            if !loading {
+                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                refresh()
+            }
+        }
+        
+        func didTapCourse(course: Course) {
+            guard course.link != nil else { return }
+            currentCourse = course
+            withAnimation {
+                showCourse = true
+            }
+        }
+        
         private func updateOverallAverage() {
             var count: Int = 0
             var sum: Double = 0
@@ -107,13 +131,6 @@ extension MainView {
             }
             if count > 0 {
                 overallAverage = sum / Double(count)
-            }
-        }
-        
-        func didPullToRefresh() {
-            if !loading {
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                refresh()
             }
         }
         
@@ -138,10 +155,10 @@ extension MainView {
         
         private func handleAuthenticationSuccess(response: AuthenticationResponse) {
             do {
-                let courses = try TAParser.shared.parseCourseList(html: response.dataString)
+                var newCourses = try TAParser.shared.parseCourseList(html: response.dataString)
                 var thrownError: Error? = nil
                 let group = DispatchGroup()
-                for course in courses where course.link != nil {
+                for course in newCourses where course.link != nil {
                     group.enter()
                     DispatchQueue.global(qos: .userInteractive).async {
                         TAService.shared.fetchCourse(link: course.link!,
@@ -167,10 +184,18 @@ extension MainView {
                         self.handleError(error: TAError.getTAError(error))
                         return
                     }
-                    // TODO: update course data with new fetch
+                    // if the new courses are not the same as old courses, reset persisted courses
+                    if self.courses == newCourses {
+                        for (i, course) in newCourses.enumerated() where course.link == nil {
+                            if self.courses[i].link != nil {
+                                // replace new course that is closed with old course that is open
+                                newCourses[i] = self.courses[i]
+                            }
+                        }
+                    }
                     DispatchQueue.main.async {
-                        PersistenceController.shared.saveCourses(courses: courses)
-                        self.courses = courses
+                        PersistenceController.shared.saveCourses(courses: newCourses)
+                        self.courses = newCourses
                         self.loading = false
                         print("successful refresh")
                     }
