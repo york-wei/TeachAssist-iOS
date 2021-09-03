@@ -14,7 +14,7 @@ struct RingView: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(TAColor.ringBackgroundColor, style: StrokeStyle(lineWidth: 11))
+                .stroke(TAColor.progressBackgroundColor, style: StrokeStyle(lineWidth: 11))
                 .frame(width: 150, height: 150)
             Circle()
                 .trim(from: !animate ? CGFloat(1 - percentage / 100) : 1, to: 1)

@@ -12,10 +12,11 @@ struct TAColor {
     static let foregroundColor = Color("ForegroundColor")
     static let dropShadowColor = Color("DropShadowColor")
     static let themeColor = Color("ThemeColor")
+    static let highlightColor = Color("HighlightColor")
     static let themeDropShadowColor = Color("ThemeDropShadowColor")
     static let primaryTextColor = Color("PrimaryTextColor")
     static let secondaryTextColor = Color("SecondaryTextColor")
-    static let ringBackgroundColor = Color("RingBackgroundColor")
+    static let progressBackgroundColor = Color("ProgressBackgroundColor")
     static let themeGradient = Gradient(colors: [Color(#colorLiteral(red: 0.1254901961, green: 0.3254901961, blue: 0.4549019608, alpha: 1)), Color(#colorLiteral(red: 0.1529411765, green: 0.6274509804, blue: 0.6196078431, alpha: 1)), Color(#colorLiteral(red: 0.1882352941, green: 0.8078431373, blue: 0.5333333333, alpha: 1))])
 }
 

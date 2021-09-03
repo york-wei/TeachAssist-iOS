@@ -36,6 +36,7 @@ struct MainView: View {
                 .buttonStyle(SmallButtonStyle())
                 .disabled(viewModel.loading)
             }
+            .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             ScrollView(showsIndicators: false) {
                 RefreshControl(coordinateSpace: .named("MainScrollViewRefresh")) {
                     viewModel.didPullToRefresh()
@@ -47,16 +48,22 @@ struct MainView: View {
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundColor(TAColor.primaryTextColor)
-                        .padding(10)
+                        .padding(.top, 10)
                 }
-//                    ForEach(viewModel.courses) { course in
-//                        if let code = course.code {
-//                            Text(code)
-//                        }
-//                    }
+                VStack {
+                    ForEach(viewModel.courses) { course in
+                        CourseCellView(course: course)
+                            .padding(.bottom, 15)
+                            .onTapGesture {
+                                if let code = course.code {
+                                    print("Tapped course: \(code)")
+                                }
+                            }
+                    }
+                }
+                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             }.coordinateSpace(name: "MainScrollViewRefresh")
         }
-        .padding(TAPadding.viewEdgePadding)
         .alert(isPresented: $viewModel.showError, content: {
             Alert(title: Text(viewModel.currentError.description),
                   message: Text("Your marks could not be updated."),
