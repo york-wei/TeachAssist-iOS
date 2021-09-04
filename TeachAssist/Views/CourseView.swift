@@ -14,7 +14,43 @@ struct CourseView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false) {
-            
+            // Top bar
+            HStack(alignment: .center) {
+                Button(action: {
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    withAnimation {
+                        show = false
+                    }
+                }) {
+                    SmallButtonView(imageName: "chevron.backward")
+                }
+                .buttonStyle(TAButtonStyle(scale: 1.07))
+                Spacer()
+                if let code = viewModel.course.code {
+                    Text(code)
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(TAColor.primaryTextColor)
+                }
+                Spacer()
+                Button(action: {
+                    
+                }) {
+                    SmallButtonView(imageName: "pencil")
+                }
+                .buttonStyle(TAButtonStyle(scale: 1.07))
+            }
+            .padding(.top, 40)
+            .padding([.trailing, .leading], TAPadding.viewEdgePadding)
+            if let average = viewModel.course.average {
+                RingView(percentage: average, animate: .constant(false))
+                    .padding(10)
+                Text("Course Average")
+                    .font(.subheadline)
+                    .fontWeight(.semibold)
+                    .foregroundColor(TAColor.primaryTextColor)
+                    .padding(.top, 10)
+            }
         }
         .background(TAColor.backgroundColor)
         .offset(x: currentOffsetX)

@@ -36,3 +36,11 @@ struct TAUrl {
         return URL(string: "https://ta.yrdsb.ca/live/students/" + link)!
     }
 }
+
+struct TAButtonStyle: ButtonStyle {
+    let scale: CGFloat
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? scale : 1)
+    }
+}

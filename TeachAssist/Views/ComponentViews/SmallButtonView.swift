@@ -22,11 +22,3 @@ struct SmallButtonView: View {
         }
     }
 }
-
-struct SmallButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 1.07 : 1)
-    }
-}
-

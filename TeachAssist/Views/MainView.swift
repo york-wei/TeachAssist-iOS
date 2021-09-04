@@ -25,12 +25,12 @@ struct MainView: View {
                     }) {
                         SmallButtonView(imageName: "line.horizontal.3.decrease")
                     }
-                    .buttonStyle(SmallButtonStyle())
+                    .buttonStyle(TAButtonStyle(scale: 1.07))
                     .disabled(viewModel.loading)
                     Spacer()
                     Text(userState.username)
                         .font(.subheadline)
-                        .fontWeight(.medium)
+                        .fontWeight(.semibold)
                         .foregroundColor(TAColor.primaryTextColor)
                     Spacer()
                     Button(action: {
@@ -38,7 +38,7 @@ struct MainView: View {
                     }) {
                         SmallButtonView(imageName: "person.fill")
                     }
-                    .buttonStyle(SmallButtonStyle())
+                    .buttonStyle(TAButtonStyle(scale: 1.07))
                     .disabled(viewModel.loading)
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
@@ -47,18 +47,20 @@ struct MainView: View {
                         .padding(10)
                     Text("Term Average")
                         .font(.subheadline)
-                        .fontWeight(.medium)
+                        .fontWeight(.semibold)
                         .foregroundColor(TAColor.primaryTextColor)
                         .padding(.top, 10)
                 }
                 VStack {
                     ForEach(viewModel.courses) { course in
-                        CourseCellView(course: course, animate: $viewModel.loading)
-                            .padding(.bottom, 15)
-                            .disabled(viewModel.loading)
-                            .onTapGesture {
-                                viewModel.didTapCourse(course: course)
-                            }
+                        Button(action: {
+                            viewModel.didTapCourse(course: course)
+                        }) {
+                            CourseCellView(course: course, animate: $viewModel.loading)
+                        }
+                        .padding(.bottom, 15)
+                        .buttonStyle(TAButtonStyle(scale: course.link == nil ? 1 : 1.02))
+                        .disabled(viewModel.loading)
                     }
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
@@ -69,6 +71,7 @@ struct MainView: View {
             if viewModel.showCourse {
                 CourseView(show: $viewModel.showCourse, viewModel: .init(course: viewModel.currentCourse))
                     .transition(.move(edge: .trailing))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .alert(isPresented: $viewModel.showError, content: {
@@ -116,6 +119,7 @@ extension MainView {
         
         func didTapCourse(course: Course) {
             guard course.link != nil else { return }
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             currentCourse = course
             withAnimation {
                 showCourse = true

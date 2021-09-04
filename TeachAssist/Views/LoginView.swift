@@ -47,7 +47,7 @@ struct LoginView: View {
             }) {
                 LongButtonView(isLoading: $viewModel.isLoading)
             }
-            .buttonStyle(LongButtonStyle())
+            .buttonStyle(TAButtonStyle(scale: 1.02))
             .disabled(viewModel.isLoading)
         }
         .padding(TAPadding.viewEdgePadding)

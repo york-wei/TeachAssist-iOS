@@ -35,10 +35,3 @@ struct LongButtonView: View {
         .disabled(isLoading)
     }
 }
-
-struct LongButtonStyle: ButtonStyle {
-    func makeBody(configuration: Self.Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 1.05 : 1)
-    }
-}

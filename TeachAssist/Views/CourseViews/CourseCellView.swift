@@ -22,13 +22,13 @@ struct CourseCellView: View {
                         if let name = course.name {
                             Text("\(code): \(name)")
                                 .font(.subheadline)
-                                .fontWeight(.medium)
+                                .fontWeight(.semibold)
                                 .foregroundColor(TAColor.primaryTextColor)
                                 .lineLimit(1)
                         } else {
                             Text(code)
                                 .font(.subheadline)
-                                .fontWeight(.medium)
+                                .fontWeight(.semibold)
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
                     }
