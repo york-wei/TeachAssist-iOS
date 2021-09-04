@@ -26,7 +26,10 @@ struct CourseView: View {
                 Button(action: {
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     withAnimation {
-                        show = false
+                        currentOffsetX = UIScreen.main.bounds.width
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                            self.show = false
+                        }
                     }
                 }) {
                     SmallButtonView(imageName: "chevron.backward")
@@ -41,9 +44,9 @@ struct CourseView: View {
                 }
                 Spacer()
                 Button(action: {
-                    
+                    viewModel.didTapEdit()
                 }) {
-                    SmallButtonView(imageName: "pencil")
+                    SmallButtonView(imageName: viewModel.editing ? "pencil.slash" : "pencil")
                 }
                 .buttonStyle(TAButtonStyle(scale: 1.07))
             }
@@ -53,7 +56,7 @@ struct CourseView: View {
             if let average = viewModel.course.average {
                 RingView(percentage: average, animate: .constant(false))
                     .padding(10)
-                Text("Course Average")
+                Text(viewModel.editing ? "Predicted Course Average" : "Course Average")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(TAColor.primaryTextColor)
@@ -68,13 +71,19 @@ struct CourseView: View {
                 Text("Breakdown")
                     .tag(SelectedTab.breakdown)
             }
-            .pickerStyle(SegmentedPickerStyle())
-            .animation(.none)
-            .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
+                .pickerStyle(SegmentedPickerStyle())
+                .animation(.none)
+                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             // Selected view
             switch selectedTab {
             case .evaluations:
-                EmptyView()
+                VStack {
+                    ForEach(viewModel.course.evaluations.reversed()) { evaluation in
+                        EvaluationView(viewModel: .init(evaluation: evaluation, editing: viewModel.editing))
+                    }
+                    .padding(.bottom, 15)
+                }
+                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             case .trends:
                 EmptyView()
             case .breakdown:
@@ -109,9 +118,14 @@ struct CourseView: View {
 extension CourseView {
     class ViewModel: ObservableObject {
         @Published var course: Course
+        @Published var editing: Bool = false
         
         init(course: Course) {
             self.course = course
+        }
+        
+        func didTapEdit() {
+            editing.toggle()
         }
         
     }

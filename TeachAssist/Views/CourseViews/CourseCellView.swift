@@ -51,7 +51,7 @@ struct CourseCellView: View {
                     if let average = course.average {
                         Text(String(format: "%.1f%%", average))
                             .font(.subheadline)
-                            .fontWeight(.medium)
+                            .fontWeight(.semibold)
                             .foregroundColor(TAColor.primaryTextColor)
                             .padding(.top, 2)
                             .padding(.bottom, 2)
