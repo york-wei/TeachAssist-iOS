@@ -71,7 +71,6 @@ struct MainView: View {
             if viewModel.showCourse {
                 CourseView(show: $viewModel.showCourse, viewModel: .init(course: viewModel.currentCourse))
                     .transition(.move(edge: .trailing))
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
         .alert(isPresented: $viewModel.showError, content: {

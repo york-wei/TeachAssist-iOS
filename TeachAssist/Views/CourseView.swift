@@ -52,7 +52,7 @@ struct CourseView: View {
                     .padding(.top, 10)
             }
         }
-        .background(TAColor.backgroundColor)
+        .background(TAColor.backgroundColor.ignoresSafeArea())
         .offset(x: currentOffsetX)
         .gesture(DragGesture(coordinateSpace: .global)
                     .onChanged { value in
