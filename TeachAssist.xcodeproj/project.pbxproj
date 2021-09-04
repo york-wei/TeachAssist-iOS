@@ -14,6 +14,7 @@
 		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */; };
+		F32C28C126E42C9F00F3F396 /* AddEvaluationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -31,7 +32,7 @@
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
 		F373B3BD26D59E000009BB1D /* TAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F373B3BC26D59E000009BB1D /* TAError.swift */; };
 		F375111426D1968400C452DB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375111326D1968400C452DB /* Reachability.swift */; };
-		F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065A269F86CB007319AD /* LongButtonView.swift */; };
+		F38E065B269F86CB007319AD /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065A269F86CB007319AD /* LoginButtonView.swift */; };
 		F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065C269F8A40007319AD /* ActivityIndicator.swift */; };
 		F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */; };
 		F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C002652BB2C00B79F38 /* TeachAssistApp.swift */; };
@@ -77,6 +78,7 @@
 		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationView.swift; sourceTree = "<group>"; };
+		F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvaluationButtonView.swift; sourceTree = "<group>"; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -94,7 +96,7 @@
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F373B3BC26D59E000009BB1D /* TAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAError.swift; sourceTree = "<group>"; };
 		F375111326D1968400C452DB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		F38E065A269F86CB007319AD /* LongButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongButtonView.swift; sourceTree = "<group>"; };
+		F38E065A269F86CB007319AD /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		F38E065C269F8A40007319AD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
 		F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeachAssist.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -250,7 +252,8 @@
 		F3716935266C220700A350EB /* ComponentViews */ = {
 			isa = PBXGroup;
 			children = (
-				F38E065A269F86CB007319AD /* LongButtonView.swift */,
+				F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */,
+				F38E065A269F86CB007319AD /* LoginButtonView.swift */,
 				F34E826226E152D800AC8314 /* SmallButtonView.swift */,
 				F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */,
 				F34E826026DD9EC700AC8314 /* RingView.swift */,
@@ -582,6 +585,7 @@
 				F365F34F26D4253B0041BCA9 /* Section.swift in Sources */,
 				F34E826926E2719100AC8314 /* CourseCellView.swift in Sources */,
 				F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */,
+				F32C28C126E42C9F00F3F396 /* AddEvaluationButtonView.swift in Sources */,
 				F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F34E826B26E2791200AC8314 /* ProgressBarView.swift in Sources */,
@@ -591,7 +595,7 @@
 				F365F34D26D425350041BCA9 /* Evaluation.swift in Sources */,
 				F3BA8C0A2652BB2E00B79F38 /* Persistence.swift in Sources */,
 				F3D9F4B026B8AC1200B48D08 /* TAService.swift in Sources */,
-				F38E065B269F86CB007319AD /* LongButtonView.swift in Sources */,
+				F38E065B269F86CB007319AD /* LoginButtonView.swift in Sources */,
 				F365F35326D483310041BCA9 /* FetchCourseResponse.swift in Sources */,
 				F365F34726D422180041BCA9 /* TAParser.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,

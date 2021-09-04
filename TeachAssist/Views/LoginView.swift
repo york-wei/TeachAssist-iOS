@@ -45,7 +45,7 @@ struct LoginView: View {
             Button(action: {
                 viewModel.longButtonPressed()
             }) {
-                LongButtonView(isLoading: $viewModel.isLoading)
+                LoginButtonView(isLoading: $viewModel.isLoading)
             }
             .buttonStyle(TAButtonStyle(scale: 1.02))
             .disabled(viewModel.isLoading)

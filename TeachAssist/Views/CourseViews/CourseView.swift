@@ -36,7 +36,7 @@ struct CourseView: View {
                 }
                 .buttonStyle(TAButtonStyle(scale: 1.07))
                 Spacer()
-                if let code = viewModel.course.code {
+                if let code = viewModel.getCourse().code {
                     Text(code)
                         .font(.subheadline)
                         .fontWeight(.semibold)
@@ -53,7 +53,7 @@ struct CourseView: View {
             .padding(.top, 50)
             .padding([.trailing, .leading], TAPadding.viewEdgePadding)
             // Course average ring
-            if let average = viewModel.course.average {
+            if let average = viewModel.getCourse().average {
                 RingView(percentage: average, animate: .constant(false))
                     .padding(10)
                 Text(viewModel.editing ? "Predicted Course Average" : "Course Average")
@@ -78,8 +78,17 @@ struct CourseView: View {
             switch selectedTab {
             case .evaluations:
                 VStack {
-                    ForEach(viewModel.course.evaluations.reversed()) { evaluation in
-                        EvaluationView(viewModel: .init(evaluation: evaluation, editing: viewModel.editing))
+                    if viewModel.editing {
+                        Button(action: {
+                            
+                        }) {
+                            AddEvaluationButtonView()
+                        }
+                        .buttonStyle(TAButtonStyle(scale: 1.02))
+                        .padding(.bottom, 15)
+                    }
+                    ForEach(viewModel.getCourse().evaluations.reversed()) { evaluation in
+                        EvaluationView(viewModel: .init(evaluation: evaluation, editing: viewModel.editing, delete: viewModel.deleteEvaluation(evaluation:)))
                     }
                     .padding(.bottom, 15)
                 }
@@ -118,6 +127,7 @@ struct CourseView: View {
 extension CourseView {
     class ViewModel: ObservableObject {
         @Published var course: Course
+        @Published var editCourse: Course = Course()
         @Published var editing: Bool = false
         
         init(course: Course) {
@@ -126,6 +136,18 @@ extension CourseView {
         
         func didTapEdit() {
             editing.toggle()
+            if editing {
+                editCourse = Course(course: course)
+            }
+        }
+        
+        func getCourse() -> Course {
+            return editing ? editCourse : course
+        }
+        
+        func deleteEvaluation(evaluation: Evaluation) {
+            getCourse().evaluations.removeAll(where: { $0.id == evaluation.id })
+            objectWillChange.send()
         }
         
     }

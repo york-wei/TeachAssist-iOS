@@ -25,6 +25,26 @@ class Course: ObservableObject, Identifiable, Equatable {
     var other: Section = Section(type: .other)
     var final: Section = Section(type: .final)
     
+    init() { }
+    // init method for copying a course
+    init(course: Course) {
+        self.code = course.code
+        self.name = course.name
+        self.period = course.period
+        self.room = course.room
+        self.link = course.link
+        for evaluation in course.evaluations {
+            self.evaluations.append(Evaluation(evaluation: evaluation))
+        }
+        self.average = course.average
+        self.knowledge = Section(section: course.knowledge)
+        self.thinking = Section(section: course.thinking)
+        self.communication = Section(section: course.communication)
+        self.application = Section(section: course.application)
+        self.other = Section(section: course.other)
+        self.final = Section(section: course.final)
+    }
+    
     func calculateAverage(needsPrediction: Bool) {
         // If an average is already parsed from the course list page then no calculation is needed
         if average != nil { return }

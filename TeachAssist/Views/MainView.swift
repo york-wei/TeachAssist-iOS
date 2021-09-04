@@ -36,7 +36,7 @@ struct MainView: View {
                     Button(action: {
                         
                     }) {
-                        SmallButtonView(imageName: "person.fill")
+                        SmallButtonView(imageName: "person")
                     }
                     .buttonStyle(TAButtonStyle(scale: 1.07))
                     .disabled(viewModel.loading)

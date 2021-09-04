@@ -1,5 +1,5 @@
 //
-//  LongButtonView.swift
+//  LoginButtonView.swift
 //  TeachAssist
 //
 //  Created by York Wei on 2021-07-14.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LongButtonView: View {
+struct LoginButtonView: View {
     @Binding var isLoading: Bool
     
     var body: some View {

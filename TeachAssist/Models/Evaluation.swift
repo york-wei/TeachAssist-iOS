@@ -21,6 +21,20 @@ class Evaluation: ObservableObject, Identifiable {
     var overall: Double?
     var feedback: String?
     
+    init() { }
+    // init method for copying an evaluation
+    init(evaluation: Evaluation) {
+        self.name = evaluation.name
+        self.knowledge = Section(section: evaluation.knowledge)
+        self.thinking = Section(section: evaluation.thinking)
+        self.communication = Section(section: evaluation.communication)
+        self.application = Section(section: evaluation.application)
+        self.other = Section(section: evaluation.other)
+        self.final = Section(section: evaluation.final)
+        self.overall = evaluation.overall
+        self.feedback = evaluation.feedback
+    }
+    
     func getSection(type: SectionType) -> Section {
         switch type {
         case .knowledge:

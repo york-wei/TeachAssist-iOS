@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EvaluationView: View {
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         ZStack {
@@ -186,11 +186,13 @@ extension EvaluationView {
     class ViewModel: ObservableObject {
         var evaluation: Evaluation
         var editing: Bool
+        var delete: (Evaluation) -> Void
         @Published var expanded = false
         
-        init(evaluation: Evaluation, editing: Bool) {
+        init(evaluation: Evaluation, editing: Bool, delete: @escaping((Evaluation) -> Void)) {
             self.evaluation = evaluation
             self.editing = editing
+            self.delete = delete
         }
         
         func getWeight(section: Section) -> String {
@@ -223,6 +225,7 @@ extension EvaluationView {
         
         func didTapDeleteEvaluation() {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            delete(evaluation)
         }
     }
 }
