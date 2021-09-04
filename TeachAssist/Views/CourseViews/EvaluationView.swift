@@ -186,13 +186,18 @@ extension EvaluationView {
     class ViewModel: ObservableObject {
         var evaluation: Evaluation
         var editing: Bool
-        var delete: (Evaluation) -> Void
+        var didTapDelete: (Evaluation) -> Void
+        var didTapEdit: (Evaluation) -> Void
         @Published var expanded = false
         
-        init(evaluation: Evaluation, editing: Bool, delete: @escaping((Evaluation) -> Void)) {
+        init(evaluation: Evaluation,
+             editing: Bool,
+             didTapDelete: @escaping((Evaluation) -> Void),
+             didTapEdit: @escaping((Evaluation) -> Void)) {
             self.evaluation = evaluation
             self.editing = editing
-            self.delete = delete
+            self.didTapDelete = didTapDelete
+            self.didTapEdit = didTapEdit
         }
         
         func getWeight(section: Section) -> String {
@@ -221,11 +226,12 @@ extension EvaluationView {
         
         func didTapEditEvaluation() {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            didTapEdit(evaluation)
         }
         
         func didTapDeleteEvaluation() {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            delete(evaluation)
+            didTapDelete(evaluation)
         }
     }
 }

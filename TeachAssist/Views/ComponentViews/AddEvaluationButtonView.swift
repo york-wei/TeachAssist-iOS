@@ -24,8 +24,7 @@ struct AddEvaluationButtonView: View {
                     .fontWeight(.semibold)
             }
             .fixedSize(horizontal: false, vertical: true)
-            .padding([.leading, .trailing], 28)
-            .padding([.top, .bottom], 38)
+            .padding([.top, .bottom], 18)
         }
     }
 }

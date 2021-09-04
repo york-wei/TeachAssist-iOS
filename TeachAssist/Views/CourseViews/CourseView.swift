@@ -80,7 +80,7 @@ struct CourseView: View {
                 VStack {
                     if viewModel.editing {
                         Button(action: {
-                            
+                            viewModel.didTapAddEvaluation()
                         }) {
                             AddEvaluationButtonView()
                         }
@@ -88,7 +88,10 @@ struct CourseView: View {
                         .padding(.bottom, 15)
                     }
                     ForEach(viewModel.getCourse().evaluations.reversed()) { evaluation in
-                        EvaluationView(viewModel: .init(evaluation: evaluation, editing: viewModel.editing, delete: viewModel.deleteEvaluation(evaluation:)))
+                        EvaluationView(viewModel: .init(evaluation: evaluation,
+                                                        editing: viewModel.editing,
+                                                        didTapDelete: viewModel.didTapDeleteEvaluation(evaluation:),
+                                                        didTapEdit: viewModel.didTapEditEvaluation(evaluation:)))
                     }
                     .padding(.bottom, 15)
                 }
@@ -121,6 +124,12 @@ struct CourseView: View {
                             }
                         }
                     })
+        .sheet(isPresented: $viewModel.showAddEvaluationView) {
+            Text("add")
+        }
+        .sheet(isPresented: $viewModel.showEditEvaluationView) {
+            Text("edit")
+        }
     }
 }
 
@@ -129,6 +138,8 @@ extension CourseView {
         @Published var course: Course
         @Published var editCourse: Course = Course()
         @Published var editing: Bool = false
+        @Published var showAddEvaluationView = false
+        @Published var showEditEvaluationView = false
         
         init(course: Course) {
             self.course = course
@@ -145,7 +156,28 @@ extension CourseView {
             return editing ? editCourse : course
         }
         
-        func deleteEvaluation(evaluation: Evaluation) {
+        func didTapAddEvaluation() {
+            showAddEvaluationView = true
+        }
+        
+        func didTapEditEvaluation(evaluation: Evaluation) {
+            showEditEvaluationView = true
+        }
+        
+        func didTapDeleteEvaluation(evaluation: Evaluation) {
+            deleteEvaluation(evaluation: evaluation)
+        }
+        
+        private func addEvaluation(evaluation: Evaluation) {
+            getCourse().evaluations.append(evaluation)
+            objectWillChange.send()
+        }
+        
+        private func editEvaluation(evaluation: Evaluation) {
+            
+        }
+        
+        private func deleteEvaluation(evaluation: Evaluation) {
             getCourse().evaluations.removeAll(where: { $0.id == evaluation.id })
             objectWillChange.send()
         }
