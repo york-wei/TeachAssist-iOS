@@ -7,7 +7,10 @@
 
 import Foundation
 
-class Evaluation {
+class Evaluation: ObservableObject, Identifiable {
+    
+    let id = UUID()
+    
     var name: String?
     var knowledge: Section = Section(type: .knowledge)
     var thinking: Section = Section(type: .thinking)

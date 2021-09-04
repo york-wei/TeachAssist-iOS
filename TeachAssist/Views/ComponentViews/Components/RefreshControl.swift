@@ -15,7 +15,7 @@ struct RefreshControl: View {
     @State var refresh: Bool = false
     var body: some View {
         GeometryReader { geo in
-            if (geo.frame(in: coordinateSpace).midY > 50) {
+            if (geo.frame(in: coordinateSpace).midY > 60) {
                 Spacer()
                     .onAppear {
                         if refresh == false {
@@ -45,6 +45,7 @@ struct RefreshControl: View {
                    }.frame(width: 20, height: 20, alignment: .center)
                 }
             }.frame(width: geo.size.width)
-        }.padding(.top, -50)
+        }
+        .padding(.top, -20)
     }
 }

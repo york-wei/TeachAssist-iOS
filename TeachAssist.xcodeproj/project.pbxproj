@@ -13,6 +13,7 @@
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
 		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
+		F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -75,6 +76,7 @@
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
+		F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationView.swift; sourceTree = "<group>"; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -173,7 +175,6 @@
 				F324C147266B18F000DD8BE1 /* LaunchView.swift */,
 				F3716936266C221C00A350EB /* LoginView.swift */,
 				F33E7A7126D6CD6E007819B7 /* MainView.swift */,
-				F34E826C26E2C32300AC8314 /* CourseView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,7 +229,9 @@
 		F34E826726E2718000AC8314 /* CourseViews */ = {
 			isa = PBXGroup;
 			children = (
+				F34E826C26E2C32300AC8314 /* CourseView.swift */,
 				F34E826826E2719100AC8314 /* CourseCellView.swift */,
+				F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */,
 			);
 			path = CourseViews;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F34E826B26E2791200AC8314 /* ProgressBarView.swift in Sources */,
+				F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */,
 				F34E826326E152D800AC8314 /* SmallButtonView.swift in Sources */,
 				F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */,
 				F365F34D26D425350041BCA9 /* Evaluation.swift in Sources */,

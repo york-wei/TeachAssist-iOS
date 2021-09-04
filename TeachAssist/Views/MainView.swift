@@ -41,7 +41,8 @@ struct MainView: View {
                     .buttonStyle(TAButtonStyle(scale: 1.07))
                     .disabled(viewModel.loading)
                 }
-                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+                .padding(.top, 40)
+                .padding([.trailing, .leading], TAPadding.viewEdgePadding)
                 if let overallAverage = viewModel.overallAverage {
                     RingView(percentage: overallAverage, animate: $viewModel.loading)
                         .padding(10)
@@ -73,6 +74,7 @@ struct MainView: View {
                     .transition(.move(edge: .trailing))
             }
         }
+        .ignoresSafeArea()
         .alert(isPresented: $viewModel.showError, content: {
             Alert(title: Text(viewModel.currentError.description),
                   message: Text("Your marks could not be updated."),

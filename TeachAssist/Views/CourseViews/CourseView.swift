@@ -7,9 +7,16 @@
 
 import SwiftUI
 
+enum SelectedTab {
+    case evaluations
+    case trends
+    case breakdown
+}
+
 struct CourseView: View {
     @Binding var show: Bool
     @State var currentOffsetX: CGFloat = 0
+    @State var selectedTab = SelectedTab.evaluations
     @StateObject var viewModel: ViewModel
     
     var body: some View {
@@ -40,8 +47,9 @@ struct CourseView: View {
                 }
                 .buttonStyle(TAButtonStyle(scale: 1.07))
             }
-            .padding(.top, 40)
+            .padding(.top, 50)
             .padding([.trailing, .leading], TAPadding.viewEdgePadding)
+            // Course average ring
             if let average = viewModel.course.average {
                 RingView(percentage: average, animate: .constant(false))
                     .padding(10)
@@ -50,6 +58,27 @@ struct CourseView: View {
                     .fontWeight(.semibold)
                     .foregroundColor(TAColor.primaryTextColor)
                     .padding(.top, 10)
+            }
+            // Picker
+            Picker("Options", selection: $selectedTab) {
+                Text("Evaluations")
+                    .tag(SelectedTab.evaluations)
+                Text("Trends")
+                    .tag(SelectedTab.trends)
+                Text("Breakdown")
+                    .tag(SelectedTab.breakdown)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .animation(.none)
+            .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
+            // Selected view
+            switch selectedTab {
+            case .evaluations:
+                EmptyView()
+            case .trends:
+                EmptyView()
+            case .breakdown:
+                EmptyView()
             }
         }
         .background(TAColor.backgroundColor.ignoresSafeArea())
