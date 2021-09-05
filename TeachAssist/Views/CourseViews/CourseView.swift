@@ -129,7 +129,9 @@ struct CourseView: View {
                               addEvaluation: viewModel.addEvaluation(evaluation:))
         }
         .sheet(isPresented: $viewModel.showEditEvaluationView) {
-            Text("edit")
+            EditEvaluationView(show: $viewModel.showEditEvaluationView,
+                               evaluation: viewModel.evaluationForEditing,
+                               editEvaluation: viewModel.editEvaluation(evaluation:))
         }
     }
 }
@@ -141,6 +143,7 @@ extension CourseView {
         @Published var editing: Bool = false
         @Published var showAddEvaluationView = false
         @Published var showEditEvaluationView = false
+        var evaluationForEditing: Evaluation = Evaluation()
         
         init(course: Course) {
             self.course = course
@@ -162,6 +165,7 @@ extension CourseView {
         }
         
         func didTapEditEvaluation(evaluation: Evaluation) {
+            evaluationForEditing = evaluation
             showEditEvaluationView = true
         }
         
@@ -176,7 +180,10 @@ extension CourseView {
         }
         
         func editEvaluation(evaluation: Evaluation) {
-            
+            guard let index = getCourse().evaluations.firstIndex(where: { $0.id == evaluation.id }) else { return }
+            getCourse().evaluations[index] = evaluation
+            getCourse().updateAverageForEstimate()
+            objectWillChange.send()
         }
         
         func deleteEvaluation(evaluation: Evaluation) {

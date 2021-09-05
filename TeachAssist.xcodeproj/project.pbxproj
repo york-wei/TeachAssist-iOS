@@ -16,6 +16,7 @@
 		F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */; };
 		F32C28C126E42C9F00F3F396 /* AddEvaluationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */; };
 		F32C28C426E44B7200F3F396 /* AddEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */; };
+		F32C28C626E476EE00F3F396 /* EditEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C526E476EE00F3F396 /* EditEvaluationView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -81,6 +82,7 @@
 		F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationView.swift; sourceTree = "<group>"; };
 		F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvaluationButtonView.swift; sourceTree = "<group>"; };
 		F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvaluationView.swift; sourceTree = "<group>"; };
+		F32C28C526E476EE00F3F396 /* EditEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvaluationView.swift; sourceTree = "<group>"; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */,
 				F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */,
+				F32C28C526E476EE00F3F396 /* EditEvaluationView.swift */,
 			);
 			path = EvaluationViews;
 			sourceTree = "<group>";
@@ -616,6 +619,7 @@
 				F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
+				F32C28C626E476EE00F3F396 /* EditEvaluationView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
