@@ -62,7 +62,7 @@ struct CourseCellView: View {
                     }
                 }
                 if let average = course.average {
-                    ProgressBarView(percentage: average, animate: $animate)
+                    CourseProgressBarView(percentage: average, animate: $animate)
                         .padding(.top, 5)
                 } else {
                     Text("Current Mark Unavailable")

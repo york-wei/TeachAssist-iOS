@@ -201,7 +201,9 @@ extension MainView {
                     DispatchQueue.main.async {
                         PersistenceController.shared.saveCourses(courses: newCourses)
                         self.courses = newCourses
-                        self.loading = false
+                        withAnimation {
+                            self.loading = false
+                        }
                         print("successful refresh")
                     }
                 }

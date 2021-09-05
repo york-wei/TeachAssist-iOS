@@ -34,7 +34,7 @@ struct BreakdownView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     }
                     .padding(.top, 5)
-                    ProgressBarView(percentage: course.knowledge.percent ?? 0, animate: .constant(false))
+                    EvaluationProgressBarView(percentage: course.knowledge.percent ?? 0)
                         .padding(.top, 5)
                 }
                 Group {
@@ -51,7 +51,7 @@ struct BreakdownView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     }
                     .padding(.top, 5)
-                    ProgressBarView(percentage: course.thinking.percent ?? 0, animate: .constant(false))
+                    EvaluationProgressBarView(percentage: course.thinking.percent ?? 0)
                         .padding(.top, 5)
                 }
                 Group {
@@ -67,7 +67,7 @@ struct BreakdownView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     }
                     .padding(.top, 5)
-                    ProgressBarView(percentage: course.communication.percent ?? 0, animate: .constant(false))
+                    EvaluationProgressBarView(percentage: course.communication.percent ?? 0)
                         .padding(.top, 5)
                 }
                 Group {
@@ -83,7 +83,7 @@ struct BreakdownView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     }
                     .padding(.top, 5)
-                    ProgressBarView(percentage: course.application.percent ?? 0, animate: .constant(false))
+                    EvaluationProgressBarView(percentage: course.application.percent ?? 0)
                         .padding(.top, 5)
                 }
                 Group {
@@ -99,7 +99,7 @@ struct BreakdownView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     }
                     .padding(.top, 5)
-                    ProgressBarView(percentage: course.other.percent ?? 0, animate: .constant(false))
+                    EvaluationProgressBarView(percentage: course.other.percent ?? 0)
                         .padding(.top, 5)
                 }
                 Group {
@@ -115,7 +115,7 @@ struct BreakdownView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     }
                     .padding(.top, 5)
-                    ProgressBarView(percentage: course.final.percent ?? 0, animate: .constant(false))
+                    EvaluationProgressBarView(percentage: course.final.percent ?? 0)
                         .padding(.top, 5)
                 }
             }

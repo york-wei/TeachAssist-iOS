@@ -22,6 +22,7 @@ struct EvaluationView: View {
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundColor(TAColor.primaryTextColor)
+                            .fixedSize(horizontal: false, vertical: true)
                     }
                     Spacer()
                     Text(viewModel.evaluation.overall != nil ? String(format: "%.1f%%", viewModel.evaluation.overall!) : "Formative")
@@ -35,7 +36,7 @@ struct EvaluationView: View {
                         .background(TAColor.highlightColor)
                         .cornerRadius(5)
                 }
-                ProgressBarView(percentage: viewModel.evaluation.overall ?? 0, animate: .constant(false))
+                EvaluationProgressBarView(percentage: viewModel.evaluation.overall ?? 0)
                     .padding(.top, 5)
                 if viewModel.expanded && !viewModel.editing {
                     Group {
@@ -57,7 +58,7 @@ struct EvaluationView: View {
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
                         .padding(.top, 5)
-                        ProgressBarView(percentage: viewModel.evaluation.knowledge.percent ?? 0, animate: .constant(false))
+                        EvaluationProgressBarView(percentage: viewModel.evaluation.knowledge.percent ?? 0)
                             .padding(.top, 5)
                         HStack {
                             Text("T (\(viewModel.evaluation.thinking.getWeightString()))")
@@ -77,7 +78,7 @@ struct EvaluationView: View {
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
                         .padding(.top, 5)
-                        ProgressBarView(percentage: viewModel.evaluation.thinking.percent ?? 0, animate: .constant(false))
+                        EvaluationProgressBarView(percentage: viewModel.evaluation.thinking.percent ?? 0)
                             .padding(.top, 5)
                         HStack {
                             Text("C (\(viewModel.evaluation.communication.getWeightString()))")
@@ -97,7 +98,7 @@ struct EvaluationView: View {
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
                         .padding(.top, 5)
-                        ProgressBarView(percentage: viewModel.evaluation.communication.percent ?? 0, animate: .constant(false))
+                        EvaluationProgressBarView(percentage: viewModel.evaluation.communication.percent ?? 0)
                             .padding(.top, 5)
                         HStack {
                             Text("A (\(viewModel.evaluation.application.getWeightString()))")
@@ -117,7 +118,7 @@ struct EvaluationView: View {
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
                         .padding(.top, 5)
-                        ProgressBarView(percentage: viewModel.evaluation.application.percent ?? 0, animate: .constant(false))
+                        EvaluationProgressBarView(percentage: viewModel.evaluation.application.percent ?? 0)
                             .padding(.top, 5)
                         HStack {
                             Text("O/F (\(viewModel.evaluation.final.getWeightString()))")
@@ -137,7 +138,15 @@ struct EvaluationView: View {
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
                             .padding(.top, 5)
-                        ProgressBarView(percentage: viewModel.evaluation.final.percent ?? 0, animate: .constant(false))
+                        EvaluationProgressBarView(percentage: viewModel.evaluation.final.percent ?? 0)
+                            .padding(.top, 5)
+                    }
+                    if let feedback = viewModel.evaluation.feedback {
+                        Text(feedback)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(TAColor.primaryTextColor)
+                            .fixedSize(horizontal: false, vertical: true)
                             .padding(.top, 5)
                     }
                 }
@@ -152,6 +161,7 @@ struct EvaluationView: View {
                         .font(.subheadline)
                         .fontWeight(.semibold)
                         .foregroundColor(TAColor.primaryTextColor)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 Spacer()
                 Button(action: {
