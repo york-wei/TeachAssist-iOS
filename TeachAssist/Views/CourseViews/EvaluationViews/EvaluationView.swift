@@ -137,9 +137,9 @@ struct EvaluationView: View {
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
                         }
-                            .padding(.top, 5)
+                        .padding(.top, 5)
                         EvaluationProgressBarView(percentage: viewModel.evaluation.final.percent ?? 0)
-                            .padding(.top, 5)
+                        .padding(.top, 5)
                     }
                     if let feedback = viewModel.evaluation.feedback {
                         Text(feedback)

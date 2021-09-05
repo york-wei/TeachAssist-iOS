@@ -86,7 +86,8 @@ class TAParser {
                 
                 // Evaluation feedback
                 if let feedbackCell = try evaluationsArray[i+1].children().filter({ try !$0.getElementsByAttribute("colspan").isEmpty()}).first,
-                   let feedback = try feedbackCell.getElementsByAttribute("colspan").first()?.text() {
+                   let feedback = try feedbackCell.getElementsByAttribute("colspan").first()?.text(),
+                   !feedback.isEmpty {
                     evaluation.feedback = feedback
                 }
                 
