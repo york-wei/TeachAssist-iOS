@@ -1,30 +1,32 @@
 //
-//  AddEvaluationButtonView.swift
+//  LinkButtonView.swift
 //  TeachAssist
 //
-//  Created by York Wei on 2021-09-04.
+//  Created by York Wei on 2021-09-05.
 //
 
 import SwiftUI
 
-struct AddEvaluationButtonView: View {
+struct LinkButtonView: View {
+    let label: String
     var body: some View {
         ZStack {
             Rectangle()
                 .foregroundColor(TAColor.foregroundColor)
-                .cornerRadius(20)
+                .cornerRadius(10)
                 .shadow(color: TAColor.dropShadowColor, radius: 5, x: 0, y: 2)
-            VStack(alignment: .center, spacing: 10) {
-                Image(systemName: "plus")
-                    .font(.subheadline)
-                    .foregroundColor(TAColor.primaryTextColor)
-                Text("Add Evaluation")
+            HStack {
+                Text(label)
                     .font(.subheadline)
                     .foregroundColor(TAColor.primaryTextColor)
                     .fontWeight(.semibold)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.subheadline)
+                    .foregroundColor(TAColor.primaryTextColor)
             }
             .fixedSize(horizontal: false, vertical: true)
-            .padding([.top, .bottom], 18)
+            .padding([.top, .bottom, .leading, .trailing], 20)
         }
     }
 }

@@ -21,7 +21,7 @@ struct MainView: View {
                 // Top bar
                 HStack(alignment: .center) {
                     Button(action: {
-                        
+                        viewModel.didTapSettings()
                     }) {
                         SmallButtonView(imageName: "line.horizontal.3.decrease")
                     }
@@ -34,7 +34,7 @@ struct MainView: View {
                         .foregroundColor(TAColor.primaryTextColor)
                     Spacer()
                     Button(action: {
-                        
+                        viewModel.didTapLinks()
                     }) {
                         SmallButtonView(imageName: "person")
                     }
@@ -82,6 +82,13 @@ struct MainView: View {
                     self.viewModel.loading = false
                   })
         })
+        .sheet(isPresented: $viewModel.showSettingsView) {
+            Text("settings view")
+        }
+        .sheet(isPresented: $viewModel.showLinksView) {
+            LinksView(show: $viewModel.showLinksView,
+                      viewModel: .init(userState: userState))
+        }
     }
 }
 
@@ -95,6 +102,8 @@ extension MainView {
         var currentError: TAError = TAError.unknownError
         @Published var showCourse: Bool = false
         var currentCourse: Course = Course()
+        @Published var showLinksView: Bool = false
+        @Published var showSettingsView: Bool = false
         
         init(userState: UserState) {
             self.userState = userState
@@ -109,6 +118,16 @@ extension MainView {
                     self.loading = false
                 }
             }
+        }
+        
+        func didTapSettings() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            showSettingsView = true
+        }
+        
+        func didTapLinks() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            showLinksView = true
         }
         
         func didPullToRefresh() {
