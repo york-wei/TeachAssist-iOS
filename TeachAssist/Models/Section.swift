@@ -38,4 +38,19 @@ class Section {
         self.percent = percent
         self.weight = weight
     }
+    
+    func getWeightString() -> String {
+        if let weight = weight,
+           weight > 0 {
+            return String(format: "Weight: %.1f", weight)
+        }
+        return "No Weight"
+    }
+    
+    func getPercentString() -> String {
+        if let percent = percent {
+            return String(format: "%.1f%%", percent)
+        }
+        return "No Mark"
+    }
 }

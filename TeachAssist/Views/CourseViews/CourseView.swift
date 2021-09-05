@@ -16,7 +16,6 @@ enum SelectedTab {
 struct CourseView: View {
     @Binding var show: Bool
     @State var currentOffsetX: CGFloat = 0
-    @State var selectedTab = SelectedTab.evaluations
     @StateObject var viewModel: ViewModel
     
     var body: some View {
@@ -63,7 +62,7 @@ struct CourseView: View {
                     .padding(.top, 10)
             }
             // Picker
-            Picker("Options", selection: $selectedTab) {
+            Picker("Options", selection: $viewModel.selectedTab) {
                 Text("Evaluations")
                     .tag(SelectedTab.evaluations)
                 Text("Trends")
@@ -71,11 +70,14 @@ struct CourseView: View {
                 Text("Breakdown")
                     .tag(SelectedTab.breakdown)
             }
-                .pickerStyle(SegmentedPickerStyle())
-                .animation(.none)
-                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+            .pickerStyle(SegmentedPickerStyle())
+            .animation(.none)
+            .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+            .onReceive([viewModel.selectedTab].publisher.first(), perform: { _ in
+                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            })
             // Selected view
-            switch selectedTab {
+            switch viewModel.selectedTab {
             case .evaluations:
                 VStack {
                     if viewModel.editing {
@@ -99,7 +101,8 @@ struct CourseView: View {
             case .trends:
                 EmptyView()
             case .breakdown:
-                EmptyView()
+                BreakdownView(course: viewModel.getCourse())
+                    .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             }
         }
         .background(TAColor.backgroundColor.ignoresSafeArea())
@@ -139,6 +142,7 @@ struct CourseView: View {
 extension CourseView {
     class ViewModel: ObservableObject {
         @Published var course: Course
+        @Published var selectedTab: SelectedTab = .evaluations
         @Published var editCourse: Course = Course()
         @Published var editing: Bool = false
         @Published var showAddEvaluationView = false
@@ -150,6 +154,7 @@ extension CourseView {
         }
         
         func didTapEdit() {
+            selectedTab = .evaluations
             editing.toggle()
             if editing {
                 editCourse = Course(course: course)

@@ -40,7 +40,7 @@ struct EvaluationView: View {
                 if viewModel.expanded && !viewModel.editing {
                     Group {
                         HStack {
-                            Text("K/U (\(viewModel.getWeight(section: viewModel.evaluation.knowledge)))")
+                            Text("K/U (\(viewModel.evaluation.knowledge.getWeightString()))")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -51,7 +51,7 @@ struct EvaluationView: View {
                                     .fontWeight(.regular)
                                     .foregroundColor(TAColor.primaryTextColor)
                             }
-                            Text(viewModel.getPercent(section: viewModel.evaluation.knowledge))
+                            Text(viewModel.evaluation.knowledge.getPercentString())
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -60,7 +60,7 @@ struct EvaluationView: View {
                         ProgressBarView(percentage: viewModel.evaluation.knowledge.percent ?? 0, animate: .constant(false))
                             .padding(.top, 5)
                         HStack {
-                            Text("T (\(viewModel.getWeight(section: viewModel.evaluation.thinking)))")
+                            Text("T (\(viewModel.evaluation.thinking.getWeightString()))")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -71,7 +71,7 @@ struct EvaluationView: View {
                                     .fontWeight(.regular)
                                     .foregroundColor(TAColor.primaryTextColor)
                             }
-                            Text(viewModel.getPercent(section: viewModel.evaluation.thinking))
+                            Text(viewModel.evaluation.thinking.getPercentString())
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -80,7 +80,7 @@ struct EvaluationView: View {
                         ProgressBarView(percentage: viewModel.evaluation.thinking.percent ?? 0, animate: .constant(false))
                             .padding(.top, 5)
                         HStack {
-                            Text("C (\(viewModel.getWeight(section: viewModel.evaluation.communication)))")
+                            Text("C (\(viewModel.evaluation.communication.getWeightString()))")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -91,7 +91,7 @@ struct EvaluationView: View {
                                     .fontWeight(.regular)
                                     .foregroundColor(TAColor.primaryTextColor)
                             }
-                            Text(viewModel.getPercent(section: viewModel.evaluation.communication))
+                            Text(viewModel.evaluation.communication.getPercentString())
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -100,7 +100,7 @@ struct EvaluationView: View {
                         ProgressBarView(percentage: viewModel.evaluation.communication.percent ?? 0, animate: .constant(false))
                             .padding(.top, 5)
                         HStack {
-                            Text("A (\(viewModel.getWeight(section: viewModel.evaluation.application)))")
+                            Text("A (\(viewModel.evaluation.application.getWeightString()))")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -111,7 +111,7 @@ struct EvaluationView: View {
                                     .fontWeight(.regular)
                                     .foregroundColor(TAColor.primaryTextColor)
                             }
-                            Text(viewModel.getPercent(section: viewModel.evaluation.application))
+                            Text(viewModel.evaluation.application.getPercentString())
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -120,7 +120,7 @@ struct EvaluationView: View {
                         ProgressBarView(percentage: viewModel.evaluation.application.percent ?? 0, animate: .constant(false))
                             .padding(.top, 5)
                         HStack {
-                            Text("O/F (\(viewModel.getWeight(section: viewModel.evaluation.final)))")
+                            Text("O/F (\(viewModel.evaluation.final.getWeightString()))")
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -131,7 +131,7 @@ struct EvaluationView: View {
                                     .fontWeight(.regular)
                                     .foregroundColor(TAColor.primaryTextColor)
                             }
-                            Text(viewModel.getPercent(section: viewModel.evaluation.final))
+                            Text(viewModel.evaluation.final.getPercentString())
                                 .font(.subheadline)
                                 .fontWeight(.regular)
                                 .foregroundColor(TAColor.primaryTextColor)
@@ -198,21 +198,6 @@ extension EvaluationView {
             self.editing = editing
             self.didTapDelete = didTapDelete
             self.didTapEdit = didTapEdit
-        }
-        
-        func getWeight(section: Section) -> String {
-            if let weight = section.weight,
-               weight > 0 {
-                return String(format: "Weight: %.1f", weight)
-            }
-            return "No Weight"
-        }
-        
-        func getPercent(section: Section) -> String {
-            if let percent = section.percent {
-                return String(format: "%.1f%%", percent)
-            }
-            return "No Mark"
         }
         
         func didTapEvaluation() {
