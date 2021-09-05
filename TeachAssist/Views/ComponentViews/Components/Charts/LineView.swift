@@ -66,8 +66,8 @@ public struct LineView: View {
                                  frame: .constant(CGRect(x: 0, y: 0, width: reader.frame(in: .local).width, height: reader.frame(in: .local).height)),
                                  touchLocation: self.$indicatorLocation,
                                  showIndicator: self.$hideHorizontalLines,
-                                 minDataValue: .constant(nil),
-                                 maxDataValue: .constant(nil),
+                                 minDataValue: .constant(self.data.onlyPoints().min() == nil ? nil : self.data.onlyPoints().min()! - 10),
+                                 maxDataValue: .constant(self.data.onlyPoints().max() == nil ? nil : self.data.onlyPoints().max()! + 10),
                                  showBackground: true,
                                  gradient: self.style.gradientColor
                             )
@@ -83,7 +83,7 @@ public struct LineView: View {
                             self.dragLocation = value.location
                             self.indicatorLocation = CGPoint(x: max(value.location.x,0), y: 32)
                             self.opacity = 1
-                            self.closestPoint = self.getClosestDataPoint(toPoint: value.location, width: geometry.frame(in: .local).size.width, height: 240)
+                            self.closestPoint = self.getClosestDataPoint(toPoint: value.location, width: geometry.frame(in: .local).size.width, height: 230)
                             self.hideHorizontalLines = true
                         })
                         .onEnded({ value in
@@ -96,6 +96,7 @@ public struct LineView: View {
                 self.currentDataNumber = data.onlyPoints().last ?? 0
             }
         }
+        .frame(height: 230)
     }
     
     func getClosestDataPoint(toPoint: CGPoint, width:CGFloat, height: CGFloat) -> CGPoint {

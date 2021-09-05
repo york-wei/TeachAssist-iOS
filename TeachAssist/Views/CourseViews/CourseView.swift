@@ -96,7 +96,7 @@ struct CourseView: View {
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             case .trends:
-                TrendView()
+                TrendView(course: viewModel.getCourse())
             case .breakdown:
                 BreakdownView(course: viewModel.getCourse())
                     .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)

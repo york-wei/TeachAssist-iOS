@@ -24,7 +24,7 @@ struct CourseCellView: View {
                                 .font(.subheadline)
                                 .fontWeight(.semibold)
                                 .foregroundColor(TAColor.primaryTextColor)
-                                .lineLimit(1)
+                                .fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                         } else {
                             Text(code)
                                 .font(.subheadline)
