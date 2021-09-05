@@ -125,7 +125,8 @@ struct CourseView: View {
                         }
                     })
         .sheet(isPresented: $viewModel.showAddEvaluationView) {
-            Text("add")
+            AddEvaluationView(show: $viewModel.showAddEvaluationView,
+                              addEvaluation: viewModel.addEvaluation(evaluation:))
         }
         .sheet(isPresented: $viewModel.showEditEvaluationView) {
             Text("edit")
@@ -168,16 +169,16 @@ extension CourseView {
             deleteEvaluation(evaluation: evaluation)
         }
         
-        private func addEvaluation(evaluation: Evaluation) {
+        func addEvaluation(evaluation: Evaluation) {
             getCourse().evaluations.append(evaluation)
             objectWillChange.send()
         }
         
-        private func editEvaluation(evaluation: Evaluation) {
+        func editEvaluation(evaluation: Evaluation) {
             
         }
         
-        private func deleteEvaluation(evaluation: Evaluation) {
+        func deleteEvaluation(evaluation: Evaluation) {
             getCourse().evaluations.removeAll(where: { $0.id == evaluation.id })
             objectWillChange.send()
         }

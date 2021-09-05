@@ -32,4 +32,10 @@ class Section {
         self.weight = section.weight
         self.score = section.score
     }
+    
+    init(type: SectionType, percent: Double, weight: Double) {
+        self.type = type
+        self.percent = percent
+        self.weight = weight
+    }
 }

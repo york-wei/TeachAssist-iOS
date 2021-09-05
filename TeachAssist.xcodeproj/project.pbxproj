@@ -15,6 +15,7 @@
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */; };
 		F32C28C126E42C9F00F3F396 /* AddEvaluationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */; };
+		F32C28C426E44B7200F3F396 /* AddEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -79,6 +80,7 @@
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationView.swift; sourceTree = "<group>"; };
 		F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvaluationButtonView.swift; sourceTree = "<group>"; };
+		F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvaluationView.swift; sourceTree = "<group>"; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,15 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		F32C28C226E44B5B00F3F396 /* EvaluationViews */ = {
+			isa = PBXGroup;
+			children = (
+				F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */,
+				F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */,
+			);
+			path = EvaluationViews;
+			sourceTree = "<group>";
+		};
 		F34E825A26DD98BD00AC8314 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,9 +242,9 @@
 		F34E826726E2718000AC8314 /* CourseViews */ = {
 			isa = PBXGroup;
 			children = (
+				F32C28C226E44B5B00F3F396 /* EvaluationViews */,
 				F34E826C26E2C32300AC8314 /* CourseView.swift */,
 				F34E826826E2719100AC8314 /* CourseCellView.swift */,
-				F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */,
 			);
 			path = CourseViews;
 			sourceTree = "<group>";
@@ -601,6 +612,7 @@
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
 				F34E826D26E2C32300AC8314 /* CourseView.swift in Sources */,
 				F34E826126DD9EC700AC8314 /* RingView.swift in Sources */,
+				F32C28C426E44B7200F3F396 /* AddEvaluationView.swift in Sources */,
 				F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
