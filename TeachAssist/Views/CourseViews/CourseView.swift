@@ -171,6 +171,7 @@ extension CourseView {
         
         func addEvaluation(evaluation: Evaluation) {
             getCourse().evaluations.append(evaluation)
+            getCourse().updateAverageForEstimate()
             objectWillChange.send()
         }
         
@@ -180,6 +181,7 @@ extension CourseView {
         
         func deleteEvaluation(evaluation: Evaluation) {
             getCourse().evaluations.removeAll(where: { $0.id == evaluation.id })
+            getCourse().updateAverageForEstimate()
             objectWillChange.send()
         }
         
