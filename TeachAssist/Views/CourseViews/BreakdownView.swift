@@ -20,7 +20,7 @@ struct BreakdownView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(TAColor.primaryTextColor)
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 10)
                 Group {
                     HStack {
                         Text("K/U (\(course.knowledge.getWeightString()))")

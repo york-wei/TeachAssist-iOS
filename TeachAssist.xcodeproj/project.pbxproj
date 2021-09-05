@@ -18,6 +18,16 @@
 		F32C28C426E44B7200F3F396 /* AddEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */; };
 		F32C28C626E476EE00F3F396 /* EditEvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C526E476EE00F3F396 /* EditEvaluationView.swift */; };
 		F32C28C826E511DC00F3F396 /* BreakdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28C726E511DC00F3F396 /* BreakdownView.swift */; };
+		F32C28D826E52B8300F3F396 /* Path+QuadCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28CF26E52B8200F3F396 /* Path+QuadCurve.swift */; };
+		F32C28D926E52B8300F3F396 /* IndicatorPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D026E52B8200F3F396 /* IndicatorPoint.swift */; };
+		F32C28DA26E52B8300F3F396 /* LineChartViewSwiftUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D126E52B8200F3F396 /* LineChartViewSwiftUI.swift */; };
+		F32C28DB26E52B8300F3F396 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D226E52B8200F3F396 /* Helpers.swift */; };
+		F32C28DC26E52B8300F3F396 /* MagnifierRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D326E52B8200F3F396 /* MagnifierRect.swift */; };
+		F32C28DD26E52B8300F3F396 /* Legend.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D426E52B8300F3F396 /* Legend.swift */; };
+		F32C28DE26E52B8300F3F396 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D526E52B8300F3F396 /* Line.swift */; };
+		F32C28DF26E52B8300F3F396 /* MultiLineChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D626E52B8300F3F396 /* MultiLineChartView.swift */; };
+		F32C28E026E52B8300F3F396 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D726E52B8300F3F396 /* LineView.swift */; };
+		F32C28E226E52CC900F3F396 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E126E52CC900F3F396 /* TrendView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -85,6 +95,16 @@
 		F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEvaluationView.swift; sourceTree = "<group>"; };
 		F32C28C526E476EE00F3F396 /* EditEvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEvaluationView.swift; sourceTree = "<group>"; };
 		F32C28C726E511DC00F3F396 /* BreakdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakdownView.swift; sourceTree = "<group>"; };
+		F32C28CF26E52B8200F3F396 /* Path+QuadCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Path+QuadCurve.swift"; sourceTree = "<group>"; };
+		F32C28D026E52B8200F3F396 /* IndicatorPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndicatorPoint.swift; sourceTree = "<group>"; };
+		F32C28D126E52B8200F3F396 /* LineChartViewSwiftUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChartViewSwiftUI.swift; sourceTree = "<group>"; };
+		F32C28D226E52B8200F3F396 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		F32C28D326E52B8200F3F396 /* MagnifierRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagnifierRect.swift; sourceTree = "<group>"; };
+		F32C28D426E52B8300F3F396 /* Legend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Legend.swift; sourceTree = "<group>"; };
+		F32C28D526E52B8300F3F396 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		F32C28D626E52B8300F3F396 /* MultiLineChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultiLineChartView.swift; sourceTree = "<group>"; };
+		F32C28D726E52B8300F3F396 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		F32C28E126E52CC900F3F396 /* TrendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendView.swift; path = TeachAssist/Views/CourseViews/TrendView.swift; sourceTree = SOURCE_ROOT; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -198,11 +218,28 @@
 		F32C28C226E44B5B00F3F396 /* EvaluationViews */ = {
 			isa = PBXGroup;
 			children = (
+				F32C28E126E52CC900F3F396 /* TrendView.swift */,
 				F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */,
 				F32C28C326E44B7200F3F396 /* AddEvaluationView.swift */,
 				F32C28C526E476EE00F3F396 /* EditEvaluationView.swift */,
 			);
 			path = EvaluationViews;
+			sourceTree = "<group>";
+		};
+		F32C28CE26E52B6500F3F396 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				F32C28D226E52B8200F3F396 /* Helpers.swift */,
+				F32C28D026E52B8200F3F396 /* IndicatorPoint.swift */,
+				F32C28D426E52B8300F3F396 /* Legend.swift */,
+				F32C28D526E52B8300F3F396 /* Line.swift */,
+				F32C28D126E52B8200F3F396 /* LineChartViewSwiftUI.swift */,
+				F32C28D726E52B8300F3F396 /* LineView.swift */,
+				F32C28D326E52B8200F3F396 /* MagnifierRect.swift */,
+				F32C28D626E52B8300F3F396 /* MultiLineChartView.swift */,
+				F32C28CF26E52B8200F3F396 /* Path+QuadCurve.swift */,
+			);
+			path = Charts;
 			sourceTree = "<group>";
 		};
 		F34E825A26DD98BD00AC8314 /* Networking */ = {
@@ -347,6 +384,7 @@
 		F3EA7ABB26A5EA72007FBFCF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F32C28CE26E52B6500F3F396 /* Charts */,
 				F3621861269F457900B40CD1 /* SecureTextField.swift */,
 				F38E065C269F8A40007319AD /* ActivityIndicator.swift */,
 				F34E825826DD964500AC8314 /* RefreshControl.swift */,
@@ -591,10 +629,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F32C28E026E52B8300F3F396 /* LineView.swift in Sources */,
+				F32C28DE26E52B8300F3F396 /* Line.swift in Sources */,
 				F365F35126D4333E0041BCA9 /* String+Helpers.swift in Sources */,
+				F32C28DB26E52B8300F3F396 /* Helpers.swift in Sources */,
 				F375111426D1968400C452DB /* Reachability.swift in Sources */,
+				F32C28D926E52B8300F3F396 /* IndicatorPoint.swift in Sources */,
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
+				F32C28DD26E52B8300F3F396 /* Legend.swift in Sources */,
 				F3EA7ABA26A5EA4F007FBFCF /* TextFieldView.swift in Sources */,
 				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
 				F32C28C826E511DC00F3F396 /* BreakdownView.swift in Sources */,
@@ -604,6 +647,7 @@
 				F34E826926E2719100AC8314 /* CourseCellView.swift in Sources */,
 				F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */,
 				F32C28C126E42C9F00F3F396 /* AddEvaluationButtonView.swift in Sources */,
+				F32C28E226E52CC900F3F396 /* TrendView.swift in Sources */,
 				F3621862269F457900B40CD1 /* SecureTextField.swift in Sources */,
 				F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */,
 				F34E826B26E2791200AC8314 /* ProgressBarView.swift in Sources */,
@@ -616,7 +660,11 @@
 				F38E065B269F86CB007319AD /* LoginButtonView.swift in Sources */,
 				F365F35326D483310041BCA9 /* FetchCourseResponse.swift in Sources */,
 				F365F34726D422180041BCA9 /* TAParser.swift in Sources */,
+				F32C28DC26E52B8300F3F396 /* MagnifierRect.swift in Sources */,
+				F32C28D826E52B8300F3F396 /* Path+QuadCurve.swift in Sources */,
+				F32C28DF26E52B8300F3F396 /* MultiLineChartView.swift in Sources */,
 				F3BA8C032652BB2C00B79F38 /* RootView.swift in Sources */,
+				F32C28DA26E52B8300F3F396 /* LineChartViewSwiftUI.swift in Sources */,
 				F34E826D26E2C32300AC8314 /* CourseView.swift in Sources */,
 				F34E826126DD9EC700AC8314 /* RingView.swift in Sources */,
 				F32C28C426E44B7200F3F396 /* AddEvaluationView.swift in Sources */,

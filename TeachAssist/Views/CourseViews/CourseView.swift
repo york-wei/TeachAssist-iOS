@@ -73,9 +73,6 @@ struct CourseView: View {
             .pickerStyle(SegmentedPickerStyle())
             .animation(.none)
             .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
-            .onReceive([viewModel.selectedTab].publisher.first(), perform: { _ in
-                UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            })
             // Selected view
             switch viewModel.selectedTab {
             case .evaluations:
@@ -99,10 +96,10 @@ struct CourseView: View {
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             case .trends:
-                EmptyView()
+                TrendView()
             case .breakdown:
                 BreakdownView(course: viewModel.getCourse())
-                    .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+                    .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
             }
         }
         .background(TAColor.backgroundColor.ignoresSafeArea())

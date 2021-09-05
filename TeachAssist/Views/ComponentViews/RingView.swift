@@ -26,7 +26,8 @@ struct RingView: View {
                 .hueRotation(.degrees(!animate ? 0 : -45))
                 .animation(Animation.easeInOut(duration: 0.6))
             Text(String(format: "%.1f%%", percentage))
-                .font(.system(size: 26, weight: .bold))
+                .font(.title)
+                .fontWeight(.bold)
                 .foregroundColor(TAColor.primaryTextColor)
                 .redacted(reason: animate ? .placeholder : [])
         }
