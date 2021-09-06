@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import CoreData
+import Firebase
 
 struct RootView: View {
     @StateObject var viewModel: ViewModel
@@ -46,6 +46,7 @@ extension RootView {
         let userState: UserState
         
         init(userState: UserState) {
+            FirebaseApp.configure()
             self.userState = userState
         }
        

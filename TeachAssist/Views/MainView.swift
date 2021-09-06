@@ -86,7 +86,9 @@ struct MainView: View {
             Alert(title: Text(viewModel.currentError.description),
                   message: Text("Your marks could not be updated."),
                   dismissButton: .default(Text("OK")) {
-                    self.viewModel.loading = false
+                    withAnimation {
+                        self.viewModel.loading = false
+                    }
                   })
         })
         .sheet(isPresented: $viewModel.showSettingsView) {
@@ -123,7 +125,9 @@ extension MainView {
             } else {
                 userState.fromLogin = false
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.loading = false
+                    withAnimation {
+                        self.loading = false
+                    }
                 }
             }
         }
@@ -167,10 +171,14 @@ extension MainView {
         }
         
         private func refresh() {
-            loading = true
+            withAnimation {
+                loading = true
+            }
             guard !userState.isDemoUser() else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.loading = false
+                    withAnimation {
+                        self.loading = false
+                    }
                 }
                 return
             }

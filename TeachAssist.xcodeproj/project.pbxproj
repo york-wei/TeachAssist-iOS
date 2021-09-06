@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,11 @@
 		9D0CA4FF3CD821B7A4078D44 /* Pods_TeachAssistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C13CED4F7CA17D7CBB6CC00 /* Pods_TeachAssistTests.framework */; };
 		CD8BC9889167B27DC3198026 /* Pods_TeachAssist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35BF106475FFAEA25BD8B7D3 /* Pods_TeachAssist.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E4A88A848F875A3B2DF96A5B /* Pods_TeachAssist_TeachAssistUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */; };
+		F315696B26E6A01F00B5AE03 /* FirebaseInAppMessaging-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F315696A26E6A01F00B5AE03 /* FirebaseInAppMessaging-Beta */; };
+		F315696D26E6A01F00B5AE03 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F315696C26E6A01F00B5AE03 /* FirebaseAnalytics */; };
+		F315696F26E6A01F00B5AE03 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F315696E26E6A01F00B5AE03 /* FirebaseCrashlytics */; };
+		F315697126E6A01F00B5AE03 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F315697026E6A01F00B5AE03 /* FirebaseRemoteConfig */; };
+		F315697326E6A07D00B5AE03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F315697226E6A07D00B5AE03 /* GoogleService-Info.plist */; };
 		F324C148266B18F000DD8BE1 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F324C147266B18F000DD8BE1 /* LaunchView.swift */; };
 		F325329A2669175B006480DA /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
 		F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */; };
@@ -94,6 +99,7 @@
 		C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeachAssist_TeachAssistUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE54CC16644B267F2EF6A4F9 /* Pods-TeachAssist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist/Pods-TeachAssist.debug.xcconfig"; sourceTree = "<group>"; };
 		DF410B31EF8289123691D060 /* Pods-TeachAssistTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssistTests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssistTests/Pods-TeachAssistTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F315697226E6A07D00B5AE03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F324C147266B18F000DD8BE1 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		F32532992669175B006480DA /* TAConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAConstants.swift; sourceTree = "<group>"; };
 		F32C28BE26E3CC5D00F3F396 /* EvaluationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvaluationView.swift; sourceTree = "<group>"; };
@@ -161,6 +167,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD8BC9889167B27DC3198026 /* Pods_TeachAssist.framework in Frameworks */,
+				F315696F26E6A01F00B5AE03 /* FirebaseCrashlytics in Frameworks */,
+				F315696B26E6A01F00B5AE03 /* FirebaseInAppMessaging-Beta in Frameworks */,
+				F315696D26E6A01F00B5AE03 /* FirebaseAnalytics in Frameworks */,
+				F315697126E6A01F00B5AE03 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +403,7 @@
 				F324C14B266B1B8000DD8BE1 /* Assets */,
 				F3BA8C062652BB2E00B79F38 /* Preview Content */,
 				F3BA8C0E2652BB2E00B79F38 /* Info.plist */,
+				F315697226E6A07D00B5AE03 /* GoogleService-Info.plist */,
 			);
 			path = TeachAssist;
 			sourceTree = "<group>";
@@ -452,6 +463,12 @@
 			dependencies = (
 			);
 			name = TeachAssist;
+			packageProductDependencies = (
+				F315696A26E6A01F00B5AE03 /* FirebaseInAppMessaging-Beta */,
+				F315696C26E6A01F00B5AE03 /* FirebaseAnalytics */,
+				F315696E26E6A01F00B5AE03 /* FirebaseCrashlytics */,
+				F315697026E6A01F00B5AE03 /* FirebaseRemoteConfig */,
+			);
 			productName = TeachAssist;
 			productReference = F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */;
 			productType = "com.apple.product-type.application";
@@ -526,6 +543,9 @@
 				Base,
 			);
 			mainGroup = F3BA8BF42652BB2C00B79F38;
+			packageReferences = (
+				F315696926E6A01F00B5AE03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = F3BA8BFE2652BB2C00B79F38 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -544,6 +564,7 @@
 			files = (
 				F3BA8C082652BB2E00B79F38 /* Preview Assets.xcassets in Resources */,
 				F3BA8C052652BB2E00B79F38 /* Assets.xcassets in Resources */,
+				F315697326E6A07D00B5AE03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1044,6 +1065,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F315696926E6A01F00B5AE03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F315696A26E6A01F00B5AE03 /* FirebaseInAppMessaging-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F315696926E6A01F00B5AE03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseInAppMessaging-Beta";
+		};
+		F315696C26E6A01F00B5AE03 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F315696926E6A01F00B5AE03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F315696E26E6A01F00B5AE03 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F315696926E6A01F00B5AE03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F315697026E6A01F00B5AE03 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F315696926E6A01F00B5AE03 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */ = {
