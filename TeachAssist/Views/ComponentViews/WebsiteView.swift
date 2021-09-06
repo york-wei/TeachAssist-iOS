@@ -17,6 +17,7 @@ struct WebsiteView: View {
             HStack(alignment: .center) {
                 Button(action: {
                     withAnimation {
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         show = false
                     }
                 }) {

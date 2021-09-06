@@ -76,6 +76,7 @@ struct EditEvaluationView: View {
                     // the overall evaluation mark could be updated as well
                     // but there is no point in doing so since its not showed
                     editEvaluation(evaluation)
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     show = false
                 }) {
                     SmallButtonView(imageName: "checkmark")

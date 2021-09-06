@@ -73,6 +73,7 @@ struct AddEvaluationView: View {
                         evaluation.final = Section(type: .final, percent: fPercent, weight: fWeight)
                     }
                     addEvaluation(evaluation)
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     show = false
                 }) {
                     SmallButtonView(imageName: "checkmark")

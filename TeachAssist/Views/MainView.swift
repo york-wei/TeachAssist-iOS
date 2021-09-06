@@ -52,19 +52,18 @@ struct MainView: View {
                         .foregroundColor(TAColor.primaryTextColor)
                         .padding(.top, 10)
                 }
-                VStack {
+                VStack(spacing: 15) {
                     ForEach(viewModel.courses) { course in
                         Button(action: {
                             viewModel.didTapCourse(course: course)
                         }) {
                             CourseCellView(course: course, animate: $viewModel.loading)
                         }
-                        .padding(.bottom, 15)
                         .buttonStyle(TAButtonStyle(scale: course.link == nil ? 1 : 1.02))
                         .disabled(viewModel.loading)
                     }
                 }
-                .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+                .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
             }
             .coordinateSpace(name: "MainScrollViewRefresh")
             
@@ -84,7 +83,8 @@ struct MainView: View {
                   })
         })
         .sheet(isPresented: $viewModel.showSettingsView) {
-            Text("settings view")
+            SettingsView(show: $viewModel.showSettingsView,
+                         viewModel: .init(userState: userState))
         }
         .sheet(isPresented: $viewModel.showLinksView) {
             LinksView(show: $viewModel.showLinksView,

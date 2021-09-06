@@ -38,6 +38,22 @@ class UserState: ObservableObject {
     }() {
         didSet {
             UserDefaults.standard.set(interfaceTheme.rawValue, forKey: "INTERFACE_THEME")
+            updateInterfaceTheme()
+        }
+    }
+    
+    init() {
+        updateInterfaceTheme()
+    }
+    
+    private func updateInterfaceTheme() {
+        switch interfaceTheme {
+        case .system:
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .unspecified
+        case .light:
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .light
+        case .dark:
+            UIApplication.shared.windows.first?.overrideUserInterfaceStyle = .dark
         }
     }
     
@@ -47,4 +63,15 @@ enum InterfaceTheme: Int {
     case system
     case light
     case dark
+    
+    var name: String {
+        switch self {
+        case .system:
+            return "System"
+        case .light:
+            return "Light"
+        case .dark:
+            return "Dark"
+        }
+    }
 }

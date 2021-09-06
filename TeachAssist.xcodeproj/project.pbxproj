@@ -29,8 +29,9 @@
 		F32C28E026E52B8300F3F396 /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28D726E52B8300F3F396 /* LineView.swift */; };
 		F32C28E226E52CC900F3F396 /* TrendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E126E52CC900F3F396 /* TrendView.swift */; };
 		F32C28E426E5817100F3F396 /* LinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E326E5817100F3F396 /* LinksView.swift */; };
-		F32C28E726E5834A00F3F396 /* LinkButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E626E5834A00F3F396 /* LinkButtonView.swift */; };
+		F32C28E726E5834A00F3F396 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E626E5834A00F3F396 /* MenuButtonView.swift */; };
 		F32C28E926E5A37400F3F396 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E826E5A37400F3F396 /* WebsiteView.swift */; };
+		F32C28EB26E5B15100F3F396 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28EA26E5B15100F3F396 /* SettingsView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -109,8 +110,9 @@
 		F32C28D726E52B8300F3F396 /* LineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		F32C28E126E52CC900F3F396 /* TrendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrendView.swift; path = TeachAssist/Views/CourseViews/TrendView.swift; sourceTree = SOURCE_ROOT; };
 		F32C28E326E5817100F3F396 /* LinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinksView.swift; sourceTree = "<group>"; };
-		F32C28E626E5834A00F3F396 /* LinkButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkButtonView.swift; sourceTree = "<group>"; };
+		F32C28E626E5834A00F3F396 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		F32C28E826E5A37400F3F396 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
+		F32C28EA26E5B15100F3F396 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				F32C28E326E5817100F3F396 /* LinksView.swift */,
+				F32C28EA26E5B15100F3F396 /* SettingsView.swift */,
 			);
 			path = MenuViews;
 			sourceTree = "<group>";
@@ -322,7 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				F32C28C026E42C9F00F3F396 /* AddEvaluationButtonView.swift */,
-				F32C28E626E5834A00F3F396 /* LinkButtonView.swift */,
+				F32C28E626E5834A00F3F396 /* MenuButtonView.swift */,
 				F38E065A269F86CB007319AD /* LoginButtonView.swift */,
 				F34E826226E152D800AC8314 /* SmallButtonView.swift */,
 				F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */,
@@ -655,6 +658,7 @@
 				F3BA8C0D2652BB2E00B79F38 /* TeachAssist.xcdatamodeld in Sources */,
 				F32C28E426E5817100F3F396 /* LinksView.swift in Sources */,
 				9681D7152652DE6C003F7E31 /* UserState.swift in Sources */,
+				F32C28EB26E5B15100F3F396 /* SettingsView.swift in Sources */,
 				F32C28DD26E52B8300F3F396 /* Legend.swift in Sources */,
 				F3EA7ABA26A5EA4F007FBFCF /* TextFieldView.swift in Sources */,
 				F325329A2669175B006480DA /* TAConstants.swift in Sources */,
@@ -671,7 +675,7 @@
 				F34E826B26E2791200AC8314 /* ProgressBarView.swift in Sources */,
 				F32C28BF26E3CC5D00F3F396 /* EvaluationView.swift in Sources */,
 				F32C28E926E5A37400F3F396 /* WebsiteView.swift in Sources */,
-				F32C28E726E5834A00F3F396 /* LinkButtonView.swift in Sources */,
+				F32C28E726E5834A00F3F396 /* MenuButtonView.swift in Sources */,
 				F34E826326E152D800AC8314 /* SmallButtonView.swift in Sources */,
 				F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */,
 				F365F34D26D425350041BCA9 /* Evaluation.swift in Sources */,

@@ -148,6 +148,7 @@ extension CourseView {
         }
         
         func didTapEdit() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             selectedTab = .evaluations
             editing.toggle()
             if editing {
@@ -160,6 +161,7 @@ extension CourseView {
         }
         
         func didTapAddEvaluation() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             showAddEvaluationView = true
         }
         

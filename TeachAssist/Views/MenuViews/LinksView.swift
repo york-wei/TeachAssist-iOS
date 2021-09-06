@@ -54,6 +54,7 @@ struct LinksView: View {
                 // Top bar
                 HStack(alignment: .center) {
                     Button(action: {
+                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                         show = false
                     }) {
                         SmallButtonView(imageName: "xmark")
@@ -74,15 +75,24 @@ struct LinksView: View {
                 .padding(.top, 40)
                 .padding([.trailing, .leading], TAPadding.viewEdgePadding)
                 
-                VStack(spacing: 15) {
-                    ForEach([LinkSelection.teachAssist, LinkSelection.myBlueprint, LinkSelection.moodle, LinkSelection.yrdsbTwitter]) { linkSelection in
-                        Button(action: {
-                            viewModel.didTapLink(selection: linkSelection)
-                        }) {
-                            LinkButtonView(label: linkSelection.name)
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(TAColor.foregroundColor)
+                        .cornerRadius(20)
+                        .shadow(color: TAColor.dropShadowColor, radius: 5, x: 0, y: 2)
+                    VStack {
+                        ForEach([LinkSelection.teachAssist, LinkSelection.myBlueprint, LinkSelection.moodle, LinkSelection.yrdsbTwitter]) { linkSelection in
+                            Button(action: {
+                                viewModel.didTapLink(selection: linkSelection)
+                            }) {
+                                ArrowButtonView(label: linkSelection.name)
+                            }
+                            if linkSelection != .yrdsbTwitter {
+                                Divider()
+                            }
                         }
-                        .buttonStyle(TAButtonStyle(scale: 1.02))
                     }
+                    .padding([.top, .bottom], 10)
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             }
@@ -109,6 +119,7 @@ extension LinksView {
         }
         
         func didTapLink(selection: LinkSelection) {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             currentSelection = selection
             withAnimation {
                 showWebsiteView = true
