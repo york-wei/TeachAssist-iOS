@@ -62,7 +62,7 @@ struct SettingsView: View {
                         }
                         Divider()
                         Button(action: {
-                            
+                            viewModel.didTapAboutButton()
                         }) {
                             ArrowButtonView(label: "About")
                         }
@@ -72,11 +72,16 @@ struct SettingsView: View {
                         }) {
                             LogOutButtonView()
                         }
-                        
                     }
                     .padding([.top, .bottom], 10)
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
+            }
+            
+            if viewModel.showAboutView {
+                AboutView(show: $viewModel.showAboutView)
+                    .transition(.move(edge: .trailing))
+                    .zIndex(1)
             }
         }
         .ignoresSafeArea()
@@ -87,6 +92,7 @@ struct SettingsView: View {
 extension SettingsView {
     class ViewModel: ObservableObject {
         let userState: UserState
+        @Published var showAboutView = false
         
         init(userState: UserState) {
             self.userState = userState
@@ -108,6 +114,13 @@ extension SettingsView {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             if let url = URL(string: "itms-apps://itunes.apple.com/app/id1479482556") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        func didTapAboutButton() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            withAnimation {
+                showAboutView = true
             }
         }
         

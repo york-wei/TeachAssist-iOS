@@ -26,7 +26,7 @@ struct LoginView: View {
                 .foregroundColor(TAColor.primaryTextColor)
             Text("For YRDSB")
                 .font(.subheadline)
-                .fontWeight(.regular)
+                .fontWeight(.semibold)
                 .foregroundColor(TAColor.secondaryTextColor)
                 .padding(3)
             TextFieldView(viewModel: .init(imageName: "person.fill", title: "Student Number", isSecure: false, text: $viewModel.username))

@@ -32,6 +32,7 @@
 		F32C28E726E5834A00F3F396 /* MenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E626E5834A00F3F396 /* MenuButtonView.swift */; };
 		F32C28E926E5A37400F3F396 /* WebsiteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28E826E5A37400F3F396 /* WebsiteView.swift */; };
 		F32C28EB26E5B15100F3F396 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28EA26E5B15100F3F396 /* SettingsView.swift */; };
+		F32C28EF26E5E13300F3F396 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32C28EE26E5E13300F3F396 /* AboutView.swift */; };
 		F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E7A7126D6CD6E007819B7 /* MainView.swift */; };
 		F34E825926DD964500AC8314 /* RefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E825826DD964500AC8314 /* RefreshControl.swift */; };
 		F34E826126DD9EC700AC8314 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34E826026DD9EC700AC8314 /* RingView.swift */; };
@@ -113,6 +114,7 @@
 		F32C28E626E5834A00F3F396 /* MenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuButtonView.swift; sourceTree = "<group>"; };
 		F32C28E826E5A37400F3F396 /* WebsiteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebsiteView.swift; sourceTree = "<group>"; };
 		F32C28EA26E5B15100F3F396 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F32C28EE26E5E13300F3F396 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F33E7A7126D6CD6E007819B7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		F34E825826DD964500AC8314 /* RefreshControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshControl.swift; sourceTree = "<group>"; };
 		F34E826026DD9EC700AC8314 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
@@ -254,10 +256,28 @@
 		F32C28E526E5817B00F3F396 /* MenuViews */ = {
 			isa = PBXGroup;
 			children = (
-				F32C28E326E5817100F3F396 /* LinksView.swift */,
-				F32C28EA26E5B15100F3F396 /* SettingsView.swift */,
+				F32C28EC26E5E10700F3F396 /* LinksViews */,
+				F32C28ED26E5E11C00F3F396 /* SettingsViews */,
 			);
 			path = MenuViews;
+			sourceTree = "<group>";
+		};
+		F32C28EC26E5E10700F3F396 /* LinksViews */ = {
+			isa = PBXGroup;
+			children = (
+				F32C28E326E5817100F3F396 /* LinksView.swift */,
+				F32C28E826E5A37400F3F396 /* WebsiteView.swift */,
+			);
+			path = LinksViews;
+			sourceTree = "<group>";
+		};
+		F32C28ED26E5E11C00F3F396 /* SettingsViews */ = {
+			isa = PBXGroup;
+			children = (
+				F32C28EA26E5B15100F3F396 /* SettingsView.swift */,
+				F32C28EE26E5E13300F3F396 /* AboutView.swift */,
+			);
+			path = SettingsViews;
 			sourceTree = "<group>";
 		};
 		F34E825A26DD98BD00AC8314 /* Networking */ = {
@@ -330,7 +350,6 @@
 				F34E826226E152D800AC8314 /* SmallButtonView.swift */,
 				F3EA7AB926A5EA4F007FBFCF /* TextFieldView.swift */,
 				F34E826026DD9EC700AC8314 /* RingView.swift */,
-				F32C28E826E5A37400F3F396 /* WebsiteView.swift */,
 				F3EA7ABB26A5EA72007FBFCF /* Components */,
 				F34E826A26E2791200AC8314 /* ProgressBarView.swift */,
 			);
@@ -692,6 +711,7 @@
 				F34E826D26E2C32300AC8314 /* CourseView.swift in Sources */,
 				F34E826126DD9EC700AC8314 /* RingView.swift in Sources */,
 				F32C28C426E44B7200F3F396 /* AddEvaluationView.swift in Sources */,
+				F32C28EF26E5E13300F3F396 /* AboutView.swift in Sources */,
 				F33E7A7226D6CD6E007819B7 /* MainView.swift in Sources */,
 				F3716937266C221C00A350EB /* LoginView.swift in Sources */,
 				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
@@ -864,7 +884,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkwei.TeachAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -888,7 +908,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.yorkwei.TeachAssist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

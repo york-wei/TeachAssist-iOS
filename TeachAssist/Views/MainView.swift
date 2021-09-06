@@ -53,14 +53,21 @@ struct MainView: View {
                         .padding(.top, 10)
                 }
                 VStack(spacing: 15) {
-                    ForEach(viewModel.courses) { course in
-                        Button(action: {
-                            viewModel.didTapCourse(course: course)
-                        }) {
-                            CourseCellView(course: course, animate: $viewModel.loading)
+                    if viewModel.courses.count == 0 {
+                        Text("No Courses Available")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(TAColor.primaryTextColor)
+                    } else {
+                        ForEach(viewModel.courses) { course in
+                            Button(action: {
+                                viewModel.didTapCourse(course: course)
+                            }) {
+                                CourseCellView(course: course, animate: $viewModel.loading)
+                            }
+                            .buttonStyle(TAButtonStyle(scale: course.link == nil ? 1 : 1.02))
+                            .disabled(viewModel.loading)
                         }
-                        .buttonStyle(TAButtonStyle(scale: course.link == nil ? 1 : 1.02))
-                        .disabled(viewModel.loading)
                     }
                 }
                 .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)

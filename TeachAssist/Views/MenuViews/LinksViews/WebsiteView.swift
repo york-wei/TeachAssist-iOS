@@ -36,8 +36,8 @@ struct WebsiteView: View {
                 }
                 .opacity(0)
             }
-                .padding(.top, 40)
-                .padding([.trailing, .leading], TAPadding.viewEdgePadding)
+            .padding(.top, 40)
+            .padding([.trailing, .leading], TAPadding.viewEdgePadding)
             WebView(linkSelection: linkSelection, userState: userState)
                 .padding(.top, TAPadding.viewEdgePadding)
                 .frame(maxHeight: .infinity)
