@@ -25,10 +25,7 @@ struct CourseView: View {
                 Button(action: {
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                     withAnimation {
-                        currentOffsetX = UIScreen.main.bounds.width
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                            self.show = false
-                        }
+                        self.show = false
                     }
                 }) {
                     SmallButtonView(imageName: "chevron.backward")

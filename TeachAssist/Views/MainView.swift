@@ -72,6 +72,7 @@ struct MainView: View {
             if viewModel.showCourse {
                 CourseView(show: $viewModel.showCourse, viewModel: .init(course: viewModel.currentCourse))
                     .transition(.move(edge: .trailing))
+                    .zIndex(1)
             }
         }
         .ignoresSafeArea()

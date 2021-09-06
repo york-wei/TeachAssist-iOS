@@ -7,11 +7,41 @@
 
 import SwiftUI
 
-enum LinkSelection {
+enum LinkSelection: Identifiable {
     case teachAssist
     case myBlueprint
     case moodle
     case yrdsbTwitter
+    
+    var id: UUID {
+        return UUID()
+    }
+    
+    var name: String {
+        switch self {
+        case .teachAssist:
+            return "TeachAssist Website"
+        case .myBlueprint:
+            return "My Blueprint"
+        case .moodle:
+            return "Moodle"
+        case .yrdsbTwitter:
+            return "YRDSB Twitter"
+        }
+    }
+    
+    var url: URL {
+        switch self {
+        case .teachAssist:
+            return URL(string: "https://ta.yrdsb.ca/live/m/index.php?error_message=0")!
+        case .myBlueprint:
+            return URL(string: "https://mypathwayplanner.yrdsb.ca/LoginFormIdentityProvider/Login.aspx?ReturnUrl=%2fLoginFormIdentityProvider%2fDefault.aspx")!
+        case .moodle:
+            return URL(string: "https://moodle2.yrdsb.ca/login/index.php")!
+        case .yrdsbTwitter:
+            return URL(string: "https://twitter.com/yrdsb")!
+        }
+    }
 }
 
 struct LinksView: View {
@@ -45,41 +75,22 @@ struct LinksView: View {
                 .padding([.trailing, .leading], TAPadding.viewEdgePadding)
                 
                 VStack(spacing: 15) {
-                    Button(action: {
-                        viewModel.didTapLink(selection: .teachAssist)
-                    }) {
-                        LinkButtonView(label: "TeachAssist Website")
+                    ForEach([LinkSelection.teachAssist, LinkSelection.myBlueprint, LinkSelection.moodle, LinkSelection.yrdsbTwitter]) { linkSelection in
+                        Button(action: {
+                            viewModel.didTapLink(selection: linkSelection)
+                        }) {
+                            LinkButtonView(label: linkSelection.name)
+                        }
+                        .buttonStyle(TAButtonStyle(scale: 1.02))
                     }
-                    .buttonStyle(TAButtonStyle(scale: 1.02))
-                    Button(action: {
-                        viewModel.didTapLink(selection: .myBlueprint)
-                    }) {
-                        LinkButtonView(label: "My Blueprint")
-                    }
-                    .buttonStyle(TAButtonStyle(scale: 1.02))
-                    Button(action: {
-                        viewModel.didTapLink(selection: .moodle)
-                    }) {
-                        LinkButtonView(label: "Moodle")
-                    }
-                    .buttonStyle(TAButtonStyle(scale: 1.02))
-                    Button(action: {
-                        viewModel.didTapLink(selection: .yrdsbTwitter)
-                    }) {
-                        LinkButtonView(label: "YRDSB Twitter")
-                    }
-                    .buttonStyle(TAButtonStyle(scale: 1.02))
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             }
             
             if viewModel.showWebsiteView {
-                VStack {
-                    HStack { Spacer() }
-                    Spacer()
-                }
-                .transition(.move(edge: .trailing))
-                .background(Color.red)
+                WebsiteView(show: $viewModel.showWebsiteView, linkSelection: viewModel.currentSelection, userState: viewModel.userState)
+                    .transition(.move(edge: .trailing))
+                    .zIndex(1)
             }
         }
         .ignoresSafeArea()
