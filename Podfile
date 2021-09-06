@@ -6,7 +6,6 @@ target 'TeachAssist' do
   use_frameworks!
 
   # Pods for TeachAssist
-  pod 'lottie-ios'
   pod 'SwiftKeychainWrapper'
   pod 'SwiftSoup'
 
