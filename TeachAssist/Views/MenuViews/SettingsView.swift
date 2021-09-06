@@ -68,7 +68,7 @@ struct SettingsView: View {
                         }
                         Divider()
                         Button(action: {
-                            
+                            viewModel.didTapLogoutButton()
                         }) {
                             LogOutButtonView()
                         }
@@ -109,6 +109,12 @@ extension SettingsView {
             if let url = URL(string: "itms-apps://itunes.apple.com/app/id1479482556") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
+        }
+        
+        func didTapLogoutButton() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            PersistenceController.shared.wipeCourses()
+            userState.logOutUser()
         }
         
         

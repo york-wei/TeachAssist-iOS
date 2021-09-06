@@ -83,13 +83,20 @@ struct CourseView: View {
                         .buttonStyle(TAButtonStyle(scale: 1.02))
                         .padding(.bottom, 15)
                     }
-                    ForEach(viewModel.getCourse().evaluations.reversed()) { evaluation in
-                        EvaluationView(viewModel: .init(evaluation: evaluation,
-                                                        editing: viewModel.editing,
-                                                        didTapDelete: viewModel.didTapDeleteEvaluation(evaluation:),
-                                                        didTapEdit: viewModel.didTapEditEvaluation(evaluation:)))
+                    if viewModel.getCourse().evaluations.count == 0 {
+                        Text("No Evaluations Available")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundColor(TAColor.primaryTextColor)
+                    } else {
+                        ForEach(viewModel.getCourse().evaluations.reversed()) { evaluation in
+                            EvaluationView(viewModel: .init(evaluation: evaluation,
+                                                            editing: viewModel.editing,
+                                                            didTapDelete: viewModel.didTapDeleteEvaluation(evaluation:),
+                                                            didTapEdit: viewModel.didTapEditEvaluation(evaluation:)))
+                        }
+                        .padding(.bottom, 15)
                     }
-                    .padding(.bottom, 15)
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             case .trends:

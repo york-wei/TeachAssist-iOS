@@ -57,6 +57,13 @@ class UserState: ObservableObject {
         }
     }
     
+    func logOutUser() {
+        username = ""
+        password = ""
+        interfaceTheme = .system
+        isLoggedIn = false
+    }
+    
 }
 
 enum InterfaceTheme: Int {
