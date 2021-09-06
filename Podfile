@@ -8,12 +8,6 @@ target 'TeachAssist' do
   # Pods for TeachAssist
   pod 'SwiftKeychainWrapper'
   pod 'SwiftSoup'
-  
-  # Firebase pods
-  pod 'Firebase/Analytics'
-  pod 'Firebase/Crashlytics'
-  pod 'Firebase/InAppMessaging'
-  pod 'Firebase/RemoteConfig'
 
   target 'TeachAssistTests' do
     inherit! :search_paths
