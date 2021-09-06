@@ -56,7 +56,7 @@ struct SettingsView: View {
                         }
                         Divider()
                         Button(action: {
-                            
+                            viewModel.didTapReportBugButton()
                         }) {
                             ArrowButtonView(label: "Report A Bug")
                         }
@@ -113,6 +113,13 @@ extension SettingsView {
         func didTapRateInAppStoreButton() {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             if let url = URL(string: "itms-apps://itunes.apple.com/app/id1479482556") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        
+        func didTapReportBugButton() {
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            if let url = URL(string: "https://forms.gle/uLMdy6KK1iofhbfT8") {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
