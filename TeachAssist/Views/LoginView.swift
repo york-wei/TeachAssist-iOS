@@ -94,6 +94,16 @@ extension LoginView {
                 self.isLoading = true
                 self.showError = false
             }
+            guard !userState.isDemoUser(username: username) else {
+                PersistenceController.shared.saveCourses(courses: Demo.demoCourses)
+                userState.username = username
+                userState.password = password
+                userState.fromLogin = true
+                withAnimation {
+                    userState.isLoggedIn = true
+                }
+                return
+            }
             TAService.shared.authenticateStudent(username: username, password: password, completion: { result in
                 switch result {
                 case .failure(let authenticationError):
@@ -151,7 +161,9 @@ extension LoginView {
                         self.userState.username = self.username
                         self.userState.password = self.password
                         self.userState.fromLogin = true
-                        self.userState.isLoggedIn = true
+                        withAnimation {
+                            self.userState.isLoggedIn = true
+                        }
                     }
                 }
             } catch let error {

@@ -120,6 +120,10 @@ extension LinksView {
         
         func didTapLink(selection: LinkSelection) {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+            guard !userState.isDemoUser() else {
+                UIApplication.shared.open(selection.url, options: [:], completionHandler: nil)
+                return
+            }
             currentSelection = selection
             withAnimation {
                 showWebsiteView = true

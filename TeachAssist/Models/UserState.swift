@@ -57,6 +57,13 @@ class UserState: ObservableObject {
         }
     }
     
+    func isDemoUser(username: String? = nil) -> Bool {
+        guard let username = username else {
+            return self.username == Demo.username
+        }
+        return username == Demo.username
+    }
+    
     func logOutUser() {
         username = ""
         password = ""

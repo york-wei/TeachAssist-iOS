@@ -168,6 +168,12 @@ extension MainView {
         
         private func refresh() {
             loading = true
+            guard !userState.isDemoUser() else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.loading = false
+                }
+                return
+            }
             TAService.shared.authenticateStudent(username: userState.username, password: userState.password, completion: { result in
                 switch result {
                 case .failure(let authenticationError):

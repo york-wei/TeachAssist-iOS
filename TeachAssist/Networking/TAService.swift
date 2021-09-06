@@ -42,14 +42,15 @@ class TAService {
             // Check data
             guard let dataString = String(data: data, encoding: .utf8),
                   let cookies = HTTPCookieStorage.shared.cookies,
-                  cookies.count >= 2 else {
+                  let sessionTokenIndex = cookies.firstIndex(where: ({ $0.name == "session_token" })),
+                  let studentIdIndex = cookies.firstIndex(where: ({ $0.name == "student_id" })) else {
                 completion(.failure(.badRequest))
                 return
             }
             
             completion(.success(AuthenticationResponse(dataString: dataString,
-                                                       sessionToken: cookies[0].value,
-                                                       studentId: cookies[1].value)))
+                                                       sessionToken: cookies[sessionTokenIndex].value,
+                                                       studentId: cookies[studentIdIndex].value)))
         }.resume()
     }
     

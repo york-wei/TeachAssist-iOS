@@ -35,6 +35,19 @@ class Evaluation: ObservableObject, Identifiable {
         self.feedback = evaluation.feedback
     }
     
+    init(name: String?, knowledge: Section, thinking: Section, communication: Section,
+         application: Section, other: Section, final: Section, overall: Double?, feedback: String?) {
+        self.name = name
+        self.knowledge = knowledge
+        self.thinking = thinking
+        self.communication = communication
+        self.application = application
+        self.other = other
+        self.final = final
+        self.overall = overall
+        self.feedback = feedback
+    }
+    
     func getSection(type: SectionType) -> Section {
         switch type {
         case .knowledge:

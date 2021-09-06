@@ -45,6 +45,24 @@ class Course: ObservableObject, Identifiable, Equatable {
         self.final = Section(section: course.final)
     }
     
+    init(code: String?, name: String?, period: String?, room: String?, link: String?,
+         evaluations: [Evaluation], average: Double?, knowledge: Section, thinking: Section,
+         communication: Section, application: Section, other: Section, final: Section) {
+        self.code = code
+        self.name = name
+        self.period = period
+        self.room = room
+        self.link = link
+        self.evaluations = evaluations
+        self.average = average
+        self.knowledge = knowledge
+        self.thinking = thinking
+        self.communication = communication
+        self.application = application
+        self.other = other
+        self.final = final
+    }
+    
     func calculateAverage(needsPrediction: Bool) {
         // If an average is already parsed from the course list page then no calculation is needed
         if average != nil { return }
