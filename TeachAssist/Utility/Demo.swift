@@ -15,7 +15,7 @@ class Demo {
 
 extension Demo {
     static private func getDemoCourses() -> [Course] {
-        let course1 = Course(code: "MCV4U1-05", name: "Calculus and Vectors", period: "1", room: "335", link: "demo", evaluations: getDemoEvaluations([95.4, 100, 89, 98]), average: 98.5, knowledge: demoKnowledge, thinking: demoThinking, communication: demoCommunication, application: demoApplication, other: demoOther, final: demoFinal)
+        let course1 = Course(code: "MCV4U1-05", name: "Calculus and Vectors", period: "1", room: "335", link: "demo", evaluations: getDemoEvaluations([84.5, 100, 89, 98]), average: 95.2, knowledge: demoKnowledge, thinking: demoThinking, communication: demoCommunication, application: demoApplication, other: demoOther, final: demoFinal)
         let course2 = Course(code: "ENG4U1-03", name: "English", period: "2", room: "303", link: "demo", evaluations: getDemoEvaluations([80.4, 83.3, 89.3, 98]), average: 94.5, knowledge: demoKnowledge, thinking: demoThinking, communication: demoCommunication, application: demoApplication, other: demoOther, final: demoFinal)
         let course3 = Course(code: "ICS4U1-02", name: "Computer Science", period: "3", room: "233", link: "demo", evaluations: getDemoEvaluations([99.4, 100, 89, 95.3]), average: 99.3, knowledge: demoKnowledge, thinking: demoThinking, communication: demoCommunication, application: demoApplication, other: demoOther, final: demoFinal)
         let course4 = Course(code: "AMS4M1-01", name: "Music - Repertoire", period: "4", room: "102", link: nil, evaluations: getDemoEvaluations([]), average: nil, knowledge: demoKnowledge, thinking: demoThinking, communication: demoCommunication, application: demoApplication, other: demoOther, final: demoFinal)
