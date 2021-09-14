@@ -51,6 +51,7 @@ struct MainView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(TAColor.primaryTextColor)
                         .padding(.top, 10)
+                        .redacted(reason: viewModel.loading ? .placeholder : [])
                 }
                 VStack(spacing: 15) {
                     if viewModel.courses.count == 0 {
