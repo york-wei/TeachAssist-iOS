@@ -104,7 +104,7 @@ struct LinksView: View {
             }
         }
         .ignoresSafeArea()
-        .background(TAColor.backgroundColor)
+        .background(TAColor.backgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
 

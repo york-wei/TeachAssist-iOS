@@ -80,6 +80,15 @@ struct MainView: View {
                     .transition(.move(edge: .trailing))
                     .zIndex(1)
             }
+            
+            VStack {}.sheet(isPresented: $viewModel.showSettingsView) {
+                SettingsView(show: $viewModel.showSettingsView,
+                             viewModel: .init(userState: userState))
+            }
+            VStack {}.sheet(isPresented: $viewModel.showLinksView) {
+                LinksView(show: $viewModel.showLinksView,
+                          viewModel: .init(userState: userState))
+            }
         }
         .ignoresSafeArea()
         .alert(isPresented: $viewModel.showError, content: {
@@ -91,14 +100,6 @@ struct MainView: View {
                     }
                   })
         })
-        .sheet(isPresented: $viewModel.showSettingsView) {
-            SettingsView(show: $viewModel.showSettingsView,
-                         viewModel: .init(userState: userState))
-        }
-        .sheet(isPresented: $viewModel.showLinksView) {
-            LinksView(show: $viewModel.showLinksView,
-                      viewModel: .init(userState: userState))
-        }
     }
 }
 

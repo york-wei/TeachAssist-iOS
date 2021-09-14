@@ -105,6 +105,15 @@ struct CourseView: View {
                 BreakdownView(course: viewModel.getCourse())
                     .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
             }
+            VStack {}.sheet(isPresented: $viewModel.showAddEvaluationView) {
+                AddEvaluationView(show: $viewModel.showAddEvaluationView,
+                                  addEvaluation: viewModel.addEvaluation(evaluation:))
+            }
+            VStack {}.sheet(isPresented: $viewModel.showEditEvaluationView) {
+                EditEvaluationView(show: $viewModel.showEditEvaluationView,
+                                   evaluation: viewModel.evaluationForEditing,
+                                   editEvaluation: viewModel.editEvaluation(evaluation:))
+            }
         }
         .background(TAColor.backgroundColor.ignoresSafeArea())
         .offset(x: currentOffsetX)
@@ -128,15 +137,6 @@ struct CourseView: View {
                             }
                         }
                     })
-        .sheet(isPresented: $viewModel.showAddEvaluationView) {
-            AddEvaluationView(show: $viewModel.showAddEvaluationView,
-                              addEvaluation: viewModel.addEvaluation(evaluation:))
-        }
-        .sheet(isPresented: $viewModel.showEditEvaluationView) {
-            EditEvaluationView(show: $viewModel.showEditEvaluationView,
-                               evaluation: viewModel.evaluationForEditing,
-                               editEvaluation: viewModel.editEvaluation(evaluation:))
-        }
     }
 }
 
