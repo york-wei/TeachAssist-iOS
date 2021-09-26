@@ -244,6 +244,7 @@ extension MainView {
                     DispatchQueue.main.async {
                         PersistenceController.shared.saveCourses(courses: newCourses)
                         self.courses = newCourses
+                        self.updateOverallAverage()
                         withAnimation {
                             self.loading = false
                         }
