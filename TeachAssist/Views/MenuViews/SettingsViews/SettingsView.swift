@@ -12,7 +12,7 @@ struct SettingsView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        ZStack {
+        NavigationView {
             ScrollView(showsIndicators: false) {
                 // Top bar
                 HStack(alignment: .center) {
@@ -61,11 +61,12 @@ struct SettingsView: View {
                             ArrowButtonView(label: "Report A Bug")
                         }
                         Divider()
-                        Button(action: {
-                            viewModel.didTapAboutButton()
-                        }) {
+                        NavigationLink(destination: AboutView()) {
                             ArrowButtonView(label: "About")
                         }
+                        .simultaneousGesture(TapGesture().onEnded {
+                            viewModel.didTapAboutButton()
+                        })
                         Divider()
                         Button(action: {
                             viewModel.didTapLogoutButton()
@@ -77,22 +78,16 @@ struct SettingsView: View {
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             }
-            
-            if viewModel.showAboutView {
-                AboutView(show: $viewModel.showAboutView)
-                    .transition(.move(edge: .trailing))
-                    .zIndex(1)
-            }
+            .navigationBarHidden(true)
+            .background(TAColor.backgroundColor.edgesIgnoringSafeArea(.all))
         }
         .ignoresSafeArea()
-        .background(TAColor.backgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
 
 extension SettingsView {
     class ViewModel: ObservableObject {
         let userState: UserState
-        @Published var showAboutView = false
         
         init(userState: UserState) {
             self.userState = userState
@@ -126,9 +121,6 @@ extension SettingsView {
         
         func didTapAboutButton() {
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-            withAnimation {
-                showAboutView = true
-            }
         }
         
         func didTapLogoutButton() {

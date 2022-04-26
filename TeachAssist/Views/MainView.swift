@@ -12,7 +12,7 @@ struct MainView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        ZStack {
+        NavigationView {
             // MARK: - Main Course List
             ScrollView(showsIndicators: false) {
                 RefreshControl(coordinateSpace: .named("MainScrollViewRefresh")) {
@@ -41,7 +41,6 @@ struct MainView: View {
                     .buttonStyle(TAButtonStyle(scale: 1.07))
                     .disabled(viewModel.loading)
                 }
-                .padding(.top, 40)
                 .padding([.trailing, .leading], TAPadding.viewEdgePadding)
                 if let overallAverage = viewModel.overallAverage {
                     RingView(percentage: overallAverage, animate: $viewModel.loading)
@@ -61,35 +60,24 @@ struct MainView: View {
                             .foregroundColor(TAColor.primaryTextColor)
                     } else {
                         ForEach(viewModel.courses) { course in
-                            Button(action: {
-                                viewModel.didTapCourse(course: course)
-                            }) {
+                            if course.link != nil {
+                                NavigationLink(destination: CourseView(viewModel: .init(course: viewModel.currentCourse))) {
+                                    CourseCellView(course: course, animate: $viewModel.loading)
+                                }
+                                .simultaneousGesture(TapGesture().onEnded {
+                                    viewModel.didTapCourse(course: course)
+                                })
+                                .buttonStyle(TAButtonStyle(scale: 1.02))
+                            } else {
                                 CourseCellView(course: course, animate: $viewModel.loading)
                             }
-                            .buttonStyle(TAButtonStyle(scale: course.link == nil ? 1 : 1.02))
-                            .disabled(viewModel.loading)
                         }
                     }
                 }
                 .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
             }
             .coordinateSpace(name: "MainScrollViewRefresh")
-            
-            // MARK: - Course View
-            if viewModel.showCourse {
-                CourseView(show: $viewModel.showCourse, viewModel: .init(course: viewModel.currentCourse))
-                    .transition(.move(edge: .trailing))
-                    .zIndex(1)
-            }
-            
-            VStack {}.sheet(isPresented: $viewModel.showSettingsView) {
-                SettingsView(show: $viewModel.showSettingsView,
-                             viewModel: .init(userState: userState))
-            }
-            VStack {}.sheet(isPresented: $viewModel.showLinksView) {
-                LinksView(show: $viewModel.showLinksView,
-                          viewModel: .init(userState: userState))
-            }
+            .navigationBarHidden(true)
         }
         .ignoresSafeArea()
         .alert(isPresented: $viewModel.showError, content: {
@@ -101,6 +89,14 @@ struct MainView: View {
                     }
                   })
         })
+        .sheet(isPresented: $viewModel.showLinksView) {
+            LinksView(show: $viewModel.showLinksView,
+                      viewModel: .init(userState: userState))
+        }
+        .sheet(isPresented: $viewModel.showSettingsView) {
+            SettingsView(show: $viewModel.showSettingsView,
+                         viewModel: .init(userState: userState))
+        }
     }
 }
 
@@ -112,7 +108,6 @@ extension MainView {
         @Published var loading: Bool = true
         @Published var showError: Bool = false
         var currentError: TAError = TAError.unknownError
-        @Published var showCourse: Bool = false
         var currentCourse: Course = Course()
         @Published var showLinksView: Bool = false
         @Published var showSettingsView: Bool = false
@@ -155,9 +150,6 @@ extension MainView {
             guard course.link != nil else { return }
             UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             currentCourse = course
-            withAnimation {
-                showCourse = true
-            }
         }
         
         private func updateOverallAverage() {

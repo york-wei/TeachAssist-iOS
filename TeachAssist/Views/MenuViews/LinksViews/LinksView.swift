@@ -49,7 +49,7 @@ struct LinksView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        ZStack {
+        NavigationView {
             ScrollView(showsIndicators: false) {
                 // Top bar
                 HStack(alignment: .center) {
@@ -82,10 +82,19 @@ struct LinksView: View {
                         .shadow(color: TAColor.dropShadowColor, radius: 5, x: 0, y: 2)
                     VStack {
                         ForEach([LinkSelection.teachAssist, LinkSelection.myBlueprint, LinkSelection.moodle, LinkSelection.yrdsbTwitter]) { linkSelection in
-                            Button(action: {
-                                viewModel.didTapLink(selection: linkSelection)
-                            }) {
-                                ArrowButtonView(label: linkSelection.name)
+                            if !viewModel.userState.isDemoUser() {
+                                NavigationLink(destination: WebsiteView(linkSelection: linkSelection, userState: viewModel.userState)) {
+                                    ArrowButtonView(label: linkSelection.name)
+                                }
+                                .simultaneousGesture(TapGesture().onEnded {
+                                    viewModel.didTapLink(selection: linkSelection)
+                                })
+                            } else {
+                                Button(action: {
+                                    viewModel.didTapLink(selection: linkSelection)
+                                }) {
+                                    ArrowButtonView(label: linkSelection.name)
+                                }
                             }
                             if linkSelection != .yrdsbTwitter {
                                 Divider()
@@ -96,23 +105,16 @@ struct LinksView: View {
                 }
                 .padding([.top, .trailing, .leading], TAPadding.viewEdgePadding)
             }
-            
-            if viewModel.showWebsiteView {
-                WebsiteView(show: $viewModel.showWebsiteView, linkSelection: viewModel.currentSelection, userState: viewModel.userState)
-                    .transition(.move(edge: .trailing))
-                    .zIndex(1)
-            }
+            .navigationBarHidden(true)
+            .background(TAColor.backgroundColor.edgesIgnoringSafeArea(.all))
         }
         .ignoresSafeArea()
-        .background(TAColor.backgroundColor.edgesIgnoringSafeArea(.all))
     }
 }
 
 extension LinksView {
     class ViewModel: ObservableObject {
         let userState: UserState
-        @Published var currentSelection: LinkSelection = .teachAssist
-        @Published var showWebsiteView: Bool = false
         
         init(userState: UserState) {
             self.userState = userState
@@ -123,10 +125,6 @@ extension LinksView {
             guard !userState.isDemoUser() else {
                 UIApplication.shared.open(selection.url, options: [:], completionHandler: nil)
                 return
-            }
-            currentSelection = selection
-            withAnimation {
-                showWebsiteView = true
             }
         }
     }

@@ -14,8 +14,7 @@ enum SelectedTab {
 }
 
 struct CourseView: View {
-    @Binding var show: Bool
-    @State var currentOffsetX: CGFloat = 0
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @StateObject var viewModel: ViewModel
     
     var body: some View {
@@ -24,9 +23,7 @@ struct CourseView: View {
             HStack(alignment: .center) {
                 Button(action: {
                     UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                    withAnimation {
-                        self.show = false
-                    }
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     SmallButtonView(imageName: "chevron.backward")
                 }
@@ -46,7 +43,7 @@ struct CourseView: View {
                 }
                 .buttonStyle(TAButtonStyle(scale: 1.07))
             }
-            .padding(.top, 50)
+            .padding(.top, 10)
             .padding([.trailing, .leading], TAPadding.viewEdgePadding)
             // Course average ring
             if let average = viewModel.getCourse().average {
@@ -105,38 +102,19 @@ struct CourseView: View {
                 BreakdownView(course: viewModel.getCourse())
                     .padding([.top, .bottom, .trailing, .leading], TAPadding.viewEdgePadding)
             }
-            VStack {}.sheet(isPresented: $viewModel.showAddEvaluationView) {
-                AddEvaluationView(show: $viewModel.showAddEvaluationView,
-                                  addEvaluation: viewModel.addEvaluation(evaluation:))
-            }
-            VStack {}.sheet(isPresented: $viewModel.showEditEvaluationView) {
-                EditEvaluationView(show: $viewModel.showEditEvaluationView,
-                                   evaluation: viewModel.evaluationForEditing,
-                                   editEvaluation: viewModel.editEvaluation(evaluation:))
-            }
         }
+        //.navigationBarTitle("")
+        .navigationBarHidden(true)
         .background(TAColor.backgroundColor.ignoresSafeArea())
-        .offset(x: currentOffsetX)
-        .gesture(DragGesture(coordinateSpace: .global)
-                    .onChanged { value in
-                        if value.translation.width > 0 {
-                            currentOffsetX = value.translation.width
-                        }
-                    }
-                    .onEnded { value in
-                        if currentOffsetX > UIScreen.main.bounds.width / 2 || value.predictedEndLocation.x - value.location.x > 250 {
-                            withAnimation {
-                                currentOffsetX = UIScreen.main.bounds.width
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                                    self.show = false
-                                }
-                            }
-                        } else {
-                            withAnimation {
-                                currentOffsetX = 0
-                            }
-                        }
-                    })
+        .sheet(isPresented: $viewModel.showAddEvaluationView) {
+            AddEvaluationView(show: $viewModel.showAddEvaluationView,
+                              addEvaluation: viewModel.addEvaluation(evaluation:))
+        }
+        .sheet(isPresented: $viewModel.showEditEvaluationView) {
+            EditEvaluationView(show: $viewModel.showEditEvaluationView,
+                               evaluation: viewModel.evaluationForEditing,
+                               editEvaluation: viewModel.editEvaluation(evaluation:))
+        }
     }
 }
 

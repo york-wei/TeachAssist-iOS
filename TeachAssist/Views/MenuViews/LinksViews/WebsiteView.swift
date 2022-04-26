@@ -9,17 +9,15 @@ import SwiftUI
 import WebKit
 
 struct WebsiteView: View {
-    @Binding var show: Bool
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     let linkSelection: LinkSelection
     let userState: UserState
     var body: some View {
         VStack {
             HStack(alignment: .center) {
                 Button(action: {
-                    withAnimation {
-                        UIImpactFeedbackGenerator(style: .medium).impactOccurred()
-                        show = false
-                    }
+                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    presentationMode.wrappedValue.dismiss()
                 }) {
                     SmallButtonView(imageName: "chevron.left")
                 }
@@ -44,6 +42,7 @@ struct WebsiteView: View {
         }
         .ignoresSafeArea()
         .background(TAColor.backgroundColor)
+        .navigationBarHidden(true)
     }
 }
 
