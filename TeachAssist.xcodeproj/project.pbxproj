@@ -52,6 +52,27 @@
 		F3716937266C221C00A350EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3716936266C221C00A350EB /* LoginView.swift */; };
 		F373B3BD26D59E000009BB1D /* TAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F373B3BC26D59E000009BB1D /* TAError.swift */; };
 		F375111426D1968400C452DB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375111326D1968400C452DB /* Reachability.swift */; };
+		F38078A3281E1B60007E48A1 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38078A2281E1B60007E48A1 /* WidgetKit.framework */; };
+		F38078A5281E1B60007E48A1 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F38078A4281E1B60007E48A1 /* SwiftUI.framework */; };
+		F38078A8281E1B60007E48A1 /* TeachAssistWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38078A7281E1B60007E48A1 /* TeachAssistWidget.swift */; };
+		F38078AB281E1B61007E48A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F38078AA281E1B61007E48A1 /* Assets.xcassets */; };
+		F38078AD281E1B61007E48A1 /* TeachAssistWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F38078A9281E1B60007E48A1 /* TeachAssistWidget.intentdefinition */; };
+		F38078AE281E1B61007E48A1 /* TeachAssistWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = F38078A9281E1B60007E48A1 /* TeachAssistWidget.intentdefinition */; };
+		F38078B1281E1B61007E48A1 /* TeachAssistWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F38078A1281E1B60007E48A1 /* TeachAssistWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F38078B6281E1E92007E48A1 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34826D4226B0041BCA9 /* Course.swift */; };
+		F38078B7281E1E92007E48A1 /* Evaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34C26D425350041BCA9 /* Evaluation.swift */; };
+		F38078B8281E1E92007E48A1 /* UserState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9681D7142652DE6C003F7E31 /* UserState.swift */; };
+		F38078B9281E1E92007E48A1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34E26D4253B0041BCA9 /* Section.swift */; };
+		F38078BA281E1EF1007E48A1 /* FetchCourseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F35226D483310041BCA9 /* FetchCourseResponse.swift */; };
+		F38078BB281E1EF1007E48A1 /* TAError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F373B3BC26D59E000009BB1D /* TAError.swift */; };
+		F38078BC281E1EF1007E48A1 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */; };
+		F38078BD281E1EF1007E48A1 /* TAService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D9F4AF26B8AC1100B48D08 /* TAService.swift */; };
+		F38078BE281E1F13007E48A1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C092652BB2E00B79F38 /* Persistence.swift */; };
+		F38078BF281E1F15007E48A1 /* TeachAssist.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F3BA8C0B2652BB2E00B79F38 /* TeachAssist.xcdatamodeld */; };
+		F38078C0281E1F17007E48A1 /* TAParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F34626D422180041BCA9 /* TAParser.swift */; };
+		F38078C1281E1F2E007E48A1 /* TAConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32532992669175B006480DA /* TAConstants.swift */; };
+		F38078C2281E1F31007E48A1 /* String+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365F35026D4333E0041BCA9 /* String+Helpers.swift */; };
+		F38078C3281E1F34007E48A1 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F375111326D1968400C452DB /* Reachability.swift */; };
 		F38E065B269F86CB007319AD /* LoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065A269F86CB007319AD /* LoginButtonView.swift */; };
 		F38E065D269F8A40007319AD /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38E065C269F8A40007319AD /* ActivityIndicator.swift */; };
 		F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */; };
@@ -68,6 +89,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F38078AF281E1B61007E48A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3BA8BF52652BB2C00B79F38 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F38078A0281E1B60007E48A1;
+			remoteInfo = TeachAssistWidgetExtension;
+		};
 		F3BA8C142652BB2E00B79F38 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F3BA8BF52652BB2C00B79F38 /* Project object */;
@@ -83,6 +111,20 @@
 			remoteInfo = TeachAssist;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F38078B2281E1B61007E48A1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F38078B1281E1B61007E48A1 /* TeachAssistWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0583A148131986D8313BA064 /* Pods-TeachAssist-TeachAssistUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeachAssist-TeachAssistUITests.debug.xcconfig"; path = "Target Support Files/Pods-TeachAssist-TeachAssistUITests/Pods-TeachAssist-TeachAssistUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,6 +178,13 @@
 		F3716936266C221C00A350EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		F373B3BC26D59E000009BB1D /* TAError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TAError.swift; sourceTree = "<group>"; };
 		F375111326D1968400C452DB /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		F38078A1281E1B60007E48A1 /* TeachAssistWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TeachAssistWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F38078A2281E1B60007E48A1 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		F38078A4281E1B60007E48A1 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		F38078A7281E1B60007E48A1 /* TeachAssistWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachAssistWidget.swift; sourceTree = "<group>"; };
+		F38078A9281E1B60007E48A1 /* TeachAssistWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = TeachAssistWidget.intentdefinition; sourceTree = "<group>"; };
+		F38078AA281E1B61007E48A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F38078AC281E1B61007E48A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F38E065A269F86CB007319AD /* LoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButtonView.swift; sourceTree = "<group>"; };
 		F38E065C269F8A40007319AD /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		F3B7C7DF26D3FE6200FA1075 /* AuthenticationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResponse.swift; sourceTree = "<group>"; };
@@ -158,6 +207,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F380789E281E1B60007E48A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F38078A5281E1B60007E48A1 /* SwiftUI.framework in Frameworks */,
+				F38078A3281E1B60007E48A1 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3BA8BFA2652BB2C00B79F38 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -204,6 +262,8 @@
 				35BF106475FFAEA25BD8B7D3 /* Pods_TeachAssist.framework */,
 				C2B7368D27F299DA1C60004D /* Pods_TeachAssist_TeachAssistUITests.framework */,
 				0C13CED4F7CA17D7CBB6CC00 /* Pods_TeachAssistTests.framework */,
+				F38078A2281E1B60007E48A1 /* WidgetKit.framework */,
+				F38078A4281E1B60007E48A1 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -362,12 +422,24 @@
 			path = ComponentViews;
 			sourceTree = "<group>";
 		};
+		F38078A6281E1B60007E48A1 /* TeachAssistWidget */ = {
+			isa = PBXGroup;
+			children = (
+				F38078A7281E1B60007E48A1 /* TeachAssistWidget.swift */,
+				F38078A9281E1B60007E48A1 /* TeachAssistWidget.intentdefinition */,
+				F38078AA281E1B61007E48A1 /* Assets.xcassets */,
+				F38078AC281E1B61007E48A1 /* Info.plist */,
+			);
+			path = TeachAssistWidget;
+			sourceTree = "<group>";
+		};
 		F3BA8BF42652BB2C00B79F38 = {
 			isa = PBXGroup;
 			children = (
 				F3BA8BFF2652BB2C00B79F38 /* TeachAssist */,
 				F3BA8C162652BB2E00B79F38 /* TeachAssistTests */,
 				F3BA8C212652BB2E00B79F38 /* TeachAssistUITests */,
+				F38078A6281E1B60007E48A1 /* TeachAssistWidget */,
 				F3BA8BFE2652BB2C00B79F38 /* Products */,
 				27832BC2FEF86ABADAC9A188 /* Pods */,
 				63783BA533978CA93A195896 /* Frameworks */,
@@ -380,6 +452,7 @@
 				F3BA8BFD2652BB2C00B79F38 /* TeachAssist.app */,
 				F3BA8C132652BB2E00B79F38 /* TeachAssistTests.xctest */,
 				F3BA8C1E2652BB2E00B79F38 /* TeachAssistUITests.xctest */,
+				F38078A1281E1B60007E48A1 /* TeachAssistWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -440,6 +513,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F38078A0281E1B60007E48A1 /* TeachAssistWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F38078B5281E1B61007E48A1 /* Build configuration list for PBXNativeTarget "TeachAssistWidgetExtension" */;
+			buildPhases = (
+				F380789D281E1B60007E48A1 /* Sources */,
+				F380789E281E1B60007E48A1 /* Frameworks */,
+				F380789F281E1B60007E48A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeachAssistWidgetExtension;
+			productName = TeachAssistWidgetExtension;
+			productReference = F38078A1281E1B60007E48A1 /* TeachAssistWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F3BA8BFC2652BB2C00B79F38 /* TeachAssist */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3BA8C272652BB2E00B79F38 /* Build configuration list for PBXNativeTarget "TeachAssist" */;
@@ -449,10 +539,12 @@
 				F3BA8BFA2652BB2C00B79F38 /* Frameworks */,
 				F3BA8BFB2652BB2C00B79F38 /* Resources */,
 				84930F929456A07B2422FBDD /* [CP] Embed Pods Frameworks */,
+				F38078B2281E1B61007E48A1 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F38078B0281E1B61007E48A1 /* PBXTargetDependency */,
 			);
 			name = TeachAssist;
 			productName = TeachAssist;
@@ -504,9 +596,12 @@
 		F3BA8BF52652BB2C00B79F38 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1250;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
+					F38078A0281E1B60007E48A1 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 					F3BA8BFC2652BB2C00B79F38 = {
 						CreatedOnToolsVersion = 12.5;
 					};
@@ -536,11 +631,20 @@
 				F3BA8BFC2652BB2C00B79F38 /* TeachAssist */,
 				F3BA8C122652BB2E00B79F38 /* TeachAssistTests */,
 				F3BA8C1D2652BB2E00B79F38 /* TeachAssistUITests */,
+				F38078A0281E1B60007E48A1 /* TeachAssistWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F380789F281E1B60007E48A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F38078AB281E1B61007E48A1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3BA8BFB2652BB2C00B79F38 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,6 +774,29 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F380789D281E1B60007E48A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F38078BE281E1F13007E48A1 /* Persistence.swift in Sources */,
+				F38078B6281E1E92007E48A1 /* Course.swift in Sources */,
+				F38078C1281E1F2E007E48A1 /* TAConstants.swift in Sources */,
+				F38078C0281E1F17007E48A1 /* TAParser.swift in Sources */,
+				F38078BC281E1EF1007E48A1 /* AuthenticationResponse.swift in Sources */,
+				F38078C2281E1F31007E48A1 /* String+Helpers.swift in Sources */,
+				F38078BA281E1EF1007E48A1 /* FetchCourseResponse.swift in Sources */,
+				F38078BF281E1F15007E48A1 /* TeachAssist.xcdatamodeld in Sources */,
+				F38078B8281E1E92007E48A1 /* UserState.swift in Sources */,
+				F38078BD281E1EF1007E48A1 /* TAService.swift in Sources */,
+				F38078A8281E1B60007E48A1 /* TeachAssistWidget.swift in Sources */,
+				F38078B9281E1E92007E48A1 /* Section.swift in Sources */,
+				F38078AD281E1B61007E48A1 /* TeachAssistWidget.intentdefinition in Sources */,
+				F38078B7281E1E92007E48A1 /* Evaluation.swift in Sources */,
+				F38078C3281E1F34007E48A1 /* Reachability.swift in Sources */,
+				F38078BB281E1EF1007E48A1 /* TAError.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F3BA8BF92652BB2C00B79F38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -725,6 +852,7 @@
 				F3B7C7E026D3FE6200FA1075 /* AuthenticationResponse.swift in Sources */,
 				F32C28C626E476EE00F3F396 /* EditEvaluationView.swift in Sources */,
 				F3BA8C012652BB2C00B79F38 /* TeachAssistApp.swift in Sources */,
+				F38078AE281E1B61007E48A1 /* TeachAssistWidget.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,6 +875,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F38078B0281E1B61007E48A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F38078A0281E1B60007E48A1 /* TeachAssistWidgetExtension */;
+			targetProxy = F38078AF281E1B61007E48A1 /* PBXContainerItemProxy */;
+		};
 		F3BA8C152652BB2E00B79F38 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F3BA8BFC2652BB2C00B79F38 /* TeachAssist */;
@@ -760,6 +893,64 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		F38078B3281E1B61007E48A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeachAssistWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TeachAssistWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.TeachAssist.TeachAssistWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F38078B4281E1B61007E48A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3AG32RQPW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TeachAssistWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TeachAssistWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.TeachAssist.TeachAssistWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F3BA8C252652BB2E00B79F38 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -880,6 +1071,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE54CC16644B267F2EF6A4F9 /* Pods-TeachAssist.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -904,6 +1096,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FC67F84F5065F1550038251 /* Pods-TeachAssist.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1011,6 +1204,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F38078B5281E1B61007E48A1 /* Build configuration list for PBXNativeTarget "TeachAssistWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F38078B3281E1B61007E48A1 /* Debug */,
+				F38078B4281E1B61007E48A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F3BA8BF82652BB2C00B79F38 /* Build configuration list for PBXProject "TeachAssist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
