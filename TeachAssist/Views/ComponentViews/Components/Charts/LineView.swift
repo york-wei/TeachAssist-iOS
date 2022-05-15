@@ -78,7 +78,7 @@ public struct LineView: View {
                     .frame(width: geometry.frame(in: .local).size.width, height: 230)
                 }
             }
-            .gesture(DragGesture()
+            .gesture(DragGesture(minimumDistance: 30, coordinateSpace: .local)
                         .onChanged({ value in
                             self.dragLocation = value.location
                             self.indicatorLocation = CGPoint(x: max(value.location.x,0), y: 32)
